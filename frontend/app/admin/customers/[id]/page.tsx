@@ -26,7 +26,7 @@ export default function AdminCustomerDetailPage({ params }: { params: Promise<{ 
         setCustomer(response as any);
         setItems([
           { label: "Pelanggan", href: "/admin/customers" },
-          { label: response.name, href: `/admin/customers/${customerId}` }
+          { label: (response as any).name, href: `/admin/customers/${customerId}` }
         ]);
       } catch (error) {
         console.error("Failed to fetch customer details:", error);

@@ -40,7 +40,7 @@ export function BlogTagForm({ tagId }: BlogTagFormProps) {
     watch,
     formState: { errors },
   } = useForm<BlogTagFormValues>({
-    resolver: zodResolver(blogTagSchema),
+    resolver: zodResolver(blogTagSchema) as any,
     defaultValues: {
       name: "",
       slug: "",

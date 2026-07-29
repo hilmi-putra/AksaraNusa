@@ -1,23 +1,6 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta-sans",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair-display",
-  style: ["normal", "italic"],
-});
 
 export const metadata: Metadata = {
   title: "Aksara Nusa | Satu Penerbit. Ribuan Cerita Penting.",
@@ -43,8 +26,13 @@ export default function RootLayout({
     <html
       lang="id"
       suppressHydrationWarning
-      className={cn("h-full", "antialiased", plusJakartaSans.variable, manrope.variable, playfairDisplay.variable)}
+      className={cn("h-full", "antialiased", "font-plus-jakarta-sans", "font-manrope", "font-playfair-display")}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+      </head>
       <body className="min-h-full flex flex-col">
         <ThemeProvider
           attribute="class"

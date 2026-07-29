@@ -23,7 +23,7 @@ export async function cancelAdminOrder(id: string | number, reason: string) {
 export async function downloadInvoice(id: string | number) {
   const res = await api.get(`/admin/orders/${id}/invoice`, { responseType: 'blob' });
   
-  const url = window.URL.createObjectURL(new Blob([res]));
+  const url = window.URL.createObjectURL(new Blob([res.data]));
   const link = document.createElement('a');
   link.href = url;
   link.setAttribute('download', `invoice-${id}.pdf`);
@@ -35,7 +35,7 @@ export async function downloadInvoice(id: string | number) {
 export async function downloadPackingSlip(id: string | number) {
   const res = await api.get(`/admin/orders/${id}/packing-slip`, { responseType: 'blob' });
   
-  const url = window.URL.createObjectURL(new Blob([res]));
+  const url = window.URL.createObjectURL(new Blob([res.data]));
   const link = document.createElement('a');
   link.href = url;
   link.setAttribute('download', `packing-slip-${id}.pdf`);

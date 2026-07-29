@@ -270,14 +270,14 @@ export function ProfileSettings() {
       </div>
       
       <ConfirmDialog 
-        isOpen={isConfirmOpen}
-        onClose={() => setIsConfirmOpen(false)}
+        open={isConfirmOpen}
+        onOpenChange={(open) => setIsConfirmOpen(open)}
         onConfirm={confirmDeleteAddress}
         title="Hapus Alamat"
         description="Apakah Anda yakin ingin menghapus alamat ini? Aksi ini tidak dapat dibatalkan."
         confirmText="Hapus"
         cancelText="Batal"
-        isLoading={isDeleting}
+        isSubmitting={isDeleting}
       />
 
       <AddAddressModal 

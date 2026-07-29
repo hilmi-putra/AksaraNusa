@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Book } from "@/types/book";
 
 export interface ProductMetadataProps {
-  book: Book;
+  book: any;
 }
 
 export function ProductMetadata({ book }: ProductMetadataProps) {

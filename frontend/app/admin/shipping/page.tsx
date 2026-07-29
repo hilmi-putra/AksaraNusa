@@ -48,12 +48,13 @@ export default function AdminShippingPage() {
       if (search) params.search = search;
       
       const response = await getAdminShipments(params);
-      setData(response.data || []);
+      const res = response as any;
+      setData(res.data || []);
       setPagination({
-        page: response.current_page || 1,
-        per_page: response.per_page || 15,
-        total: response.total || 0,
-        last_page: response.last_page || 1
+        page: res.current_page || 1,
+        per_page: res.per_page || 15,
+        total: res.total || 0,
+        last_page: res.last_page || 1
       });
     } catch (error) {
       console.error("Failed to fetch shipments:", error);

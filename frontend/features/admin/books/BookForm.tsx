@@ -315,7 +315,7 @@ export function BookForm({ initialData, onSubmit, isEdit = false, loading = fals
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <Label>Penulis <span className="text-red-500">*</span></Label>
-              <Select value={formData.author_id} onValueChange={(val) => handleSelectChange("author_id", val)} disabled={masterLoading}>
+              <Select value={formData.author_id} onValueChange={(val) => handleSelectChange("author_id", val || "")} disabled={masterLoading}>
                 <SelectTrigger>
                   <SelectValue placeholder={masterLoading ? "Memuat..." : "Pilih Penulis"}>
                     {authors.find(a => a.id.toString() === formData.author_id)?.name}
@@ -328,7 +328,7 @@ export function BookForm({ initialData, onSubmit, isEdit = false, loading = fals
             </div>
             <div className="space-y-2">
               <Label>Penerbit <span className="text-red-500">*</span></Label>
-              <Select value={formData.publisher_id} onValueChange={(val) => handleSelectChange("publisher_id", val)} disabled={masterLoading}>
+              <Select value={formData.publisher_id} onValueChange={(val) => handleSelectChange("publisher_id", val || "")} disabled={masterLoading}>
                 <SelectTrigger>
                   <SelectValue placeholder={masterLoading ? "Memuat..." : "Pilih Penerbit"}>
                     {publishers.find(p => p.id.toString() === formData.publisher_id)?.name}
@@ -386,7 +386,7 @@ export function BookForm({ initialData, onSubmit, isEdit = false, loading = fals
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="space-y-2">
               <Label>Bahasa</Label>
-              <Select value={formData.language} onValueChange={(val) => handleSelectChange("language", val)}>
+              <Select value={formData.language} onValueChange={(val) => handleSelectChange("language", val || "")}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   {LANGUAGES.map((l) => <SelectItem key={l.value} value={l.value}>{l.label}</SelectItem>)}
@@ -395,7 +395,7 @@ export function BookForm({ initialData, onSubmit, isEdit = false, loading = fals
             </div>
             <div className="space-y-2">
               <Label>Status <span className="text-red-500">*</span></Label>
-              <Select value={formData.status} onValueChange={(val) => handleSelectChange("status", val)}>
+              <Select value={formData.status} onValueChange={(val) => handleSelectChange("status", val || "")}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="draft">Draft</SelectItem>
@@ -452,7 +452,7 @@ export function BookForm({ initialData, onSubmit, isEdit = false, loading = fals
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="digital_file_format">Format</Label>
-                  <Select value={formData.digital_file_format} onValueChange={(val) => handleSelectChange("digital_file_format", val)}>
+                  <Select value={formData.digital_file_format} onValueChange={(val) => handleSelectChange("digital_file_format", val || "")}>
                     <SelectTrigger><SelectValue placeholder="Pilih format" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="PDF">PDF</SelectItem>
@@ -483,7 +483,7 @@ export function BookForm({ initialData, onSubmit, isEdit = false, loading = fals
             </div>
             <div className="space-y-2">
               <Label>Tipe Buku <span className="text-red-500">*</span></Label>
-              <Select value={formData.book_type} onValueChange={(val) => handleSelectChange("book_type", val)}>
+              <Select value={formData.book_type} onValueChange={(val) => handleSelectChange("book_type", val || "")}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="physical">Physical</SelectItem>
@@ -512,7 +512,7 @@ export function BookForm({ initialData, onSubmit, isEdit = false, loading = fals
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="space-y-2">
               <Label>Jenis Cover</Label>
-              <Select value={formData.cover_type} onValueChange={(val) => handleSelectChange("cover_type", val)}>
+              <Select value={formData.cover_type} onValueChange={(val) => handleSelectChange("cover_type", val || "")}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="softcover">Softcover</SelectItem>

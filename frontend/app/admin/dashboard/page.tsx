@@ -261,7 +261,6 @@ export default function AdminDashboardPage() {
     return (
         <AdminDashboardLayout 
             title="Dashboard Admin"
-            sidebar={sidebarContent}
         >
             <div className="space-y-8 font-sans">
                 

@@ -75,7 +75,7 @@ export function BlogPostForm({ postId }: BlogPostFormProps) {
     watch,
     formState: { errors },
   } = useForm<BlogPostFormValues>({
-    resolver: zodResolver(blogPostSchema),
+    resolver: zodResolver(blogPostSchema) as any,
     defaultValues: {
       title: "",
       slug: "",

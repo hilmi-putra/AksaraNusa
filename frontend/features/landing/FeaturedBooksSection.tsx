@@ -89,7 +89,7 @@ export function FeaturedBooksSection() {
                     {/* Book Image Area (The Card) */}
                     <div className="w-full h-[300px] md:h-[380px] flex items-center justify-center p-8 border border-[#EF7A08]/15 rounded-2xl overflow-hidden transition-all duration-300 group-hover:-translate-y-1">
                       <img
-                        src={book.coverUrl || "https://placehold.co/400x600/DAD6C9/171512?text=Cover"}
+                        src={book.cover_image || "https://placehold.co/400x600/DAD6C9/171512?text=Cover"}
                         alt={book.title}
                         className="h-full w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)] group-hover:scale-105 transition-transform duration-500"
                       />
@@ -102,7 +102,7 @@ export function FeaturedBooksSection() {
                           {book.title}
                         </h3>
                         <p className="text-[14px] text-[#EF7A08]/70">
-                          {book.author}
+                          {book.author?.name || 'Penulis'}
                         </p>
                       </div>
 

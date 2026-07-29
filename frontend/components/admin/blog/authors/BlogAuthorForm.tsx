@@ -51,7 +51,7 @@ export function BlogAuthorForm({ authorId }: BlogAuthorFormProps) {
     watch,
     formState: { errors },
   } = useForm<BlogAuthorFormValues>({
-    resolver: zodResolver(blogAuthorSchema),
+    resolver: zodResolver(blogAuthorSchema) as any,
     defaultValues: {
       name: "",
       slug: "",

@@ -87,7 +87,7 @@ export function DashboardNav() {
         {/* Right: User Profile Summary */}
         <div className="flex items-center gap-4 md:border-l border-gray-100 pt-0 pl-0 md:pl-6 w-full md:w-auto justify-between md:justify-end shrink-0">
           <div className="flex flex-col items-start md:items-end">
-            <Typography variant="body" className="font-bold text-[#171512] text-sm leading-none mb-1">
+            <Typography variant="p" className="font-bold text-[#171512] text-sm leading-none mb-1">
               {user?.name || 'Guest User'}
             </Typography>
             <span className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">

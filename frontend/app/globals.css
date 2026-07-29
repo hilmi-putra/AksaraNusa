@@ -4,6 +4,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+:root {
+  --font-plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-manrope: 'Manrope', sans-serif;
+  --font-playfair-display: 'Playfair Display', serif;
+}
+
 @theme inline {
   --color-cream: #F8FAFC;
   --color-ink: #0F172A;

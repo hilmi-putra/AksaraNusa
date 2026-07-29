@@ -15,7 +15,9 @@ import { useGSAP } from "@gsap/react";
 import { CheckoutStepper } from "@/components/molecules/CheckoutStepper";
 import { getOrder } from "@/lib/api/user";
 
-export default function CheckoutSuccessPage() {
+import { Suspense } from "react";
+
+function CheckoutSuccessContent() {
   const containerRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();
@@ -246,5 +248,13 @@ export default function CheckoutSuccessPage() {
 
       </Container>
     </div>
+  );
+}
+
+export default function CheckoutSuccessPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen pt-24 pb-20 flex items-center justify-center">Loading...</div>}>
+      <CheckoutSuccessContent />
+    </Suspense>
   );
 }

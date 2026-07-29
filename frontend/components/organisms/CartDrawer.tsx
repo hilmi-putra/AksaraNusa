@@ -9,6 +9,7 @@ import { X, Trash2, Minus, Plus } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
+import { ComingSoonVinyl } from "@/components/ui/ComingSoonVinyl";
 
 export function CartDrawer() {
   const { isOpen, closeCart, items, removeItem, updateQuantity, subtotal } = useCartStore();
@@ -61,109 +62,16 @@ export function CartDrawer() {
 
         {/* Item List */}
         <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
-          {items.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-full text-gray-500">
-              <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 border border-gray-200 shadow-sm animate-pulse">
-                <span className="w-3 h-3 rounded-full bg-[#EF7A08]"></span>
-              </div>
-              <p className="mb-2 font-bold text-[#171512] uppercase tracking-widest text-sm">Coming Soon</p>
-              <p className="text-center text-xs">Fitur keranjang belanja akan segera hadir untuk Anda.</p>
-              <button 
-                onClick={closeCart}
-                className="mt-6 text-gradient-primary font-bold underline hover:text-[#b06f00] text-xs uppercase tracking-widest"
-              >
-                Kembali
-              </button>
-            </div>
-          ) : (
-            items.map((item) => (
-              <div key={item.id} className="flex gap-4 border-b border-gray-200 pb-6 last:border-0 last:pb-0">
-                <div className="w-20 h-28 relative flex-shrink-0 bg-gray-100">
-                  <Image 
-                    src={item.book.coverUrl} 
-                    alt={item.book.title} 
-                    fill 
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex-1 flex flex-col">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="font-bold text-[#171512] text-sm">{item.book.title}</h3>
-                      <p className="text-xs text-gray-500 mt-1">{item.book.author} &bull; {item.book.category}</p>
-                    </div>
-                    <button 
-                      onClick={() => removeItem(item.id)}
-                      className="text-gray-400 hover:text-gradient-secondary transition-colors"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
-                  </div>
-                  
-                  <div className="mt-2">
-                    <span className="inline-block px-2 py-0.5 bg-green-100 text-green-800 text-[10px] font-bold rounded-sm tracking-wider uppercase">
-                      In Stock
-                    </span>
-                  </div>
-
-                  <div className="mt-auto flex justify-between items-end">
-                    <div className="flex items-center border border-gray-300 rounded-sm">
-                      <button 
-                        className="px-2 py-1 text-gray-500 hover:text-black transition-colors"
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      >
-                        <Minus className="w-3 h-3" />
-                      </button>
-                      <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
-                      <button 
-                        className="px-2 py-1 text-gray-500 hover:text-black transition-colors"
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      >
-                        <Plus className="w-3 h-3" />
-                      </button>
-                    </div>
-                    <div className="font-bold text-[#171512]">
-                      {formatRupiah(item.book.price * item.quantity)}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* Sticky Footer */}
-        {items.length > 0 && (
-          <div className="p-6 bg-white border-t border-gray-200">
-            <div className="space-y-3 mb-6">
-              <div className="flex justify-between text-sm text-gray-500">
-                <span>Subtotal</span>
-                <span className="font-semibold text-[#171512]">{formatRupiah(subtotal)}</span>
-              </div>
-              <div className="flex justify-between text-sm text-gray-500">
-                <span>Estimasi Ongkir</span>
-                <span className="font-semibold text-[#171512]">Dihitung saat checkout</span>
-              </div>
-              <div className="flex justify-between text-base font-bold text-[#171512] pt-3 border-t border-gray-200">
-                <span>Total</span>
-                <span>{formatRupiah(subtotal)}</span>
-              </div>
-            </div>
-            
-            <button 
-              onClick={handleCheckout}
-              className="w-full bg-gradient-primary hover:bg-[#b06f00] text-white h-12 text-sm font-bold tracking-widest uppercase rounded-sm transition-colors mb-3 flex items-center justify-center"
-            >
-              Lanjut ke Checkout
-            </button>
+          <div className="flex flex-col items-center justify-center h-full">
+            <ComingSoonVinyl title="CART" subtitle="Fitur keranjang belanja akan segera hadir untuk Anda." variant="compact" />
             <button 
               onClick={closeCart}
-              className="w-full bg-transparent text-gray-500 hover:text-[#171512] h-10 text-xs font-bold tracking-widest uppercase transition-colors"
+              className="mt-6 text-gradient-primary font-bold underline hover:text-[#b06f00] text-xs uppercase tracking-widest"
             >
-              Lanjut Belanja
+              Kembali
             </button>
           </div>
-        )}
+        </div>
       </div>
     </>
   );

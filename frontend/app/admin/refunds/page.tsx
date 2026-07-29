@@ -52,12 +52,13 @@ export default function AdminRefundsPage() {
       if (statusFilter !== "all") params.status = statusFilter;
       
       const response = await getAdminRefunds(params);
-      setData(response.data || []);
+      const res = response as any;
+      setData(res.data || []);
       setPagination({
-        page: response.current_page || 1,
-        per_page: response.per_page || 15,
-        total: response.total || 0,
-        last_page: response.last_page || 1
+        page: res.current_page || 1,
+        per_page: res.per_page || 15,
+        total: res.total || 0,
+        last_page: res.last_page || 1
       });
     } catch (error) {
       console.error("Failed to fetch refunds:", error);
@@ -233,7 +234,7 @@ export default function AdminRefundsPage() {
           </div>
           <div className="w-full sm:w-[200px] flex items-center gap-2">
             <Filter className="w-4 h-4 text-gray-400 hidden sm:block" />
-            <Select value={statusFilter} onValueChange={(val) => { setStatusFilter(val); }}>
+            <Select value={statusFilter} onValueChange={(val) => { setStatusFilter(val || 'all'); }}>
               <SelectTrigger className="h-10 text-sm font-semibold border-gray-200">
                 <SelectValue placeholder="Status" />
               </SelectTrigger>

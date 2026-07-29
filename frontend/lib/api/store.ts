@@ -37,7 +37,7 @@ export const toggleWishlist = async (bookId: number) => {
 
 export const checkWishlist = async (bookId: number) => {
     const response = await api.get(`/store/wishlist/check/${bookId}`);
-    return response.is_wishlisted;
+    return (response as any).is_wishlisted;
 };
 
 export const getCheckoutSummary = async (data: { address_id: number, shipping_zone_id?: number, use_insurance?: boolean }) => {

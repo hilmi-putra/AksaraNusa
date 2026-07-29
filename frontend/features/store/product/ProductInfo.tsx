@@ -15,7 +15,7 @@ import Cookies from "js-cookie";
 import { USER_COOKIE } from "@/lib/api";
 
 export interface ProductInfoProps {
-  book: Book;
+  book: any;
   prevSlug?: string;
   nextSlug?: string;
 }
@@ -31,7 +31,7 @@ export function ProductInfo({ book, prevSlug, nextSlug }: ProductInfoProps) {
       const userCookie = Cookies.get(USER_COOKIE);
       if (userCookie && book?.id) {
         try {
-          const status = await checkWishlist(book.id);
+          const status = await checkWishlist(Number(book.id));
           setIsWishlisted(status);
         } catch (e) {
           console.error(e);
@@ -56,7 +56,7 @@ export function ProductInfo({ book, prevSlug, nextSlug }: ProductInfoProps) {
 
     setIsWishlistLoading(true);
     try {
-      await toggleWishlist(book.id);
+      await toggleWishlist(Number(book.id));
       setIsWishlisted(!isWishlisted);
       toast.success(isWishlisted ? "Buku dihapus dari wishlist" : "Buku ditambahkan ke wishlist!");
     } catch (err) {
@@ -118,8 +118,8 @@ export function ProductInfo({ book, prevSlug, nextSlug }: ProductInfoProps) {
       {/* Description */}
       <div className="text-gray-500 leading-relaxed mb-8 max-w-2xl text-sm prose prose-sm prose-p:mb-2 prose-p:leading-relaxed"
            dangerouslySetInnerHTML={{ 
-             __html: book.long_description 
-                     ? book.long_description.substring(0, 400) + (book.long_description.length > 400 ? '...' : '')
+             __html: (book as any).long_description 
+                     ? (book as any).long_description.substring(0, 400) + ((book as any).long_description.length > 400 ? '...' : '')
                      : 'Tidak ada deskripsi tersedia.'
            }}
       />

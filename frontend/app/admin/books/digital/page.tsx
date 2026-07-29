@@ -240,7 +240,7 @@ export default function AdminDigitalFilePage() {
                 <Label htmlFor="book_type">Tipe Buku Tersedia</Label>
                 <Select
                   value={formData.book_type}
-                  onValueChange={(val) => setFormData({ ...formData, book_type: val as string })}
+                  onValueChange={(val) => setFormData({ ...formData, book_type: val || '' })}
                 >
                   <SelectTrigger>
                     <SelectValue placeholder="Pilih Tipe Buku" />

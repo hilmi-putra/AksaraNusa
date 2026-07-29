@@ -44,7 +44,7 @@ export function BlogCategoryForm({ categoryId }: BlogCategoryFormProps) {
     watch,
     formState: { errors },
   } = useForm<BlogCategoryFormValues>({
-    resolver: zodResolver(blogCategorySchema),
+    resolver: zodResolver(blogCategorySchema) as any,
     defaultValues: {
       name: "",
       slug: "",

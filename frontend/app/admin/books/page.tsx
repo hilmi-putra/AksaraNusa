@@ -283,7 +283,7 @@ export default function AdminBooksPage() {
               className="pl-10"
             />
           </div>
-          <Select value={statusFilter} onValueChange={setStatusFilter}>
+          <Select value={statusFilter} onValueChange={(value) => setStatusFilter(value || 'all')}>
             <SelectTrigger className="w-[160px]">
               <Filter className="mr-2 h-4 w-4 text-gray-400" />
               <SelectValue placeholder="Status" />
