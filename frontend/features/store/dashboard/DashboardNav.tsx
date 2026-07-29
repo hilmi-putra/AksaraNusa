@@ -132,7 +132,7 @@ export function DashboardNav() {
             return (
               <Link key={item.title} href={item.href} className="relative z-10 flex flex-col items-center justify-center w-12 h-12">
                 {isActive && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#FCD291] to-[#F9990E] rounded-full shadow-sm z-[-1]"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#004A8F] to-[#0074B7] rounded-full shadow-sm z-[-1]"></div>
                 )}
                 
                 <item.icon 

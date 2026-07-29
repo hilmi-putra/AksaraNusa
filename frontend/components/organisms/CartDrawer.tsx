@@ -63,12 +63,16 @@ export function CartDrawer() {
         <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-gray-500">
-              <p className="mb-4">Keranjang Anda kosong</p>
+              <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 border border-gray-200 shadow-sm animate-pulse">
+                <span className="w-3 h-3 rounded-full bg-[#EF7A08]"></span>
+              </div>
+              <p className="mb-2 font-bold text-[#171512] uppercase tracking-widest text-sm">Coming Soon</p>
+              <p className="text-center text-xs">Fitur keranjang belanja akan segera hadir untuk Anda.</p>
               <button 
                 onClick={closeCart}
-                className="text-gradient-primary font-bold underline hover:text-[#b06f00]"
+                className="mt-6 text-gradient-primary font-bold underline hover:text-[#b06f00] text-xs uppercase tracking-widest"
               >
-                Mulai Belanja
+                Kembali
               </button>
             </div>
           ) : (

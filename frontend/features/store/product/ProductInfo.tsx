@@ -110,7 +110,7 @@ export function ProductInfo({ book, prevSlug, nextSlug }: ProductInfoProps) {
             {formatRupiah(book.originalPrice)}
           </Typography>
         )}
-        <Typography variant="h2" className="text-[#084c3c] text-2xl lg:text-3xl font-bold mb-0">
+        <Typography variant="h2" className="text-[#EF7A08] text-2xl lg:text-3xl font-bold mb-0">
           {formatRupiah(book.price)}
         </Typography>
       </div>
@@ -150,7 +150,7 @@ export function ProductInfo({ book, prevSlug, nextSlug }: ProductInfoProps) {
         </div>
 
         <Button 
-          className="h-12 px-8 bg-[#084c3c] hover:bg-[#063a2e] text-white rounded-none font-semibold tracking-wider text-xs shadow-none"
+          className="h-12 px-8 bg-[#004A8F] hover:bg-[#002D5A] text-white rounded-none font-semibold tracking-wider text-xs shadow-none"
           onClick={handleAddToCart}
         >
           ADD TO CART
@@ -158,16 +158,16 @@ export function ProductInfo({ book, prevSlug, nextSlug }: ProductInfoProps) {
       </div>
       {/* Secondary Actions */}
       <div className="flex items-center gap-6 mb-8 text-xs font-semibold text-gray-600">
-         <button className="flex items-center gap-2 hover:text-[#084c3c] transition-colors uppercase tracking-wider">
+         <button className="flex items-center gap-2 hover:text-[#004A8F] transition-colors uppercase tracking-wider">
             <GitCompare className="w-4 h-4" /> Compare
          </button>
          <button 
            onClick={handleWishlist}
            disabled={isWishlistLoading}
-           className="flex items-center gap-2 hover:text-[#084c3c] transition-colors uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
+           className="flex items-center gap-2 hover:text-[#004A8F] transition-colors uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
          >
             <Heart 
-              className={`w-4 h-4 ${isWishlistLoading ? 'animate-pulse' : ''} ${isWishlisted ? 'fill-[#084c3c] text-[#084c3c]' : ''}`} 
+              className={`w-4 h-4 ${isWishlistLoading ? 'animate-pulse' : ''} ${isWishlisted ? 'fill-[#EF7A08] text-[#EF7A08]' : ''}`} 
             /> 
             {isWishlistLoading ? '...' : (isWishlisted ? 'In wishlist' : 'Add to wishlist')}
          </button>

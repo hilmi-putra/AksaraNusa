@@ -1,6 +1,8 @@
 import React from "react";
-import { OrderHistory } from "@/features/store/dashboard/OrderHistory";
+import { ComingSoonVinyl } from "@/components/ui/ComingSoonVinyl";
 
 export default function OrderHistoryPage() {
-  return <OrderHistory />;
+  return (
+    <ComingSoonVinyl title="PESANAN SAYA" subtitle="Lihat dan kelola pesanan Anda." />
+  );
 }

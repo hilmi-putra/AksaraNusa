@@ -116,7 +116,7 @@ export function StoreHeroSection() {
                 ref={(el) => { spinesRef.current[index] = el; }}
               >
                 <Link
-                  href={`/bookstore/kategori/${cat.id}`}
+                  href="/bookstore"
                   className={`block w-16 md:w-20 lg:w-[90px] h-[350px] md:h-[420px] ${cat.color} cursor-pointer flex flex-col items-center justify-between py-6 transition-colors shadow-[-4px_4px_0px_rgba(23,21,18,1)] border-2 border-[#171512] hover:brightness-105`}
                   style={{
                     transform: `rotate(${cat.rotate}deg)`,

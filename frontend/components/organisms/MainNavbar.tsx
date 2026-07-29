@@ -12,6 +12,7 @@ import { SearchOverlay } from "./SearchOverlay";
 import { useCartStore } from "@/stores/cartStore";
 import Cookies from "js-cookie";
 import { USER_COOKIE } from "@/lib/api";
+import { toast } from "sonner";
 
 export function MainNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -122,7 +123,7 @@ export function MainNavbar() {
                 variant="ghost" 
                 size="icon" 
                 className="rounded-full text-slate-600 hover:bg-slate-100 hover:text-slate-900 relative h-10 w-10"
-                onClick={openCart}
+                onClick={() => toast.info("Coming Soon", { description: "Fitur keranjang belanja akan segera hadir!" })}
               >
                 <ShoppingBag className="w-4 h-4" />
                 {itemCount > 0 && (
@@ -169,10 +170,10 @@ export function MainNavbar() {
               </Button>
               
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="rounded-full text-slate-600 bg-slate-50 border border-slate-200">
-                    <Menu className="w-5 h-5" />
-                  </Button>
+                <SheetTrigger render={
+                  <Button variant="ghost" size="icon" className="rounded-full text-slate-600 bg-slate-50 border border-slate-200" />
+                }>
+                  <Menu className="w-5 h-5" />
                 </SheetTrigger>
                 <SheetContent side="right" showCloseButton={false} className="!w-full !max-w-full h-full bg-white border-0 p-0 rounded-none flex flex-col">
                   <div className="flex justify-between items-center border-b border-slate-100 h-16 px-6">
@@ -209,7 +210,7 @@ export function MainNavbar() {
                       <button
                         onClick={() => {
                           setIsOpen(false);
-                          openCart();
+                          toast.info("Coming Soon", { description: "Fitur keranjang belanja akan segera hadir!" });
                         }}
                         className="text-base font-semibold text-slate-700 flex items-center justify-between py-2"
                       >

@@ -145,7 +145,7 @@ export function BookCard({
     case "related":
     case "author-books": {
       // User requested specific color for background
-      const blobColor = "text-[#9B5C00]";
+      const blobColor = "text-[#004A8F]";
 
       cardContent = (
         <div className="w-full">
@@ -254,7 +254,7 @@ export function BookCard({
 
     case "featured": {
       // User requested specific color for background
-      const blobColor = "text-[#9B5C00]";
+      const blobColor = "text-[#004A8F]";
 
       cardContent = (
         <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-center bg-transparent py-8 md:py-16">

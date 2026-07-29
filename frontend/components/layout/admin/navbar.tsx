@@ -151,10 +151,10 @@ export function AdminNavbar({ sidebarOpen, setSidebarOpen }: { sidebarOpen: bool
                     <div className="flex items-center gap-x-3 ps-4 border-s border-gray-200">
                         <div className="hidden md:flex flex-col items-end text-right">
                             <span className="text-sm font-medium text-gray-900 dark:text-zinc-100 leading-tight">
-                                {user?.name || 'aksaranusa'}
+                                {user?.name || 'Admin Aksaranusa'}
                             </span>
                             <span className="text-[11px] text-gray-400 font-normal">
-                                {user?.email || 'superadmin@megapress.co.id'}
+                                {user?.email || 'superadmin@aksaranusa.co.id'}
                             </span>
                         </div>
                         <div className="relative" ref={profileRef}>
@@ -162,7 +162,13 @@ export function AdminNavbar({ sidebarOpen, setSidebarOpen }: { sidebarOpen: bool
                                 onClick={() => setProfileOpen(!profileOpen)}
                                 className="inline-flex shrink-0 items-center gap-x-3 rounded-full hover:ring-4 hover:ring-gray-100 transition-all focus:outline-none"
                             >
-                                <img className="shrink-0 size-9 rounded-full object-cover" src={user?.avatar || "https://ui-avatars.com/api/?name=Admin&background=F7F09E&color=5C5815"} alt="Profile" />
+                                {user?.avatar ? (
+                                    <img className="shrink-0 size-9 rounded-full object-cover" src={user.avatar} alt="Profile" />
+                                ) : (
+                                    <div className="shrink-0 size-9 rounded-full bg-[#004A8F] text-white flex items-center justify-center font-bold text-sm">
+                                        {user?.name ? user.name.split(' ').map((n: string) => n[0]).join('').toUpperCase().substring(0, 2) : 'A'}
+                                    </div>
+                                )}
                             </button>
 
                             {profileOpen && (

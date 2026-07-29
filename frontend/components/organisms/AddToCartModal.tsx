@@ -17,7 +17,9 @@ export function AddToCartModal({ isOpen, onClose, book, onConfirm }: AddToCartMo
   if (!book) return null;
 
   const handleConfirm = () => {
-    onConfirm(book, quantity);
+    import("sonner").then(({ toast }) => {
+      toast.info("Coming Soon", { description: "Fitur keranjang belanja akan segera hadir!" });
+    });
     onClose();
   };
 

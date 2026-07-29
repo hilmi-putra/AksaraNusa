@@ -11,11 +11,11 @@ import { AdminDashboardLayout } from '@/components/layout/admin/AdminDashboardLa
 const PieChartCard = React.memo(({ title, data = {}, total = 0 }: any) => {
     // Colors matching mockup design system
     const COLORS = {
-        validate: '#EAE06A',
-        progress: '#F7F09E',
+        validate: '#004A8F', // Primary Blue
+        progress: '#EF7A08', // Secondary Orange
         revisions: '#4CAF50',
         pending: '#2E7D32',
-        finished: '#D4C953'
+        finished: '#002D5A'  // Darker Blue
     } as any;
 
     const chartData = [
@@ -41,7 +41,7 @@ const PieChartCard = React.memo(({ title, data = {}, total = 0 }: any) => {
                 
                 <div className="flex justify-end mb-2 relative z-10">
                     <div className="bg-white dark:bg-zinc-800 border border-gray-100 dark:border-zinc-700 rounded-lg px-3 py-1 flex items-center gap-2 text-xs font-semibold shadow-sm transition-colors duration-300">
-                        <div className="size-2 rounded-sm bg-[#F7F09E] dark:bg-amber-500"></div>
+                        <div className="size-2 rounded-sm bg-[#EF7A08] dark:bg-orange-500"></div>
                         <span className="text-gray-600 dark:text-gray-300 text-[10px] transition-colors duration-300">Progress : {data.progress || 0}</span>
                         <span className="text-gray-400 pl-2 border-l border-gray-100 dark:border-zinc-700 transition-colors duration-300">{progressRate}%</span>
                     </div>
@@ -103,12 +103,12 @@ const ClockWidget = () => {
     const dateHeroString = currentTime.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).toUpperCase();
 
     return (
-        <div className="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl p-6 md:px-10 text-center shadow-[0_8px_32px_0_rgba(247,240,158,0.3)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] border border-white/50 dark:border-zinc-700/50 flex-shrink-0 min-w-[240px]">
-            <p className="text-[11px] font-bold text-amber-950/70 dark:text-amber-100/70 mb-3 uppercase tracking-wider">{dateHeroString}</p>
-            <h2 className="text-5xl md:text-6xl font-black text-amber-950 dark:text-amber-100 tracking-tighter mb-4 leading-none font-sans">
+        <div className="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md rounded-3xl p-6 md:px-10 text-center shadow-[0_8px_32px_0_rgba(0,74,143,0.3)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] border border-white/50 dark:border-zinc-700/50 flex-shrink-0 min-w-[240px]">
+            <p className="text-[11px] font-bold text-slate-800/70 dark:text-slate-100/70 mb-3 uppercase tracking-wider">{dateHeroString}</p>
+            <h2 className="text-5xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter mb-4 leading-none font-sans">
                 {timeString}
             </h2>
-            <div className="inline-block bg-white/60 dark:bg-zinc-800/60 border border-white/50 dark:border-zinc-700/50 text-amber-900 dark:text-amber-200 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-sm">
+            <div className="inline-block bg-white/60 dark:bg-zinc-800/60 border border-white/50 dark:border-zinc-700/50 text-[#004A8F] dark:text-blue-200 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-sm">
                 WIB
             </div>
         </div>
@@ -131,7 +131,7 @@ const HeaderPill = () => {
 
     return (
         <div className="flex items-center rounded-full bg-white dark:bg-zinc-800 shadow-sm border border-gray-100 dark:border-zinc-700 overflow-hidden font-sans transition-colors duration-300">
-            <div className="bg-[#F7F09E] dark:bg-amber-900 text-amber-950 dark:text-amber-100 px-5 py-2 text-sm font-bold border-r border-[#EAE06A] dark:border-amber-700 transition-colors duration-300">
+            <div className="bg-[#004A8F] dark:bg-blue-900 text-white dark:text-blue-100 px-5 py-2 text-sm font-bold border-r border-[#003B72] dark:border-blue-700 transition-colors duration-300">
                 {timeString}
             </div>
             <div className="px-5 py-2 text-sm font-semibold text-gray-600 dark:text-gray-300 transition-colors duration-300">
@@ -171,7 +171,7 @@ export default function AdminDashboardPage() {
             <div className="relative flex items-center justify-center">
                 {index < 3 ? (
                     <>
-                        <Icon icon="ph:medal-duotone" className={`size-6 ${index === 0 ? 'text-amber-400' : index === 1 ? 'text-gray-400' : 'text-amber-700'}`} />
+                        <Icon icon="ph:medal-duotone" className={`size-6 ${index === 0 ? 'text-[#EF7A08]' : index === 1 ? 'text-gray-400' : 'text-[#004A8F]'}`} />
                         <span className="absolute text-[8px] font-bold text-white mb-[2px]">{index + 1}</span>
                     </>
                 ) : (
@@ -195,7 +195,7 @@ export default function AdminDashboardPage() {
                 key={index}
                 className="flex gap-3 relative pb-4 before:absolute before:left-[11px] before:top-6 before:bottom-0 before:w-px before:bg-gray-100 dark:before:bg-neutral-700 last:before:hidden"
             >
-                <div className="w-6 h-6 rounded-full bg-[#F7F09E]/50 text-amber-900 flex items-center justify-center flex-shrink-0 z-10 shadow-sm border border-[#F7F09E]">
+                <div className="w-6 h-6 rounded-full bg-[#004A8F]/10 text-[#004A8F] flex items-center justify-center flex-shrink-0 z-10 shadow-sm border border-[#004A8F]/20">
                     <Icon
                         icon="ph:check-bold"
                         className="size-3.5"
@@ -227,7 +227,7 @@ export default function AdminDashboardPage() {
                 
                 <div className="mb-8">
                     <h4 className="text-xs font-bold text-gray-400 font-sans flex items-center gap-2 mb-4 uppercase tracking-wider">
-                        <div className="w-1 h-3 bg-[#F7F09E] rounded-full"></div>
+                        <div className="w-1 h-3 bg-[#004A8F] rounded-full"></div>
                         Top Publisher
                     </h4>
                     <div className="space-y-5">
@@ -239,7 +239,7 @@ export default function AdminDashboardPage() {
                 
                 <div>
                     <h4 className="text-[11px] font-bold text-gray-400 tracking-wider uppercase flex items-center gap-2 mb-4">
-                        <div className="w-1 h-3.5 bg-[#F7F09E] rounded-full"></div>
+                        <div className="w-1 h-3.5 bg-[#004A8F] rounded-full"></div>
                         AKTIVITAS TERBARU
                     </h4>
                     
@@ -277,19 +277,19 @@ export default function AdminDashboardPage() {
                 </div>
 
                 {/* HERO SECTION */}
-                <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-[#F7F09E] via-[#F2E874] to-[#E3DA66] dark:from-zinc-800 dark:via-zinc-800/90 dark:to-zinc-800/80 p-8 md:p-10 shadow-sm border border-[#E3DA66]/50 dark:border-zinc-700 transition-colors duration-300">
+                <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-[#004A8F] via-[#003B72] to-[#002D5A] dark:from-zinc-800 dark:via-zinc-800/90 dark:to-zinc-800/80 p-8 md:p-10 shadow-sm border border-[#003B72]/50 dark:border-zinc-700 transition-colors duration-300">
                     {/* Decorative pattern/icons */}
-                    <Icon icon="ph:sparkle-fill" className="absolute top-8 right-[30%] size-24 text-amber-900/10 dark:text-amber-100/10 rotate-12" />
-                    <Icon icon="ph:sparkle-light" className="absolute -bottom-10 left-1/4 size-48 text-amber-900/5 dark:text-amber-100/5" />
-                    <Icon icon="ph:star-four-fill" className="absolute top-1/2 right-12 size-16 text-amber-900/10 dark:text-amber-100/10" />
-                    <Icon icon="ph:star-four-bold" className="absolute bottom-8 right-[40%] size-10 text-amber-900/10 dark:text-amber-100/10" />
+                    <Icon icon="ph:sparkle-fill" className="absolute top-8 right-[30%] size-24 text-white/10 rotate-12" />
+                    <Icon icon="ph:sparkle-light" className="absolute -bottom-10 left-1/4 size-48 text-white/5" />
+                    <Icon icon="ph:star-four-fill" className="absolute top-1/2 right-12 size-16 text-white/10" />
+                    <Icon icon="ph:star-four-bold" className="absolute bottom-8 right-[40%] size-10 text-white/10" />
                     
                     <div className="relative z-10 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8">
-                        <div className="text-gray-900 dark:text-zinc-100 max-w-xl transition-colors duration-300">
-                            <h1 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-3 text-gray-900 dark:text-zinc-100 transition-colors duration-300">
-                                Selamat Datang, {user?.name?.split(' ')[0] || 'User'}
+                        <div className="text-white max-w-xl transition-colors duration-300">
+                            <h1 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-3 text-white transition-colors duration-300">
+                                Selamat Datang, {user?.name ? user.name.split(' ')[0] : 'Admin'}
                             </h1>
-                            <p className="text-gray-800 dark:text-zinc-300 text-sm md:text-base font-medium leading-relaxed opacity-90 transition-colors duration-300">
+                            <p className="text-blue-100 text-sm md:text-base font-medium leading-relaxed opacity-90 transition-colors duration-300">
                                 Lanjutkan aktivitas manajerial dan pastikan semua<br className="hidden md:block" /> penerbitan berjalan lancar hari ini. Semangat!
                             </p>
                         </div>

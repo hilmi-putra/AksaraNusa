@@ -43,25 +43,11 @@ export function Wishlist() {
   };
 
   const handleAddToCart = async (bookId: number) => {
-    try {
-      await addToCart(bookId, 1);
-      toast.success("Buku ditambahkan ke keranjang");
-    } catch (err) {
-      console.error(err);
-      toast.error("Gagal menambahkan ke keranjang");
-    }
+    toast.info("Coming Soon", { description: "Fitur keranjang belanja akan segera hadir!" });
   };
 
   const handleAddAllToCart = async () => {
-    try {
-      for (const item of wishlistItems) {
-        await addToCart(item.book.id, 1);
-      }
-      toast.success("Semua buku ditambahkan ke keranjang");
-    } catch (err) {
-      console.error(err);
-      toast.error("Terjadi kesalahan saat menambahkan beberapa buku");
-    }
+    toast.info("Coming Soon", { description: "Fitur keranjang belanja akan segera hadir!" });
   };
 
   if (loading) {
