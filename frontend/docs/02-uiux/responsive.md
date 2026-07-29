@@ -18,7 +18,7 @@ Mockup referensi didesain untuk layar lebar (desktop-first, terlihat dari paddin
 - Desktop: paragraf lebar terpusat dengan font besar.
 - Mobile: ukuran font diturunkan 1 tingkat (`text-h3` bukan `text-body-lg` besar), tetap center-aligned.
 
-### Kenapa Mega Press
+### Kenapa Aksara Nusa
 - Desktop: card besar + grid 2×2 sejajar (2 kolom).
 - Mobile: card besar full-width di atas, grid 2×2 tetap 2 kolom (bukan 1 kolom) agar proporsi kartu tidak terlalu memanjang.
 

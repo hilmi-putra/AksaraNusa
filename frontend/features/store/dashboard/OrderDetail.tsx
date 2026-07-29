@@ -128,7 +128,7 @@ export function OrderDetail({ id }: OrderDetailProps) {
                 ${order.status === 'Completed' ? 'bg-green-100 text-green-700' 
                 : order.status === 'Pending' ? 'bg-yellow-100 text-yellow-700'
                 : order.status === 'Cancelled' ? 'bg-red-100 text-red-700'
-                : 'bg-[#DB8B00]/10 text-[#DB8B00]'}`}>
+                : 'bg-gradient-primary/10 text-gradient-primary'}`}>
                 {order.status}
               </span>
               <span className="text-sm text-gray-600 font-medium">{orderDate}</span>
@@ -137,7 +137,7 @@ export function OrderDetail({ id }: OrderDetailProps) {
           
           {order.status === 'Pending' && order.payment?.status === 'Pending' && (
             <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
-              <Button onClick={handlePay} className="bg-[#DB8B00] hover:bg-[#b06f00] text-white rounded-none h-12 px-8 font-bold tracking-widest uppercase text-xs transition-colors w-full md:w-auto">
+              <Button onClick={handlePay} className="bg-gradient-primary hover:bg-[#b06f00] text-white rounded-none h-12 px-8 font-bold tracking-widest uppercase text-xs transition-colors w-full md:w-auto">
                 Lanjutkan Pembayaran
               </Button>
             </div>
@@ -227,11 +227,11 @@ export function OrderDetail({ id }: OrderDetailProps) {
         <div className="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 border-b border-gray-100">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2 mb-2">
-              <Package className="w-5 h-5 text-[#DB8B00]" />
+              <Package className="w-5 h-5 text-gradient-primary" />
               <h3 className="font-bold text-[#171512] uppercase tracking-wider text-sm">Info Pengiriman</h3>
             </div>
             {order.shipping_method === 'pickup' ? (
-              <p className="text-sm text-gray-600">Pick up di Toko Mega Press</p>
+              <p className="text-sm text-gray-600">Pick up di Toko Aksara Nusa</p>
             ) : (
               <>
                 <p className="text-sm text-gray-600 leading-relaxed max-w-sm">
@@ -250,7 +250,7 @@ export function OrderDetail({ id }: OrderDetailProps) {
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2 mb-2">
-              <CreditCard className="w-5 h-5 text-[#DB8B00]" />
+              <CreditCard className="w-5 h-5 text-gradient-primary" />
               <h3 className="font-bold text-[#171512] uppercase tracking-wider text-sm">Info Pembayaran</h3>
             </div>
             <div className="text-sm bg-gray-50 p-3 rounded border border-gray-100 flex flex-col gap-2">
@@ -289,7 +289,7 @@ export function OrderDetail({ id }: OrderDetailProps) {
                   </div>
                   <div className="flex justify-between items-end">
                     <span className="text-sm font-semibold text-[#171512]">{item.quantity} x {formatRupiah(item.price)}</span>
-                    <span className="font-bold text-[#DB8B00]">{formatRupiah(item.price * item.quantity)}</span>
+                    <span className="font-bold text-gradient-primary">{formatRupiah(item.price * item.quantity)}</span>
                   </div>
                 </div>
               </div>
@@ -318,7 +318,7 @@ export function OrderDetail({ id }: OrderDetailProps) {
             </div>
             <div className="flex justify-between border-t border-gray-200 pt-3 mt-1">
               <span className="font-bold text-[#171512] uppercase tracking-wider text-sm">Grand Total</span>
-              <span className="font-black text-xl text-[#DB8B00]">{formatRupiah(order.grand_total)}</span>
+              <span className="font-black text-xl text-gradient-primary">{formatRupiah(order.grand_total)}</span>
             </div>
           </div>
         </div>

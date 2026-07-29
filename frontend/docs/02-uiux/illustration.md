@@ -1,7 +1,7 @@
 # Illustration & Photography Style
 
 ## Gaya Visual Utama: "Blob Shape" Imagery
-Ciri khas mockup referensi adalah foto yang dipotong dalam bentuk organik (gabungan rounded-rectangle yang saling melebur), bukan kotak/lingkaran biasa. Ini dipertahankan sebagai signature visual Mega Press.
+Ciri khas mockup referensi adalah foto yang dipotong dalam bentuk organik (gabungan rounded-rectangle yang saling melebur), bukan kotak/lingkaran biasa. Ini dipertahankan sebagai signature visual Aksara Nusa.
 
 ### Cara Membuat Blob Shape
 - Teknik: kombinasi 2–3 elemen `<div>` dengan `border-radius` berbeda di tiap sudut (mis. `border-radius: 40px 120px 40px 120px`) yang saling overlap, membentuk kesan satu bidang organik.

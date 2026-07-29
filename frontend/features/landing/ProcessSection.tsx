@@ -209,7 +209,7 @@ export function ProcessSection() {
                       L 110 480
                     "
                     fill="none" 
-                    stroke="#DB8B00" 
+                    stroke="#004A8F" 
                     strokeWidth="2.5" 
                     strokeOpacity="0.4" 
                   />

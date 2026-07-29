@@ -65,7 +65,7 @@ function CallbackHandler() {
           </div>
         ) : (
           <div>
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#DB8B00] mx-auto mb-6"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#004A8F] mx-auto mb-6"></div>
             <h2 className="text-xl font-light text-gray-800 tracking-wide">
               Memverifikasi Login Google...
             </h2>

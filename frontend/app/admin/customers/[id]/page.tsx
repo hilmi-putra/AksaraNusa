@@ -123,7 +123,7 @@ export default function AdminCustomerDetailPage({ params }: { params: Promise<{ 
               <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                    <ShoppingBag className="w-6 h-6 text-[#DB8B00]" />
+                    <ShoppingBag className="w-6 h-6 text-gradient-primary" />
                   </div>
                   <div className="flex flex-col">
                     <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Total Pesanan</span>
@@ -132,11 +132,11 @@ export default function AdminCustomerDetailPage({ params }: { params: Promise<{ 
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                    <Package className="w-6 h-6 text-[#DB8B00]" />
+                    <Package className="w-6 h-6 text-gradient-primary" />
                   </div>
                   <div className="flex flex-col">
                     <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Total Pengeluaran</span>
-                    <span className="text-xl font-bold text-[#DB8B00]">{formatRupiah(customer.orders_sum_grand_total || 0)}</span>
+                    <span className="text-xl font-bold text-gradient-primary">{formatRupiah(customer.orders_sum_grand_total || 0)}</span>
                   </div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function AdminCustomerDetailPage({ params }: { params: Promise<{ 
                   {customer.addresses.map((address: any) => (
                     <div key={address.id} className="p-4 rounded-xl border border-gray-100 bg-gray-50/50">
                       <div className="flex items-center gap-2 mb-2">
-                        <MapPin className="w-4 h-4 text-[#DB8B00]" />
+                        <MapPin className="w-4 h-4 text-gradient-primary" />
                         <span className="font-bold text-sm">{address.label}</span>
                         {address.is_primary && (
                           <Badge variant="secondary" className="text-[10px] bg-blue-100 text-blue-700 hover:bg-blue-100 ml-auto">UTAMA</Badge>
@@ -188,7 +188,7 @@ export default function AdminCustomerDetailPage({ params }: { params: Promise<{ 
                     {customer.orders.map((order: any) => (
                       <div key={order.id} className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
                         <div className="flex flex-col gap-1">
-                          <Link href={`/admin/orders/${order.id}`} className="font-bold text-[#171512] hover:text-[#DB8B00] hover:underline uppercase tracking-wider text-sm transition-colors">
+                          <Link href={`/admin/orders/${order.id}`} className="font-bold text-[#171512] hover:text-gradient-primary hover:underline uppercase tracking-wider text-sm transition-colors">
                             {order.invoice_number}
                           </Link>
                           <span className="text-xs text-gray-500">
@@ -198,7 +198,7 @@ export default function AdminCustomerDetailPage({ params }: { params: Promise<{ 
                         
                         <div className="flex items-center gap-4">
                           <div className="flex flex-col items-end">
-                            <span className="font-bold text-[#DB8B00]">{formatRupiah(order.grand_total)}</span>
+                            <span className="font-bold text-gradient-primary">{formatRupiah(order.grand_total)}</span>
                             <span className="text-xs text-gray-500">{order.payment_method}</span>
                           </div>
                           

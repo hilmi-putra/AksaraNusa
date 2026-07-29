@@ -151,7 +151,7 @@ export function AdminNavbar({ sidebarOpen, setSidebarOpen }: { sidebarOpen: bool
                     <div className="flex items-center gap-x-3 ps-4 border-s border-gray-200">
                         <div className="hidden md:flex flex-col items-end text-right">
                             <span className="text-sm font-medium text-gray-900 dark:text-zinc-100 leading-tight">
-                                {user?.name || 'megapress'}
+                                {user?.name || 'aksaranusa'}
                             </span>
                             <span className="text-[11px] text-gray-400 font-normal">
                                 {user?.email || 'superadmin@megapress.co.id'}

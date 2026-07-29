@@ -4,7 +4,7 @@
 mega-press-frontend/
 ├── app/
 │   ├── (public)/
-│   │   ├── page.tsx              → Landing Page Mega Press (Home)
+│   │   ├── page.tsx              → Landing Page Aksara Nusa (Home)
 │   │   ├── tentang-kami/page.tsx
 │   │   └── blog/...
 │   └── layout.tsx
@@ -16,7 +16,7 @@ mega-press-frontend/
 │   └── landing/
 │       ├── Hero.tsx
 │       ├── AboutIntro.tsx
-│       ├── WhyMegaPress.tsx
+│       ├── WhyAksaraNusa.tsx
 │       ├── CatalogShowcase.tsx
 │       ├── ProcessSteps.tsx
 │       └── landing.mock.ts       → mock data khusus landing page

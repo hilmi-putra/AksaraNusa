@@ -32,7 +32,7 @@ export function AboutSection() {
               <h2 className="font-serif text-[32px] md:text-[40px] leading-[1.1] mb-3 text-gray-900">
                 Alur Kerja Penulis
               </h2>
-              <a href="#" className="inline-flex items-center text-[13px] md:text-[15px] font-bold text-[#DB8B00] hover:text-[#C27A00] transition-colors group">
+              <a href="#" className="inline-flex items-center text-[13px] md:text-[15px] font-bold text-gradient-primary hover:text-[#C27A00] transition-colors group">
                 Pelajari lebih lanjut 
                 <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -145,9 +145,9 @@ export function AboutSection() {
                     <div className="w-px h-6 bg-gray-300"></div>
 
                     {/* Node 2 */}
-                    <div className="bg-[#FDF0D5] px-4 py-2 rounded-lg border border-[#DB8B00]/20 flex items-center gap-2 w-[160px] shadow-sm z-10">
-                      <Bot size={14} className="text-[#DB8B00]" />
-                      <div className="text-[11px] font-bold text-[#DB8B00]">Analisis Teks AI</div>
+                    <div className="bg-[#FDF0D5] px-4 py-2 rounded-lg border border-[#004A8F]/20 flex items-center gap-2 w-[160px] shadow-sm z-10">
+                      <Bot size={14} className="text-gradient-primary" />
+                      <div className="text-[11px] font-bold text-gradient-primary">Analisis Teks AI</div>
                     </div>
 
                     <div className="w-px h-6 bg-gray-300"></div>
@@ -216,7 +216,7 @@ export function AboutSection() {
                     {/* Action Item inside Chat */}
                     <div className="bg-gray-50 border border-gray-200 rounded-lg p-2 flex justify-between items-center mt-1">
                       <div className="flex items-center gap-2">
-                        <FileSpreadsheet size={14} className="text-[#DB8B00]" />
+                        <FileSpreadsheet size={14} className="text-gradient-primary" />
                         <span className="font-bold text-[11px] text-gray-700">Ambil File Naskah (Mss 12)</span>
                       </div>
                       <ArrowRight size={12} className="text-gray-400" />

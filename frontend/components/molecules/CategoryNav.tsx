@@ -27,7 +27,7 @@ export function CategoryNav() {
         className={cn(
           "text-sm font-semibold transition-colors",
           active === "All articles" 
-            ? "text-[#DB8B00]" 
+            ? "text-gradient-primary" 
             : "text-gray-500 hover:text-[#171512]"
         )}
       >
@@ -40,7 +40,7 @@ export function CategoryNav() {
           className={cn(
             "text-sm font-semibold transition-colors",
             active === cat.name 
-              ? "text-[#DB8B00]" 
+              ? "text-gradient-primary" 
               : "text-gray-500 hover:text-[#171512]"
           )}
         >

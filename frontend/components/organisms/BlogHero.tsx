@@ -13,7 +13,7 @@ export function BlogHero({ post }: { post: BlogPost }) {
         <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center">
           <div className="flex items-center gap-3 mb-5">
             {post.category && (
-              <span className="text-sm font-semibold tracking-wide text-[#DB8B00] uppercase">
+              <span className="text-sm font-semibold tracking-wide text-gradient-primary uppercase">
                 {post.category.name}
               </span>
             )}
@@ -24,7 +24,7 @@ export function BlogHero({ post }: { post: BlogPost }) {
           </div>
 
           <Link href={`/blog/${post.slug}`}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#171512] leading-[1.1] mb-6 hover:text-[#DB8B00] transition-colors">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#171512] leading-[1.1] mb-6 hover:text-gradient-primary transition-colors">
               {post.title}
             </h2>
           </Link>

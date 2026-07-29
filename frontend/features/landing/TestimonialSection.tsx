@@ -7,7 +7,7 @@ import { Section } from "@/components/atoms/Section";
 import { Typography } from "@/components/atoms/Typography";
 import { Star, BookOpen, PenTool, TrendingUp, Award } from "lucide-react";
 
-// Mega Press Brand Colors for Cards
+// Aksara Nusa Brand Colors for Cards
 const colors = {
   yellow: "#F7F09E",
   blue: "#97AAFA",
@@ -107,7 +107,7 @@ const MarqueeRow = ({ children, reverse = false, speed = 50 }: any) => {
 export function TestimonialSection() {
   const row1 = (
     <>
-      <QuoteCard quote="Mega Press mengubah cara saya memandang penerbitan. Sangat transparan dan super cepat." author="Ahmad Rizky" role="Penulis Novel" bg={colors.white} text="#171512" width={380} />
+      <QuoteCard quote="Aksara Nusa mengubah cara saya memandang penerbitan. Sangat transparan dan super cepat." author="Ahmad Rizky" role="Penulis Novel" bg={colors.white} text="#171512" width={380} />
       <StatCard stat="1200+" label="Buku Diterbitkan" bg={colors.pink} text="#171512" width={280} />
       <RatingCard quote="Desain sampulnya memukau! Buku saya tampil dengan estetika yang sangat premium." author="Siti Nurbaya" bg={colors.green} text="#171512" width={340} />
       <BookShowcaseCard bookTitle="Jejak Langkah" review="Distribusi ke toko buku nasional berjalan luar biasa mulus tanpa kendala." bg={colors.orange} text="#171512" coverUrl="https://megapress.co.id/wp-content/uploads/2024/04/cover-1.png" width={460} />
@@ -142,7 +142,7 @@ export function TestimonialSection() {
               Kisah & Pencapaian
             </Typography>
             <Typography variant="h2" className="text-ink font-serif text-[42px] lg:text-[56px] leading-[1.05] tracking-tight mb-6">
-              Pencapaian Bersama <br className="hidden md:block"/><em className="italic font-light text-[#DB8B00]">Penulis</em>
+              Pencapaian Bersama <br className="hidden md:block"/><em className="italic font-light text-gradient-primary">Penulis</em>
             </Typography>
           </motion.div>
 
@@ -153,7 +153,7 @@ export function TestimonialSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <p className="text-ink/80 text-[16px] md:text-[18px] leading-relaxed font-medium mb-10 max-w-2xl mx-auto">
-              Bergabunglah dengan ribuan penulis sukses yang telah menerbitkan karya mereka bersama Mega Press.
+              Bergabunglah dengan ribuan penulis sukses yang telah menerbitkan karya mereka bersama Aksara Nusa.
             </p>
           </motion.div>
           
@@ -166,7 +166,7 @@ export function TestimonialSection() {
           >
             <div className="flex items-center gap-3">
               <span className="opacity-80">200+ ulasan penerbitan</span>
-              <div className="flex gap-1 text-[#DB8B00]">
+              <div className="flex gap-1 text-gradient-primary">
                 <Star size={16} fill="currentColor" stroke="none" />
                 <Star size={16} fill="currentColor" stroke="none" />
                 <Star size={16} fill="currentColor" stroke="none" />
@@ -180,7 +180,7 @@ export function TestimonialSection() {
             
             <div className="flex items-center gap-3">
               <span className="opacity-80">Penulis Independen</span>
-              <div className="flex gap-1 text-[#DB8B00]">
+              <div className="flex gap-1 text-gradient-primary">
                 <Star size={16} fill="currentColor" stroke="none" />
                 <Star size={16} fill="currentColor" stroke="none" />
                 <Star size={16} fill="currentColor" stroke="none" />

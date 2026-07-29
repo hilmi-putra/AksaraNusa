@@ -55,7 +55,7 @@ export function LazyBookList({ onBooksLoaded }: { onBooksLoaded: (count: number)
         <section className="pt-12 border-t border-[#E8E3D9]">
           <div className="flex justify-between items-end mb-12">
             <h2 className="font-serif text-3xl font-bold text-[#171512]">Top selling book</h2>
-            <Button variant="ghost" className="text-[#171512] hover:bg-[#F0EBE1] hover:text-[#DB8B00] rounded-full" disabled>
+            <Button variant="ghost" className="text-[#171512] hover:bg-[#F0EBE1] hover:text-gradient-primary rounded-full" disabled>
               View all <ChevronDown className="w-4 h-4 ml-2 -rotate-90" />
             </Button>
           </div>
@@ -94,7 +94,7 @@ export function LazyBookList({ onBooksLoaded }: { onBooksLoaded: (count: number)
         <div className="flex justify-between items-end mb-12">
           <h2 className="font-serif text-3xl font-bold text-[#171512]">Top selling book</h2>
           <Link href="/bookstore/koleksi">
-            <Button variant="ghost" className="text-[#171512] hover:bg-[#F0EBE1] hover:text-[#DB8B00] rounded-full">
+            <Button variant="ghost" className="text-[#171512] hover:bg-[#F0EBE1] hover:text-gradient-primary rounded-full">
               View all <ChevronDown className="w-4 h-4 ml-2 -rotate-90" />
             </Button>
           </Link>

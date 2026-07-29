@@ -87,7 +87,7 @@ export default function LoginPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address"
-            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-400 text-sm"
+            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-400 text-sm"
           />
         </div>
 
@@ -100,12 +100,12 @@ export default function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-400 text-sm"
+            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-400 text-sm"
           />
           <div className="absolute right-0 top-2">
             <Link
               href="/forgot-password"
-              className="text-xs text-gray-400 hover:text-[#DB8B00] transition-colors"
+              className="text-xs text-gray-400 hover:text-gradient-primary transition-colors"
             >
               Forgot password?
             </Link>
@@ -114,7 +114,7 @@ export default function LoginPage() {
         
         {/* Remember Me */}
         <div className="flex items-center space-x-3 pt-2">
-          <Checkbox id="remember" className="rounded-sm border-gray-300 data-[state=checked]:bg-[#DB8B00] data-[state=checked]:border-[#DB8B00]" />
+          <Checkbox id="remember" className="rounded-sm border-gray-300 data-[state=checked]:bg-gradient-primary data-[state=checked]:border-[#004A8F]" />
           <label
             htmlFor="remember"
             className="text-sm text-gray-500 cursor-pointer"
@@ -128,7 +128,7 @@ export default function LoginPage() {
           <Button 
             type="submit" 
             disabled={loading}
-            className="w-full h-12 rounded-none bg-[#DB8B00] hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors disabled:opacity-70"
+            className="w-full h-12 rounded-none bg-gradient-primary hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors disabled:opacity-70"
           >
             {loading ? "LOGGING IN..." : "LOGIN"}
           </Button>

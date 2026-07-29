@@ -92,7 +92,7 @@ export default function AdminCustomersPage() {
       accessorKey: "orders_sum_grand_total",
       header: "Total Pengeluaran",
       cell: ({ row }) => (
-        <div className="font-bold text-[#DB8B00]">
+        <div className="font-bold text-gradient-primary">
           {formatRupiah(row.original.orders_sum_grand_total || 0)}
         </div>
       ),
@@ -155,7 +155,7 @@ export default function AdminCustomersPage() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
             <Input
               placeholder="Cari nama atau email..."
-              className="pl-10 h-10 w-full text-sm bg-gray-50/50 border-gray-200 focus-visible:ring-[#DB8B00]"
+              className="pl-10 h-10 w-full text-sm bg-gray-50/50 border-gray-200 focus-visible:ring-[#004A8F]"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && fetchData()}

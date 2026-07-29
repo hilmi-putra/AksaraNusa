@@ -4,7 +4,7 @@
 
 ## Kemungkinan Kebutuhan Modal di Landing Page
 - Modal "Ajukan Naskah" cepat (bila tidak dibuat sebagai section form penuh).
-- Modal preview cover buku (saat item `CatalogItemCard` di-klik, sebelum diarahkan ke halaman detail penuh di Mega Bookstore).
+- Modal preview cover buku (saat item `CatalogItemCard` di-klik, sebelum diarahkan ke halaman detail penuh di Aksara Nusa Bookstore).
 
 ## Struktur Dasar
 - Overlay: `bg-ink/50` (hitam transparan di atas krem, bukan hitam pekat penuh).

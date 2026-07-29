@@ -66,7 +66,7 @@ export default function CheckoutSuccessPage() {
         <h1 className="text-2xl font-bold mb-4 text-[#171512]">Pesanan Tidak Ditemukan</h1>
         <p className="text-gray-500 mb-8">Maaf, kami tidak dapat menemukan detail pesanan Anda.</p>
         <Link href="/dashboard/pesanan">
-          <Button className="bg-[#DB8B00] hover:bg-[#b06f00] text-white">Lihat Pesanan Saya</Button>
+          <Button className="bg-gradient-primary hover:bg-[#b06f00] text-white">Lihat Pesanan Saya</Button>
         </Link>
       </div>
     );
@@ -156,7 +156,7 @@ export default function CheckoutSuccessPage() {
               )}
               <div className="flex justify-between w-full font-bold text-base mt-2 pt-2 border-t border-gray-100">
                 <span className="text-[#171512]">Total:</span>
-                <span className="text-[#DB8B00]">{formatRupiah(order.grand_total || 0)}</span>
+                <span className="text-gradient-primary">{formatRupiah(order.grand_total || 0)}</span>
               </div>
             </div>
           </div>
@@ -238,7 +238,7 @@ export default function CheckoutSuccessPage() {
             </Button>
           </Link>
           <Link href="/dashboard">
-            <Button size="lg" className="rounded-full w-full sm:w-auto h-14 px-8 bg-[#DB8B00] hover:bg-[#b06f00] text-white shadow-md">
+            <Button size="lg" className="rounded-full w-full sm:w-auto h-14 px-8 bg-gradient-primary hover:bg-[#b06f00] text-white shadow-md">
               Lacak Pesanan
             </Button>
           </Link>

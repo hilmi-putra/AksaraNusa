@@ -22,7 +22,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
         </div>
         
         <div className="flex flex-col flex-1">
-          <h3 className="text-base font-bold text-[#171512] mb-2 line-clamp-2 group-hover:text-[#DB8B00] transition-colors">
+          <h3 className="text-base font-bold text-[#171512] mb-2 line-clamp-2 group-hover:text-gradient-primary transition-colors">
             {post.title}
           </h3>
           

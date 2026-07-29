@@ -1,12 +1,12 @@
 export const landingData = {
   hero: {
     title: "Wujudkan Naskahmu Menjadi Buku yang Menginspirasi",
-    subtitle: "Penerbit indie terkemuka yang mendampingi penulis dari draf pertama hingga mejeng di Mega Bookstore.",
+    subtitle: "Penerbit indie terkemuka yang mendampingi penulis dari draf pertama hingga mejeng di Aksara Nusa Bookstore.",
     ctaText: "Ajukan Naskah Sekarang",
   },
   about: {
-    title: "Tentang Mega Press",
-    description: "Kami percaya bahwa setiap cerita layak didengar. Berdiri sejak 2023, Mega Press berdedikasi mencari suara-suara unik dan tulisan berkualitas untuk dihadirkan kepada pembaca luas.",
+    title: "Tentang Aksara Nusa",
+    description: "Kami percaya bahwa setiap cerita layak didengar. Berdiri sejak 2023, Aksara Nusa berdedikasi mencari suara-suara unik dan tulisan berkualitas untuk dihadirkan kepada pembaca luas.",
     imageUrl: "https://placehold.co/600x400/EFEADD/171512?text=About+Mega+Press",
   },
   services: [
@@ -25,7 +25,7 @@ export const landingData = {
     {
       id: "s3",
       title: "Distribusi Nasional",
-      description: "Buku Anda akan langsung tersedia secara eksklusif di Mega Bookstore dan jaringan mitra kami.",
+      description: "Buku Anda akan langsung tersedia secara eksklusif di Aksara Nusa Bookstore dan jaringan mitra kami.",
       icon: "Truck",
     },
     {
@@ -40,7 +40,7 @@ export const landingData = {
     { step: 2, title: "Kurasi", description: "Tim redaksi meninjau kelayakan dan potensi naskah." },
     { step: 3, title: "Kontrak & Editing", description: "Kesepakatan royalti dan proses penyuntingan mendalam." },
     { step: 4, title: "Desain & Layout", description: "Pembuatan cover dan tata letak halaman standar buku cetak." },
-    { step: 5, title: "Terbit", description: "Buku dicetak dan resmi didistribusikan ke Mega Bookstore." },
+    { step: 5, title: "Terbit", description: "Buku dicetak dan resmi didistribusikan ke Aksara Nusa Bookstore." },
   ],
   statistics: [
     { value: "500+", label: "Penulis Bergabung" },
@@ -52,7 +52,7 @@ export const landingData = {
       id: "t1",
       name: "Ahmad Rizky",
       role: "Penulis Novel",
-      content: "Proses penerbitan di Mega Press sangat transparan. Editornya sangat suportif dalam mengembangkan plot novel saya.",
+      content: "Proses penerbitan di Aksara Nusa sangat transparan. Editornya sangat suportif dalam mengembangkan plot novel saya.",
       avatar: "https://placehold.co/100x100/DAD6C9/171512?text=AR",
     },
     {

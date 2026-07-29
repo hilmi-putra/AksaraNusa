@@ -5,14 +5,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-cream: #FAF8F4;
-  --color-ink: #171512;
-  --color-primary-brand: #DB8B00;
-  --color-secondary-brand: #6E0000;
-  --color-surface-muted: #DAD6C9;
+  --color-cream: #F8FAFC;
+  --color-ink: #0F172A;
+  --color-primary-brand: #004A8F;
+  --color-secondary-brand: #EF7A08;
+  --color-surface-muted: #E2E8F0;
   --color-surface-white: #FFFFFF;
-  --color-text-muted: #6B6860;
-  --color-border-subtle: #DDD8C8;
+  --color-text-muted: #64748B;
+  --color-border-subtle: #CBD5E1;
 
   --font-sans: var(--font-manrope);
   --font-heading: var(--font-plus-jakarta-sans);
@@ -96,15 +96,15 @@
 }
 
 :root {
-  /* Mega Press Brand Colors */
-  --color-cream: #FAF8F4;
-  --color-ink: #171512;
-  --color-primary-brand: #DB8B00;
-  --color-secondary-brand: #6E0000;
-  --color-surface-muted: #DAD6C9;
+  /* Aksara Nusa Brand Colors */
+  --color-cream: #F8FAFC;
+  --color-ink: #0F172A;
+  --color-primary-brand: #004A8F;
+  --color-secondary-brand: #EF7A08;
+  --color-surface-muted: #E2E8F0;
   --color-surface-white: #FFFFFF;
-  --color-text-muted: #6B6860;
-  --color-border-subtle: #DDD8C8;
+  --color-text-muted: #64748B;
+  --color-border-subtle: #CBD5E1;
 
   /* Shadcn UI Overrides */
   --background: var(--color-cream);
@@ -190,7 +190,7 @@
     scroll-behavior: smooth;
     /* Standard scrollbar for Firefox */
     scrollbar-width: thin;
-    scrollbar-color: #F9990E transparent;
+    scrollbar-color: #004A8F transparent;
   }
   
   /* Custom Scrollbar for Webkit (Chrome, Edge, Safari) */
@@ -204,11 +204,33 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #F9990E;
+    background-color: #004A8F;
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #db8b00;
+    background-color: #003366;
   }
+}
+
+@utility bg-gradient-primary {
+  background-image: linear-gradient(to right, #004A8F, #0074B7);
+}
+
+@utility bg-gradient-secondary {
+  background-image: linear-gradient(to right, #EF7A08, #F9A03F);
+}
+
+@utility text-gradient-primary {
+  background-image: linear-gradient(to right, #004A8F, #0074B7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-secondary {
+  background-image: linear-gradient(to right, #EF7A08, #F9A03F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

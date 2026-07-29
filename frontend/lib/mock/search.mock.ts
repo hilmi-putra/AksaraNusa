@@ -63,7 +63,7 @@ export const mockSearchResults: SearchResult[] = [
   {
     id: "d2",
     type: "article",
-    title: "Bagaimana Sistem Royalti Mega Press Bekerja?",
+    title: "Bagaimana Sistem Royalti Aksara Nusa Bekerja?",
     description: "Penjelasan lengkap mengenai perhitungan dan pembagian royalti.",
     category: "FAQ",
     url: "/faq/sistem-royalti",

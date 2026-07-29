@@ -1,17 +1,17 @@
-# PRD — Landing Page Mega Press
+# PRD — Landing Page Aksara Nusa
 
 ## Ringkasan
-Landing Page adalah halaman utama Mega Press: media branding, promosi layanan penerbitan, dan pengarah trafik ke Mega Bookstore. Struktur & nuansa mengikuti referensi mockup fotografer (personal, hangat, storytelling), diadaptasi ke konteks penerbit buku.
+Landing Page adalah halaman utama Aksara Nusa: media branding, promosi layanan penerbitan, dan pengarah trafik ke Aksara Nusa Bookstore. Struktur & nuansa mengikuti referensi mockup fotografer (personal, hangat, storytelling), diadaptasi ke konteks penerbit buku.
 
 ## Audiens
 1. **Calon penulis** — ingin menerbitkan naskah (Buku Ajar, Referensi, Novel, dll).
-2. **Calon pembeli** — ingin membeli buku terbitan Mega Press.
+2. **Calon pembeli** — ingin membeli buku terbitan Aksara Nusa.
 3. **Institusi/kampus** — mencari mitra penerbitan Jurnal/Proceeding.
 
 ## Struktur Halaman (Section by Section)
 
 ### 1. Header / Navigasi
-- Logo + nama "Mega Press" (kiri).
+- Logo + nama "Aksara Nusa" (kiri).
 - Menu: *Tentang Kami, Katalog, Layanan, Cara Kerja* (tengah/kanan) — adaptasi dari menu mockup (*Обо мне, Портфолио, Этапы, Услуги*).
 - Ikon kontak cepat (WhatsApp/Email) di ujung kanan — mengikuti pola 2 ikon bulat pada mockup.
 - Sticky di top saat scroll.
@@ -23,21 +23,21 @@ Landing Page adalah halaman utama Mega Press: media branding, promosi layanan pe
 - Di bawah headline: galeri showcase 3-4 foto/buku dengan bentuk **blob/organic merge** (bukan kotak lurus) — representasi buku-buku unggulan/behind-the-scene penerbitan.
 
 ### 3. Perkenalan Personal
-- Paragraf tengah, font besar, nada personal: **"Halo! Kami Mega Press, dan kami penerbit."** dilanjut kalimat tentang misi menghadirkan naskah berkualitas ke pembaca (adaptasi dari paragraf perkenalan fotografer).
+- Paragraf tengah, font besar, nada personal: **"Halo! Kami Aksara Nusa, dan kami penerbit."** dilanjut kalimat tentang misi menghadirkan naskah berkualitas ke pembaca (adaptasi dari paragraf perkenalan fotografer).
 - Highlight kata kunci dengan badge bulat kecil (seperti emoji ☀️ dan 🙂 pada referensi) — diganti ikon buku/pena.
 - CTA pill kecil di bawah paragraf: **"Konsultasi Naskah"**.
 
-### 4. Kenapa Mega Press (Preimushestva/Keunggulan)
+### 4. Kenapa Aksara Nusa (Preimushestva/Keunggulan)
 - Layout 2 kolom: kiri card besar abu-abu judul **"Keunggulan Kami"** + panah; kanan grid 2×2 card oranye (primary-brand) berisi 4 poin keunggulan, masing-masing dengan ikon bulat:
   1. Proses review naskah cepat & transparan (ikon dokumen).
   2. Desain sampul & tata letak profesional (ikon palet/kuas).
-  3. Distribusi ke Mega Bookstore & mitra toko buku (ikon lokasi/toko).
+  3. Distribusi ke Aksara Nusa Bookstore & mitra toko buku (ikon lokasi/toko).
   4. Pendampingan penulis dari awal hingga terbit (ikon chat).
 
 ### 5. Showcase Katalog Unggulan ("Мои работы" → "Katalog Unggulan")
 - Judul section dengan badge bulat kecil (ikon buku) di card hitam pojok kiri atas grid.
 - Bento-grid galeri (3 kolom, ukuran campuran: 1 besar + beberapa kecil) menampilkan cover buku unggulan dari berbagai kategori (Novel, Buku Ajar, Biografi, dll).
-- CTA di akhir grid: **"Lihat Semua Katalog →"** menuju Mega Bookstore.
+- CTA di akhir grid: **"Lihat Semua Katalog →"** menuju Aksara Nusa Bookstore.
 
 ### 6. Bagaimana Prosesnya ("Как проходит съёмка" → "Proses Penerbitan")
 - Judul + sub-copy kanan (2 baris) seperti mockup.

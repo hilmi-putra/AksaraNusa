@@ -13,9 +13,9 @@ Section besar yang menggabungkan banyak molecules/atoms, biasanya satu organism 
 - Data dari `landing.mock.ts → heroContent`.
 
 ### `AboutIntroSection`
-- Paragraf besar perkenalan personal Mega Press + `Button` CTA sekunder.
+- Paragraf besar perkenalan personal Aksara Nusa + `Button` CTA sekunder.
 
-### `WhyMegaPressSection`
+### `WhyAksaraNusaSection`
 - Card besar judul "Keunggulan Kami" (kiri) + grid 2×2 `AdvantageCard` (kanan).
 - Data: `advantages[]`.
 

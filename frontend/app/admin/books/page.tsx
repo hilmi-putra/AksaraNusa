@@ -257,7 +257,7 @@ export default function AdminBooksPage() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-2xl font-bold tracking-tight text-gray-900">Manajemen Buku</h1>
-            <p className="text-sm text-gray-500 mt-1">Kelola seluruh koleksi buku Mega Press</p>
+            <p className="text-sm text-gray-500 mt-1">Kelola seluruh koleksi buku Aksara Nusa</p>
           </div>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" onClick={fetchData} disabled={loading}>
@@ -311,7 +311,7 @@ export default function AdminBooksPage() {
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Belum Ada Buku</h3>
             <p className="text-sm text-gray-500 max-w-sm mb-6">
-              Mulai tambahkan koleksi buku pertama Anda ke katalog Mega Press.
+              Mulai tambahkan koleksi buku pertama Anda ke katalog Aksara Nusa.
             </p>
             <Link href="/admin/books/create" className={buttonVariants({ size: "sm" })}>
               <Plus className="mr-2 h-4 w-4" /> Tambah Buku Pertama

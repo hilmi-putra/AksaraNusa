@@ -72,7 +72,7 @@ export default function DashboardIndexPage() {
         <div className="mt-8 bg-white border border-gray-100 shadow-sm rounded-2xl p-6">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-bold text-gray-900">Pesanan Terbaru</h3>
-            <Link href="/dashboard/pesanan" className="text-sm font-bold text-[#DB8B00] hover:underline uppercase tracking-wider">
+            <Link href="/dashboard/pesanan" className="text-sm font-bold text-gradient-primary hover:underline uppercase tracking-wider">
               Lihat Semua
             </Link>
           </div>
@@ -97,7 +97,7 @@ export default function DashboardIndexPage() {
                         ${order.status === 'Completed' ? 'bg-green-100 text-green-700' 
                         : order.status === 'Pending' ? 'bg-yellow-100 text-yellow-700'
                         : order.status === 'Cancelled' ? 'bg-red-100 text-red-700'
-                        : 'bg-[#DB8B00]/10 text-[#DB8B00]'}`}>
+                        : 'bg-gradient-primary/10 text-gradient-primary'}`}>
                         {order.status}
                       </span>
                     </div>
@@ -115,7 +115,7 @@ export default function DashboardIndexPage() {
               <Package className="w-12 h-12 text-gray-200 mb-3" />
               <p className="text-gray-500 font-medium">Belum ada pesanan terbaru.</p>
               <Link href="/bookstore">
-                <button className="mt-4 px-6 py-2 bg-[#DB8B00] text-white font-bold rounded-full text-sm hover:bg-[#B87500] transition-colors">
+                <button className="mt-4 px-6 py-2 bg-gradient-primary text-white font-bold rounded-full text-sm hover:bg-[#B87500] transition-colors">
                   Mulai Belanja
                 </button>
               </Link>

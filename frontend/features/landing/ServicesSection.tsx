@@ -28,13 +28,13 @@ export function ServicesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-[12px] md:text-[13px] font-bold tracking-[0.2em] uppercase mb-4 text-[#DB8B00]">
+            <h2 className="text-[12px] md:text-[13px] font-bold tracking-[0.2em] uppercase mb-4 text-gradient-primary">
               Layanan Kami
             </h2>
-            <h3 className="mb-6 font-serif text-[36px] md:text-[48px] text-[#6E0000] leading-tight">
-              Solusi Lengkap untuk <em className="italic font-light text-[#DB8B00]">Penulis</em>
+            <h3 className="mb-6 font-serif text-[36px] md:text-[48px] text-gradient-secondary leading-tight">
+              Solusi Lengkap untuk <em className="italic font-light text-gradient-primary">Penulis</em>
             </h3>
-            <p className="text-[#6E0000]/70 text-[16px] md:text-[18px]">
+            <p className="text-[#EF7A08]/70 text-[16px] md:text-[18px]">
               Mulai dari penyuntingan hingga royalti, kami memfasilitasi setiap aspek.
             </p>
           </motion.div>
@@ -64,12 +64,12 @@ export function ServicesSection() {
                   
                   {/* Left: Text & Action */}
                   <div className="flex flex-col justify-center w-full sm:w-1/2 text-center sm:text-left">
-                    <h4 className="text-[22px] md:text-[26px] font-serif font-bold mb-6 leading-[1.2] text-[#6E0000]">
+                    <h4 className="text-[22px] md:text-[26px] font-serif font-bold mb-6 leading-[1.2] text-gradient-secondary">
                       {service.title}
                     </h4>
                     
                     {/* Action Link */}
-                    <div className="flex items-center justify-center sm:justify-start text-[#DB8B00] font-bold text-[14px] group-hover:text-[#6E0000] transition-colors cursor-pointer w-full sm:w-fit">
+                    <div className="flex items-center justify-center sm:justify-start text-gradient-primary font-bold text-[14px] group-hover:text-gradient-secondary transition-colors cursor-pointer w-full sm:w-fit">
                       Pelajari lebih lanjut <ArrowRight className="ml-2 w-4 h-4" />
                     </div>
                   </div>
@@ -95,12 +95,12 @@ export function ServicesSection() {
         </div>
 
         {/* Bottom Filter/Nav */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-[#6E0000]/70 text-[14px]">
-          <span>Jelajahi Ekosistem Mega Press untuk</span>
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-[#EF7A08]/70 text-[14px]">
+          <span>Jelajahi Ekosistem Aksara Nusa untuk</span>
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-2 font-medium hover:text-[#6E0000] cursor-pointer transition-colors"><span className="w-2 h-2 rounded-full bg-[#DB8B00]"></span> Fiksi</span>
-            <span className="flex items-center gap-2 font-medium hover:text-[#6E0000] cursor-pointer transition-colors"><span className="w-2 h-2 rounded-full bg-[#FAEDEE] border border-[#6E0000]/20"></span> Non-Fiksi</span>
-            <span className="flex items-center gap-2 font-medium hover:text-[#6E0000] cursor-pointer transition-colors"><span className="w-2 h-2 rounded-full bg-[#DB8B00]"></span> Akademik</span>
+            <span className="flex items-center gap-2 font-medium hover:text-gradient-secondary cursor-pointer transition-colors"><span className="w-2 h-2 rounded-full bg-gradient-primary"></span> Fiksi</span>
+            <span className="flex items-center gap-2 font-medium hover:text-gradient-secondary cursor-pointer transition-colors"><span className="w-2 h-2 rounded-full bg-[#FAEDEE] border border-[#EF7A08]/20"></span> Non-Fiksi</span>
+            <span className="flex items-center gap-2 font-medium hover:text-gradient-secondary cursor-pointer transition-colors"><span className="w-2 h-2 rounded-full bg-gradient-primary"></span> Akademik</span>
           </div>
         </div>
 

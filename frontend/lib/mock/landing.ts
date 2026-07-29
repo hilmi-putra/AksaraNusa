@@ -12,7 +12,7 @@ export const landingData: LandingData = {
     ],
   },
   aboutIntro: {
-    paragraph: "Halo! Kami Mega Press, dan kami penerbit. Bersama kami, Anda mendapatkan kesempatan untuk mewujudkan naskah menjadi karya berkualitas dan menyebarkannya ke pembaca secara luas.",
+    paragraph: "Halo! Kami Aksara Nusa, dan kami penerbit. Bersama kami, Anda mendapatkan kesempatan untuk mewujudkan naskah menjadi karya berkualitas dan menyebarkannya ke pembaca secara luas.",
     highlights: ["penerbit", "karya berkualitas"],
     ctaText: "Konsultasi Naskah",
   },
@@ -29,7 +29,7 @@ export const landingData: LandingData = {
     },
     {
       title: "Distribusi Luas",
-      description: "Tersedia di Mega Bookstore dan mitra",
+      description: "Tersedia di Aksara Nusa Bookstore dan mitra",
       icon: "Store",
     },
     {

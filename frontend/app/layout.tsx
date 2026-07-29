@@ -20,8 +20,11 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Mega Press | Satu Penerbit. Ribuan Cerita Penting.",
-  description: "Mega Press - Penerbit buku ajar, buku referensi, novel, dan jurnal.",
+  title: "Aksara Nusa | Satu Penerbit. Ribuan Cerita Penting.",
+  description: "Aksara Nusa - Penerbit buku ajar, buku referensi, novel, dan jurnal.",
+  icons: {
+    icon: "https://ik.imagekit.io/yqhp1cmbp/favicon?updatedAt=1785316791934"
+  }
 };
 
 import { FloatingWhatsAppCTA } from "@/components/ui/FloatingWhatsAppCTA";

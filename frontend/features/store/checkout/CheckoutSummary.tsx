@@ -87,7 +87,7 @@ export function CheckoutSummary() {
         {isInsuranceSelected && (
           <div className="flex justify-between items-center">
             <span className="text-gray-500">Shipping Insurance</span>
-            <span className="font-medium text-[#DB8B00]">{formatRupiah(activeInsuranceCost)}</span>
+            <span className="font-medium text-gradient-primary">{formatRupiah(activeInsuranceCost)}</span>
           </div>
         )}
 

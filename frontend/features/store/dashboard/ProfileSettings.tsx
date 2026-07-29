@@ -181,7 +181,7 @@ export function ProfileSettings() {
             </div>
 
             <div className="pt-4">
-              <Button onClick={handleProfileSubmit} disabled={isSavingProfile} className="bg-[#DB8B00] hover:bg-[#b06f00] text-white h-12 px-8 rounded-none font-bold tracking-widest uppercase text-xs transition-colors">
+              <Button onClick={handleProfileSubmit} disabled={isSavingProfile} className="bg-gradient-primary hover:bg-[#b06f00] text-white h-12 px-8 rounded-none font-bold tracking-widest uppercase text-xs transition-colors">
                 {isSavingProfile ? "Menyimpan..." : "Simpan Perubahan"}
               </Button>
             </div>
@@ -238,12 +238,12 @@ export function ProfileSettings() {
                   </div>
                 )}
                 {addresses.map((addr) => (
-                  <div key={addr.id} className="border border-gray-200 rounded-lg p-5 hover:border-[#DB8B00] transition-colors group">
+                  <div key={addr.id} className="border border-gray-200 rounded-lg p-5 hover:border-[#004A8F] transition-colors group">
                     <div className="flex justify-between items-start mb-3">
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-sm text-[#171512] uppercase tracking-wide">{addr.label}</span>
                         {addr.is_primary && (
-                          <span className="bg-[#DB8B00]/10 text-[#DB8B00] text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                          <span className="bg-gradient-primary/10 text-gradient-primary text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider">
                             Utama
                           </span>
                         )}

@@ -97,7 +97,7 @@ export function AddToCartModal({ isOpen, onClose, book, onConfirm }: AddToCartMo
               Cancel
             </Button>
             <Button 
-              className="flex-1 rounded-none bg-[#DB8B00] hover:bg-[#E0790A] text-white h-12 text-xs font-bold uppercase tracking-widest shadow-md"
+              className="flex-1 rounded-none bg-gradient-primary hover:bg-[#E0790A] text-white h-12 text-xs font-bold uppercase tracking-widest shadow-md"
               onClick={handleConfirm}
             >
               Add to Cart

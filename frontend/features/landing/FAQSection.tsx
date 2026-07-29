@@ -24,7 +24,7 @@ export function FAQSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-serif text-[42px] md:text-[56px] text-[#6E0000] mb-6">
+            <h2 className="font-serif text-[42px] md:text-[56px] text-gradient-secondary mb-6">
               FAQs
             </h2>
           </motion.div>
@@ -40,16 +40,16 @@ export function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="border-t border-[#6E0000]/20"
+                className="border-t border-[#EF7A08]/20"
               >
                 <button
                   className="w-full flex items-center justify-between py-6 md:py-8 text-left focus:outline-none group"
                   onClick={() => toggleOpen(index)}
                 >
-                  <h4 className="pr-8 text-[18px] md:text-[22px] font-bold text-[#6E0000] transition-colors duration-300">
+                  <h4 className="pr-8 text-[18px] md:text-[22px] font-bold text-gradient-secondary transition-colors duration-300">
                     {item.question}
                   </h4>
-                  <div className="shrink-0 text-[#DB8B00] group-hover:text-[#6E0000] transition-colors duration-300">
+                  <div className="shrink-0 text-gradient-primary group-hover:text-gradient-secondary transition-colors duration-300">
                     {isOpen ? <ArrowUp size={20} /> : <ArrowDown size={20} />}
                   </div>
                 </button>
@@ -63,7 +63,7 @@ export function FAQSection() {
                       className="overflow-hidden"
                     >
                       <div className="pb-8 pt-0">
-                        <p className="text-[#6E0000]/80 text-[15px] md:text-[16px] leading-relaxed max-w-3xl">
+                        <p className="text-[#EF7A08]/80 text-[15px] md:text-[16px] leading-relaxed max-w-3xl">
                           {item.answer}
                         </p>
                       </div>
@@ -74,7 +74,7 @@ export function FAQSection() {
             );
           })}
           {/* Bottom border for the last item */}
-          <div className="border-t border-[#6E0000]/20"></div>
+          <div className="border-t border-[#EF7A08]/20"></div>
         </div>
       </Container>
     </Section>

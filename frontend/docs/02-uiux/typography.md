@@ -1,6 +1,6 @@
 # Typography
 
-Tipografi dalam Mega Press dirancang untuk memberikan pengalaman membaca yang optimal, konsistensi merek, dan estetika yang premium. Sistem tipografi kami mengandalkan kombinasi dua *Google Fonts* utama yang diterapkan secara terpusat melalui komponen `Typography` dan *Tailwind CSS v4*.
+Tipografi dalam Aksara Nusa dirancang untuk memberikan pengalaman membaca yang optimal, konsistensi merek, dan estetika yang premium. Sistem tipografi kami mengandalkan kombinasi dua *Google Fonts* utama yang diterapkan secara terpusat melalui komponen `Typography` dan *Tailwind CSS v4*.
 
 ## Font Families
 
@@ -40,7 +40,7 @@ Semua skala tipografi kini dikendalikan secara sentral oleh komponen `Typography
 
 ## Contoh Penggunaan Komponen Typography
 
-Pastikan semua rendering teks di Mega Press menggunakan komponen `Typography`. Jika tag semantik HTML default tidak sesuai dengan varian (misal butuh desain `h3` tapi secara aksesibilitas harus dibaca sebagai `<p>`), gunakan prop `as`.
+Pastikan semua rendering teks di Aksara Nusa menggunakan komponen `Typography`. Jika tag semantik HTML default tidak sesuai dengan varian (misal butuh desain `h3` tapi secara aksesibilitas harus dibaca sebagai `<p>`), gunakan prop `as`.
 
 ```tsx
 import { Typography } from "@/components/atoms/Typography";

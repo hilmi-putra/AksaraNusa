@@ -100,7 +100,7 @@ export default function RegisterPage() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Full Name"
-            className={`w-full bg-transparent border-0 border-b-2 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-400 text-sm ${validationErrors.name ? 'border-red-400' : 'border-gray-200'}`}
+            className={`w-full bg-transparent border-0 border-b-2 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-400 text-sm ${validationErrors.name ? 'border-red-400' : 'border-gray-200'}`}
           />
           {validationErrors.name && <p className="text-red-500 text-xs mt-1">{validationErrors.name[0]}</p>}
         </div>
@@ -114,7 +114,7 @@ export default function RegisterPage() {
             value={formData.email}
             onChange={handleChange}
             placeholder="Email address"
-            className={`w-full bg-transparent border-0 border-b-2 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-400 text-sm ${validationErrors.email ? 'border-red-400' : 'border-gray-200'}`}
+            className={`w-full bg-transparent border-0 border-b-2 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-400 text-sm ${validationErrors.email ? 'border-red-400' : 'border-gray-200'}`}
           />
           {validationErrors.email && <p className="text-red-500 text-xs mt-1">{validationErrors.email[0]}</p>}
         </div>
@@ -129,7 +129,7 @@ export default function RegisterPage() {
               value={formData.password}
               onChange={handleChange}
               placeholder="Password"
-              className={`w-full bg-transparent border-0 border-b-2 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-400 text-sm ${validationErrors.password ? 'border-red-400' : 'border-gray-200'}`}
+              className={`w-full bg-transparent border-0 border-b-2 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-400 text-sm ${validationErrors.password ? 'border-red-400' : 'border-gray-200'}`}
             />
             {validationErrors.password && <p className="text-red-500 text-xs mt-1">{validationErrors.password[0]}</p>}
           </div>
@@ -141,7 +141,7 @@ export default function RegisterPage() {
               value={formData.password_confirmation}
               onChange={handleChange}
               placeholder="Confirm password"
-              className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-400 text-sm"
+              className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-400 text-sm"
             />
           </div>
         </div>
@@ -152,13 +152,13 @@ export default function RegisterPage() {
             id="terms" 
             checked={formData.terms} 
             onCheckedChange={(checked) => setFormData((prev) => ({ ...prev, terms: checked === true }))}
-            className="rounded-sm border-gray-300 data-[state=checked]:bg-[#DB8B00] data-[state=checked]:border-[#DB8B00] mt-0.5" 
+            className="rounded-sm border-gray-300 data-[state=checked]:bg-gradient-primary data-[state=checked]:border-[#004A8F] mt-0.5" 
           />
           <label
             htmlFor="terms"
             className="text-xs text-gray-500 cursor-pointer"
           >
-            By creating an account, you agree to our <Link href="#" className="underline hover:text-[#DB8B00]">Terms</Link> and <Link href="#" className="underline hover:text-[#DB8B00]">Privacy Policy</Link>.
+            By creating an account, you agree to our <Link href="#" className="underline hover:text-gradient-primary">Terms</Link> and <Link href="#" className="underline hover:text-gradient-primary">Privacy Policy</Link>.
           </label>
         </div>
 
@@ -167,7 +167,7 @@ export default function RegisterPage() {
           <Button 
             type="submit" 
             disabled={loading}
-            className="w-full h-12 rounded-none bg-[#DB8B00] hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors uppercase disabled:opacity-70"
+            className="w-full h-12 rounded-none bg-gradient-primary hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors uppercase disabled:opacity-70"
           >
             {loading ? "CREATING..." : "Create Account"}
           </Button>

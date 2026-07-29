@@ -66,7 +66,7 @@ export function CartDrawer() {
               <p className="mb-4">Keranjang Anda kosong</p>
               <button 
                 onClick={closeCart}
-                className="text-[#DB8B00] font-bold underline hover:text-[#b06f00]"
+                className="text-gradient-primary font-bold underline hover:text-[#b06f00]"
               >
                 Mulai Belanja
               </button>
@@ -90,7 +90,7 @@ export function CartDrawer() {
                     </div>
                     <button 
                       onClick={() => removeItem(item.id)}
-                      className="text-gray-400 hover:text-[#6E0000] transition-colors"
+                      className="text-gray-400 hover:text-gradient-secondary transition-colors"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -148,7 +148,7 @@ export function CartDrawer() {
             
             <button 
               onClick={handleCheckout}
-              className="w-full bg-[#DB8B00] hover:bg-[#b06f00] text-white h-12 text-sm font-bold tracking-widest uppercase rounded-sm transition-colors mb-3 flex items-center justify-center"
+              className="w-full bg-gradient-primary hover:bg-[#b06f00] text-white h-12 text-sm font-bold tracking-widest uppercase rounded-sm transition-colors mb-3 flex items-center justify-center"
             >
               Lanjut ke Checkout
             </button>

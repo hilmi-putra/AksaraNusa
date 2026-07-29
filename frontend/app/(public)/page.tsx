@@ -10,8 +10,8 @@ import { CTASection } from "@/features/landing/CTASection";
 import { FAQSection } from "@/features/landing/FAQSection";
 
 export const metadata = {
-  title: "Mega Press | Wujudkan Naskahmu Menjadi Buku yang Menginspirasi",
-  description: "Penerbit indie terkemuka yang mendampingi penulis dari draf pertama hingga mejeng di Mega Bookstore.",
+  title: "Aksara Nusa | Wujudkan Naskahmu Menjadi Buku yang Menginspirasi",
+  description: "Penerbit indie terkemuka yang mendampingi penulis dari draf pertama hingga mejeng di Aksara Nusa Bookstore.",
 };
 
 export default function LandingPage() {

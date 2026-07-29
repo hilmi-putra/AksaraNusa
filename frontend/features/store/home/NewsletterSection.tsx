@@ -30,7 +30,7 @@ export function NewsletterSection() {
                 Dapatkan Info Diskon & Buku Baru
               </Typography>
               <Typography variant="p" className="text-cream/80 mb-8 max-w-lg mx-auto">
-                Berlangganan newsletter Mega Bookstore untuk mendapatkan penawaran eksklusif, rekomendasi buku, dan kabar terbaru seputar literasi.
+                Berlangganan newsletter Aksara Nusa Bookstore untuk mendapatkan penawaran eksklusif, rekomendasi buku, dan kabar terbaru seputar literasi.
               </Typography>
 
               <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>

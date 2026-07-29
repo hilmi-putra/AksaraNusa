@@ -3,8 +3,8 @@ import Cookies from 'js-cookie';
 
 // Constants
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
-export const TOKEN_COOKIE = 'megapress_token';
-export const USER_COOKIE = 'megapress_user';
+export const TOKEN_COOKIE = 'aksaranusa_token';
+export const USER_COOKIE = 'aksaranusa_user';
 
 // Configure Axios instance
 const api = axios.create({

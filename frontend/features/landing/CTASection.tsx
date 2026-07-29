@@ -11,30 +11,30 @@ import { useGSAP } from "@gsap/react";
 
 // Static array of background shapes to prevent hydration mismatch
 const BACKGROUND_SHAPES = [
-  { id: 1, type: 'circle', color: 'bg-emerald-300', size: 'w-4 h-4', top: '10%', left: '15%', zIndex: 1, depth: 0.8 },
-  { id: 2, type: 'square', color: 'bg-[#657555]/60', size: 'w-6 h-6', top: '25%', left: '8%', zIndex: 2, depth: 1.2 },
-  { id: 3, type: 'triangle', color: 'bg-teal-400', size: 'w-5 h-5', top: '45%', left: '12%', zIndex: 1, depth: 0.6 },
-  { id: 4, type: 'circle', color: 'bg-[#8F9779]/80', size: 'w-8 h-8', top: '70%', left: '5%', zIndex: 0, depth: 0.4 },
-  { id: 5, type: 'square', color: 'bg-gray-400', size: 'w-3 h-3', top: '85%', left: '18%', zIndex: 2, depth: 1.5 },
-  { id: 6, type: 'icon', icon: Book, color: 'text-emerald-500', size: 'w-6 h-6', top: '15%', left: '28%', zIndex: 1, depth: 0.9 },
-  { id: 7, type: 'circle', color: 'bg-stone-300', size: 'w-5 h-5', top: '35%', left: '25%', zIndex: 0, depth: 0.5 },
-  { id: 8, type: 'square', color: 'bg-[#657555]/40', size: 'w-4 h-4', top: '65%', left: '22%', zIndex: 1, depth: 0.7 },
-  { id: 9, type: 'icon', icon: PenTool, color: 'text-teal-500', size: 'w-5 h-5', top: '85%', left: '32%', zIndex: 2, depth: 1.3 },
-  { id: 10, type: 'circle', color: 'bg-gray-400', size: 'w-3 h-3', top: '50%', left: '38%', zIndex: 1, depth: 0.8 },
+  { id: 1, type: 'circle', color: 'bg-blue-400/40', size: 'w-4 h-4', top: '10%', left: '15%', zIndex: 1, depth: 0.8 },
+  { id: 2, type: 'square', color: 'bg-orange-400/40', size: 'w-6 h-6', top: '25%', left: '8%', zIndex: 2, depth: 1.2 },
+  { id: 3, type: 'triangle', color: 'bg-blue-500/40', size: 'w-5 h-5', top: '45%', left: '12%', zIndex: 1, depth: 0.6 },
+  { id: 4, type: 'circle', color: 'bg-orange-500/40', size: 'w-8 h-8', top: '70%', left: '5%', zIndex: 0, depth: 0.4 },
+  { id: 5, type: 'square', color: 'bg-slate-400/40', size: 'w-3 h-3', top: '85%', left: '18%', zIndex: 2, depth: 1.5 },
+  { id: 6, type: 'icon', icon: Book, color: 'text-blue-500/40', size: 'w-6 h-6', top: '15%', left: '28%', zIndex: 1, depth: 0.9 },
+  { id: 7, type: 'circle', color: 'bg-slate-300/60', size: 'w-5 h-5', top: '35%', left: '25%', zIndex: 0, depth: 0.5 },
+  { id: 8, type: 'square', color: 'bg-orange-400/30', size: 'w-4 h-4', top: '65%', left: '22%', zIndex: 1, depth: 0.7 },
+  { id: 9, type: 'icon', icon: PenTool, color: 'text-orange-500/40', size: 'w-5 h-5', top: '85%', left: '32%', zIndex: 2, depth: 1.3 },
+  { id: 10, type: 'circle', color: 'bg-slate-400/40', size: 'w-3 h-3', top: '50%', left: '38%', zIndex: 1, depth: 0.8 },
   
-  { id: 11, type: 'circle', color: 'bg-emerald-400', size: 'w-6 h-6', top: '12%', right: '18%', zIndex: 2, depth: 1.1 },
-  { id: 12, type: 'square', color: 'bg-teal-300', size: 'w-5 h-5', top: '28%', right: '8%', zIndex: 1, depth: 0.7 },
-  { id: 13, type: 'triangle', color: 'bg-[#8F9779]/70', size: 'w-4 h-4', top: '48%', right: '15%', zIndex: 0, depth: 0.5 },
-  { id: 14, type: 'circle', color: 'bg-[#657555]/50', size: 'w-7 h-7', top: '75%', right: '10%', zIndex: 2, depth: 1.4 },
-  { id: 15, type: 'square', color: 'bg-stone-400', size: 'w-3 h-3', top: '90%', right: '22%', zIndex: 1, depth: 0.9 },
-  { id: 16, type: 'icon', icon: Edit3, color: 'text-emerald-500', size: 'w-6 h-6', top: '18%', right: '32%', zIndex: 1, depth: 0.8 },
-  { id: 17, type: 'circle', color: 'bg-teal-400', size: 'w-4 h-4', top: '38%', right: '28%', zIndex: 0, depth: 0.4 },
-  { id: 18, type: 'square', color: 'bg-[#657555]/60', size: 'w-5 h-5', top: '68%', right: '25%', zIndex: 2, depth: 1.2 },
-  { id: 19, type: 'icon', icon: Bookmark, color: 'text-teal-600', size: 'w-5 h-5', top: '88%', right: '35%', zIndex: 1, depth: 0.7 },
-  { id: 20, type: 'circle', color: 'bg-emerald-300', size: 'w-3 h-3', top: '55%', right: '40%', zIndex: 1, depth: 0.6 },
+  { id: 11, type: 'circle', color: 'bg-blue-400/40', size: 'w-6 h-6', top: '12%', right: '18%', zIndex: 2, depth: 1.1 },
+  { id: 12, type: 'square', color: 'bg-orange-300/50', size: 'w-5 h-5', top: '28%', right: '8%', zIndex: 1, depth: 0.7 },
+  { id: 13, type: 'triangle', color: 'bg-blue-400/40', size: 'w-4 h-4', top: '48%', right: '15%', zIndex: 0, depth: 0.5 },
+  { id: 14, type: 'circle', color: 'bg-orange-400/40', size: 'w-7 h-7', top: '75%', right: '10%', zIndex: 2, depth: 1.4 },
+  { id: 15, type: 'square', color: 'bg-slate-400/40', size: 'w-3 h-3', top: '90%', right: '22%', zIndex: 1, depth: 0.9 },
+  { id: 16, type: 'icon', icon: Edit3, color: 'text-blue-500/40', size: 'w-6 h-6', top: '18%', right: '32%', zIndex: 1, depth: 0.8 },
+  { id: 17, type: 'circle', color: 'bg-blue-300/50', size: 'w-4 h-4', top: '38%', right: '28%', zIndex: 0, depth: 0.4 },
+  { id: 18, type: 'square', color: 'bg-orange-400/40', size: 'w-5 h-5', top: '68%', right: '25%', zIndex: 2, depth: 1.2 },
+  { id: 19, type: 'icon', icon: Bookmark, color: 'text-orange-500/40', size: 'w-5 h-5', top: '88%', right: '35%', zIndex: 1, depth: 0.7 },
+  { id: 20, type: 'circle', color: 'bg-blue-400/40', size: 'w-3 h-3', top: '55%', right: '40%', zIndex: 1, depth: 0.6 },
   
-  { id: 21, type: 'icon', icon: Type, color: 'text-[#8F9779]', size: 'w-6 h-6', top: '8%', left: '50%', zIndex: 0, depth: 0.3 },
-  { id: 22, type: 'icon', icon: Feather, color: 'text-stone-500', size: 'w-6 h-6', top: '92%', left: '48%', zIndex: 2, depth: 1.1 },
+  { id: 21, type: 'icon', icon: Type, color: 'text-blue-500/30', size: 'w-6 h-6', top: '8%', left: '50%', zIndex: 0, depth: 0.3 },
+  { id: 22, type: 'icon', icon: Feather, color: 'text-slate-400/50', size: 'w-6 h-6', top: '92%', left: '48%', zIndex: 2, depth: 1.1 },
 ];
 
 export function CTASection() {
@@ -160,8 +160,8 @@ export function CTASection() {
     if (cursorRef.current) {
       gsap.to(cursorRef.current, {
         scale: isHovering ? 2.5 : 1,
-        backgroundColor: isHovering ? "rgba(219, 139, 0, 0.1)" : "rgba(110, 0, 0, 0.5)",
-        border: isHovering ? "1px solid rgba(219, 139, 0, 0.5)" : "none",
+        backgroundColor: isHovering ? "rgba(239, 122, 8, 0.1)" : "rgba(0, 74, 143, 0.1)",
+        border: isHovering ? "1px solid rgba(239, 122, 8, 0.5)" : "none",
         duration: 0.3,
         ease: "power2.out"
       });
@@ -181,7 +181,7 @@ export function CTASection() {
       />
 
       {/* Decorative Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #6E0000 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #EF7A08 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
       {/* Scattered Parallax/Magnetic Shapes */}
       {BACKGROUND_SHAPES.map((shape, i) => (
@@ -217,22 +217,22 @@ export function CTASection() {
         >
           <div className="flex flex-col items-center p-10 md:p-12 pb-10">
             {/* Logo */}
-            <div className="w-12 h-12 mb-6 flex items-center justify-center">
+            <div className="w-[140px] md:w-[180px] mb-6 flex items-center justify-center">
               <img 
-                src="https://ik.imagekit.io/yqhp1cmbp/logo_megapress.svg" 
-                alt="Mega Press Logo" 
-                className="w-full h-full object-contain"
+                src="https://ik.imagekit.io/yqhp1cmbp/Teks%20paragraf%20Anda%201.png" 
+                alt="Aksara Nusa Logo" 
+                className="w-full h-auto object-contain"
               />
             </div>
             
             <h2 className="text-gray-900 font-serif text-[32px] md:text-[36px] leading-[1.15] tracking-tight mb-8">
               Mulai langkah pertama, <br />
-              bersama Mega Press
+              bersama Aksara Nusa
             </h2>
             
             <div className="flex flex-row gap-3 w-full">
               <Button 
-                className="flex-1 rounded-[6px] h-12 text-[14px] bg-[#657555] hover:bg-[#526045] text-white font-bold transition-colors"
+                className="flex-1 rounded-[6px] h-12 text-[14px] bg-gradient-primary hover:brightness-110 text-white font-bold transition-all"
               >
                 Kirim Naskah
               </Button>
@@ -247,7 +247,7 @@ export function CTASection() {
           
           {/* Bottom Area (Like Image 2) */}
           <div className="bg-[#F8F9FA] border-t border-gray-100 py-6 px-10 text-[14px] text-gray-600">
-            Sudah punya akun? <a href="#" className="font-bold text-[#657555] hover:underline">Masuk</a>.
+            Sudah punya akun? <a href="#" className="font-bold text-[#004A8F] hover:underline">Masuk</a>.
           </div>
         </motion.div>
 

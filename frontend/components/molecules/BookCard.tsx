@@ -113,7 +113,7 @@ export function BookCard({
         loading="lazy"
       />
       {book.isNew && variant !== "cart-preview" && (
-        <Badge className="absolute top-4 left-4 bg-[#DB8B00] text-white border-none rounded-full px-3 text-xs">Baru</Badge>
+        <Badge className="absolute top-4 left-4 bg-gradient-primary text-white border-none rounded-full px-3 text-xs">Baru</Badge>
       )}
       {book.isBestseller && variant !== "cart-preview" && !book.isNew && (
         <Badge variant="secondary" className="absolute top-4 left-4 bg-[#171512] text-[#FAF8F4] border-none rounded-full px-3 text-xs">Bestseller</Badge>
@@ -179,7 +179,7 @@ export function BookCard({
               />
               {/* Badges positioned relative to the cover */}
               {book.isNew && (
-                <Badge className="absolute -top-3 -left-3 bg-[#DB8B00] text-white border-none rounded-full px-3 py-1 text-[10px] shadow-sm uppercase tracking-widest z-20">Baru</Badge>
+                <Badge className="absolute -top-3 -left-3 bg-gradient-primary text-white border-none rounded-full px-3 py-1 text-[10px] shadow-sm uppercase tracking-widest z-20">Baru</Badge>
               )}
               {book.isBestseller && !book.isNew && (
                 <Badge className="absolute -top-3 -left-3 bg-[#171512] text-white border-none rounded-full px-3 py-1 text-[10px] shadow-sm uppercase tracking-widest z-20">Top</Badge>
@@ -201,7 +201,7 @@ export function BookCard({
               
               <Button 
                 size="sm" 
-                className="rounded-none bg-[#171512] text-white hover:bg-[#DB8B00] h-10 px-8 text-xs font-bold uppercase tracking-widest transition-all duration-300 w-full mt-4"
+                className="rounded-none bg-[#171512] text-white hover:bg-gradient-primary h-10 px-8 text-xs font-bold uppercase tracking-widest transition-all duration-300 w-full mt-4"
                 disabled={isOutOfStock}
                 onClick={(e) => {
                   e.preventDefault();
@@ -293,7 +293,7 @@ export function BookCard({
             <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-6 mt-4">
                {renderPrice("text-3xl md:text-4xl text-[#322855] font-semibold")}
                <div className="flex flex-col gap-3 w-full md:w-auto">
-                 <Button size="lg" className="rounded-none bg-[#DB8B00] hover:bg-[#E0790A] text-white px-8 h-12 text-sm font-bold uppercase tracking-widest shadow-lg transition-transform w-full" disabled={isOutOfStock} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIsModalOpen(true); }}>
+                 <Button size="lg" className="rounded-none bg-gradient-primary hover:bg-[#E0790A] text-white px-8 h-12 text-sm font-bold uppercase tracking-widest shadow-lg transition-transform w-full" disabled={isOutOfStock} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIsModalOpen(true); }}>
                    {isOutOfStock ? "Habis" : "Beli Sekarang"}
                  </Button>
                  <Button variant="outline" size="lg" className="rounded-none border-[#171512] text-[#171512] hover:bg-[#171512] hover:text-white px-8 h-12 text-sm font-bold uppercase tracking-widest w-full" disabled={isOutOfStock} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIsModalOpen(true); }}>
@@ -311,7 +311,7 @@ export function BookCard({
       cardContent = (
         <div className="group flex flex-col gap-4 text-center cursor-pointer relative pt-6">
           {rank && (
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#DB8B00] text-white flex items-center justify-center font-bold z-10 shadow-lg border-4 border-[#FAF8F4]">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-primary text-white flex items-center justify-center font-bold z-10 shadow-lg border-4 border-[#FAF8F4]">
               {rank}
             </div>
           )}
@@ -385,7 +385,7 @@ export function BookCard({
       cardContent = (
         <div className="group flex flex-col gap-4 bg-transparent p-4 rounded-2xl border border-[#E8E3D9] hover:bg-white transition-colors">
            {recommendationReason && (
-            <Badge variant="outline" className="w-fit text-[10px] uppercase tracking-wider mb-2 border-[#DB8B00] text-[#DB8B00] rounded-full">{recommendationReason}</Badge>
+            <Badge variant="outline" className="w-fit text-[10px] uppercase tracking-wider mb-2 border-[#004A8F] text-gradient-primary rounded-full">{recommendationReason}</Badge>
            )}
           <div className="flex gap-4 items-center">
             <Link href={bookSlug} className="shrink-0 w-20 rounded-lg overflow-hidden transition-transform group-hover:scale-105">

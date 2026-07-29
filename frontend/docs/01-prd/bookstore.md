@@ -1,10 +1,10 @@
-# PRD - Mega Bookstore (Frontend)
+# PRD - Aksara Nusa Bookstore (Frontend)
 
 ## 1. Objective
-Membangun antarmuka e-commerce modern (Frontend) untuk Mega Bookstore yang terintegrasi secara visual dengan Mega Press, fokus pada user experience (UX) premium, navigasi yang intuitif, dan performa tinggi. Pada fase ini, semua interaksi data menggunakan *mock data*.
+Membangun antarmuka e-commerce modern (Frontend) untuk Aksara Nusa Bookstore yang terintegrasi secara visual dengan Aksara Nusa, fokus pada user experience (UX) premium, navigasi yang intuitif, dan performa tinggi. Pada fase ini, semua interaksi data menggunakan *mock data*.
 
 ## 2. Scope & Features
-- **Global Navigation**: Header yang menyatukan link Landing Page Mega Press dan kategori Mega Bookstore.
+- **Global Navigation**: Header yang menyatukan link Landing Page Aksara Nusa dan kategori Aksara Nusa Bookstore.
 - **Product Catalog (Home Store)**: 
   - Hero image promo/featured books.
   - Category filters & Sorting.
@@ -26,5 +26,5 @@ Membangun antarmuka e-commerce modern (Frontend) untuk Mega Bookstore yang terin
 ## 3. Non-Functional Requirements
 - **State Management**: Cart & user session harus tersimpan minimal di memory (menggunakan Zustand) selama fase mock.
 - **Form Handling**: Validasi form (Checkout, Login) wajib menggunakan Zod + React Hook Form.
-- **Design System**: Komponen menggunakan shadcn/ui dan Tailwind CSS, disesuaikan dengan *brand guidelines* Mega Press.
+- **Design System**: Komponen menggunakan shadcn/ui dan Tailwind CSS, disesuaikan dengan *brand guidelines* Aksara Nusa.
 - **Animations**: Transisi antar halaman dan mikro-interaksi menggunakan Framer Motion atau GSAP.

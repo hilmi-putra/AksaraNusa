@@ -26,7 +26,7 @@ Hero Section
 ↓ 96px
 Perkenalan Personal
 ↓ 64px
-Kenapa Mega Press
+Kenapa Aksara Nusa
 ↓ 96px
 Showcase Katalog
 ↓ 96px

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const path = 'C:\\laragon\\www\\Megapress\\frontend\\features\\store\\dashboard\\ProfileSettings.tsx';
+const path = 'C:\\laragon\\www\\aksaranusa\\frontend\\features\\store\\dashboard\\ProfileSettings.tsx';
 let content = fs.readFileSync(path, 'utf8');
 
 // 1. Imports
@@ -96,7 +96,7 @@ const newPersonal = `{/* Content */}
             </div>
 
             <div className="pt-4">
-              <Button onClick={handleProfileSubmit} disabled={isSavingProfile} className="bg-[#DB8B00] hover:bg-[#b06f00] text-white h-12 px-8 rounded-none font-bold tracking-widest uppercase text-xs transition-colors">
+              <Button onClick={handleProfileSubmit} disabled={isSavingProfile} className="bg-gradient-primary hover:bg-[#b06f00] text-white h-12 px-8 rounded-none font-bold tracking-widest uppercase text-xs transition-colors">
                 {isSavingProfile ? "Menyimpan..." : "Simpan Perubahan"}
               </Button>
             </div>

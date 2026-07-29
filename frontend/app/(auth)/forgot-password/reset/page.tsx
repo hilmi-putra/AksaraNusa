@@ -68,7 +68,7 @@ function ResetPasswordForm() {
     >
       <div className="text-center mb-8">
         <h1 className="text-3xl font-light tracking-wide text-gray-800">
-          NEW <span className="text-[#DB8B00]">PASSWORD</span>
+          NEW <span className="text-gradient-primary">PASSWORD</span>
         </h1>
         <p className="text-gray-500 text-sm mt-4">
           Silakan buat password baru Anda.
@@ -96,7 +96,7 @@ function ResetPasswordForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password Baru"
-            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-400 text-sm"
+            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-400 text-sm"
           />
         </div>
 
@@ -108,7 +108,7 @@ function ResetPasswordForm() {
             value={passwordConfirmation}
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             placeholder="Konfirmasi Password Baru"
-            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-400 text-sm"
+            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-400 text-sm"
           />
         </div>
 
@@ -116,7 +116,7 @@ function ResetPasswordForm() {
           <Button 
             type="submit" 
             disabled={loading}
-            className="w-full h-12 rounded-none bg-[#DB8B00] hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors uppercase disabled:opacity-70"
+            className="w-full h-12 rounded-none bg-gradient-primary hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors uppercase disabled:opacity-70"
           >
             {loading ? "SAVING..." : "RESET PASSWORD"}
           </Button>

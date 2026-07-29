@@ -288,7 +288,7 @@ export function CheckoutForm() {
           <button 
             type="button" 
             onClick={() => setIsSavedModalOpen(true)}
-            className="text-xs font-bold text-[#DB8B00] hover:text-[#b06f00] hover:underline uppercase tracking-wide transition-colors"
+            className="text-xs font-bold text-gradient-primary hover:text-[#b06f00] hover:underline uppercase tracking-wide transition-colors"
           >
             Use Saved Address
           </button>
@@ -428,7 +428,7 @@ export function CheckoutForm() {
                 <div className="flex-1">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-bold text-sm text-[#171512] uppercase">Tambah Asuransi Pengiriman (Rekomendasi)</span>
-                    <span className="font-semibold text-[#DB8B00]">{formatRupiah(insuranceCost)}</span>
+                    <span className="font-semibold text-gradient-primary">{formatRupiah(insuranceCost)}</span>
                   </div>
                   <p className="text-sm text-gray-500 leading-relaxed">
                     Melindungi pesanan Anda 100% dari potensi kerusakan atau kehilangan yang disebabkan oleh kelalaian kurir saat pengiriman. Karena produk yang Anda beli bernilai tinggi, kami sangat menyarankan untuk menyertakan asuransi ini.
@@ -443,12 +443,12 @@ export function CheckoutForm() {
               <div className="flex items-start gap-4">
                 <Store className="w-6 h-6 mt-1 text-[#171512]" />
                 <div>
-                  <h4 className="font-bold text-[#171512] uppercase text-sm mb-2">Megapress Flagship Store</h4>
+                  <h4 className="font-bold text-[#171512] uppercase text-sm mb-2">aksaranusa Flagship Store</h4>
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">
                     Jl. Gatot Subroto No. 289, Cibangkong, Batununggal<br />
                     Bandung, Jawa Barat 40273
                   </p>
-                  <div className="flex items-center gap-2 text-sm text-[#DB8B00] font-semibold">
+                  <div className="flex items-center gap-2 text-sm text-gradient-primary font-semibold">
                     <Clock className="w-4 h-4" />
                     Buka Hari Ini: 09:00 - 21:00
                   </div>

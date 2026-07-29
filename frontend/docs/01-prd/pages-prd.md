@@ -1,7 +1,7 @@
-# PRD - Mega Bookstore Pages
+# PRD - Aksara Nusa Bookstore Pages
 
 ## 1. Landing Page (Redesign)
-- **Tujuan**: Halaman muka perusahaan (Mega Press) dengan *point of entry* jelas menuju Bookstore.
+- **Tujuan**: Halaman muka perusahaan (Aksara Nusa) dengan *point of entry* jelas menuju Bookstore.
 - **Section**:
   - Global Header (Unified Navigasi).
   - Hero Section dengan CTA.
@@ -13,7 +13,7 @@
 - **Interaksi**: Animasi *scroll reveal* pada tiap section, hover effect pada galeri buku.
 - **Acceptance Criteria**: Navbar baru harus menggabungkan link publishing dan bookstore tanpa terlihat berantakan. Transisi warna antara section harus halus (menggunakan warna brand).
 
-## 2. Mega Bookstore (Catalog)
+## 2. Aksara Nusa Bookstore (Catalog)
 - **Tujuan**: Halaman etalase utama e-commerce untuk menemukan buku.
 - **Section**:
   - Promo Hero Banner.

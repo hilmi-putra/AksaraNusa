@@ -1,6 +1,6 @@
 # Roadmap — Frontend (Fase Landing Page)
 
-Roadmap besar mengikuti Architecture Blueprint v2.0 (Frontend-First). Dokumen ini merinci roadmap tersebut khusus untuk ruang lingkup **Landing Page Mega Press**, sebagai prioritas pertama.
+Roadmap besar mengikuti Architecture Blueprint v2.0 (Frontend-First). Dokumen ini merinci roadmap tersebut khusus untuk ruang lingkup **Landing Page Aksara Nusa**, sebagai prioritas pertama.
 
 ## Posisi dalam Roadmap Besar
 
@@ -29,12 +29,12 @@ Roadmap besar mengikuti Architecture Blueprint v2.0 (Frontend-First). Dokumen in
 - Build galeri blob-shape untuk showcase buku terbitan (menggantikan galeri foto pada mockup referensi).
 
 ### Sprint 3 — Konten Personal & Keunggulan
-- Section "Tentang Mega Press" (perkenalan singkat, nada personal).
-- Section "Kenapa Mega Press" — 4 card keunggulan (mengikuti pola 4 kartu oranye pada mockup).
+- Section "Tentang Aksara Nusa" (perkenalan singkat, nada personal).
+- Section "Kenapa Aksara Nusa" — 4 card keunggulan (mengikuti pola 4 kartu oranye pada mockup).
 
 ### Sprint 4 — Showcase Katalog
 - Grid showcase katalog unggulan (bento-grid, mengikuti pola "Мои работы").
-- CTA menuju Mega Bookstore.
+- CTA menuju Aksara Nusa Bookstore.
 
 ### Sprint 5 — Proses Kerja Sama & Footer
 - Section "Bagaimana Prosesnya" — numbered steps (mengikuti pola "Как проходит съёмка").

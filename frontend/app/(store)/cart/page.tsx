@@ -36,7 +36,7 @@ export default function CartPage() {
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-20 text-gray-500 bg-white border border-gray-200 rounded-lg">
               <p className="mb-4 text-xl">Keranjang Anda kosong</p>
-              <Link href="/bookstore" className="text-[#DB8B00] font-bold underline hover:text-[#b06f00]">
+              <Link href="/bookstore" className="text-gradient-primary font-bold underline hover:text-[#b06f00]">
                 Mulai Belanja
               </Link>
             </div>
@@ -62,7 +62,7 @@ export default function CartPage() {
                           </Link>
                           <button 
                             onClick={() => removeItem(item.id)}
-                            className="text-gray-400 hover:text-[#6E0000] transition-colors flex-shrink-0"
+                            className="text-gray-400 hover:text-gradient-secondary transition-colors flex-shrink-0"
                           >
                             <Trash2 className="w-5 h-5" />
                           </button>
@@ -122,7 +122,7 @@ export default function CartPage() {
                   </div>
 
                   <Link href="/checkout" className="w-full flex">
-                    <button className="w-full bg-[#DB8B00] hover:bg-[#b06f00] text-white py-4 font-bold tracking-widest uppercase rounded-sm transition-colors text-sm">
+                    <button className="w-full bg-gradient-primary hover:bg-[#b06f00] text-white py-4 font-bold tracking-widest uppercase rounded-sm transition-colors text-sm">
                       Beli Sekarang
                     </button>
                   </Link>

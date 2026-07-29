@@ -14,65 +14,76 @@ export function HeroSection() {
   const { title, subtitle, ctaText } = landingData.hero;
 
   return (
-    <Section className="relative overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32 min-h-[90vh] flex items-center bg-transparent">
+    <Section className="relative pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 bg-[#002D5A] overflow-hidden min-h-screen flex flex-col justify-center">
+      
+      {/* Subtle background pattern for depth */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+        style={{ 
+          backgroundImage: 'radial-gradient(circle at 2px 2px, #ffffff 1px, transparent 0)', 
+          backgroundSize: '40px 40px' 
+        }} 
+      />
+      
+      {/* Gradient glow to anchor the visual */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#004A8F]/40 blur-[120px] rounded-full pointer-events-none" />
 
-      {/* Decorative Gradients */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-brand/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[300px] bg-amber-500/10 blur-[100px] rounded-full pointer-events-none" />
+      <Container className="relative z-10 w-full">
+        <div className="flex flex-col items-center justify-center w-full">
+          
+          {/* CENTER COLUMN: Typography & CTAs */}
+          <motion.div 
+            className="flex flex-col items-center text-center w-full max-w-4xl mx-auto pt-10 lg:pt-0"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="inline-flex items-center justify-center gap-2 mb-6">
+              <div className="w-8 h-[2px] bg-[#EF7A08]" />
+              <span className="text-[#EF7A08] font-bold tracking-widest text-xs uppercase">Aksara Nusa Mediatama</span>
+              <div className="w-8 h-[2px] bg-[#EF7A08]" />
+            </div>
 
+            <Typography variant="hero" className="text-white mb-6 tracking-tight leading-[1.05] font-serif text-5xl md:text-6xl lg:text-[72px]">
+              Wujudkan Naskahmu Menjadi Buku yang <em className="italic font-light text-gradient-secondary">Menginspirasi</em>
+            </Typography>
+            
+            <Typography variant="description" className="text-blue-100/80 text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+              Penerbit independen terkemuka yang mendampingi penulis dari draf pertama hingga mejeng di Aksara Nusa Bookstore.
+            </Typography>
+            
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+              <Button size="lg" className="rounded-xl px-8 h-14 bg-gradient-secondary hover:brightness-110 text-white font-bold text-base border-0 shadow-lg shadow-[#EF7A08]/20 transition-all hover:-translate-y-1">
+                {ctaText} <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-xl px-8 h-14 bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#002D5A] font-bold text-base transition-all hover:-translate-y-1 backdrop-blur-sm">
+                Jelajahi Bookstore
+              </Button>
+            </div>
 
-
-      <Container className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary-brand/20 text-primary-brand mb-8 shadow-sm"
-        >
-          <span className="flex h-2 w-2 rounded-full bg-primary-brand animate-pulse" />
-          <Typography variant="caption" className="font-medium text-primary-brand m-0 leading-none">
-            Penerbit Independen Terpercaya
-          </Typography>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-        >
-          {/* Using dangerouslySetInnerHTML to render the italic parts if they were in the mock, or we can hardcode the styling to match the reference */}
-          <Typography variant="hero" className="text-ink mb-6 max-w-3xl mx-auto">
-            Wujudkan Naskahmu Menjadi Buku yang <em className="italic font-light text-primary-brand">Menginspirasi</em>
-          </Typography>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <Typography variant="description" className="mx-auto max-w-2xl mb-12 text-ink/70">
-            {subtitle}
-          </Typography>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto"
-        >
-          <Button size="lg" className="rounded-full px-8 h-14 w-full sm:w-auto bg-primary-brand hover:bg-primary-brand/90 text-white font-semibold text-base shadow-xl shadow-primary-brand/20 transition-all hover:-translate-y-1">
-            {ctaText}
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button size="lg" variant="outline" className="rounded-full px-8 h-14 w-full sm:w-auto bg-white/50 backdrop-blur-sm text-ink border-border hover:bg-white text-base font-semibold transition-all hover:-translate-y-1">
-            Jelajahi Bookstore
-          </Button>
-        </motion.div>
+            {/* Quick stats / Trust indicators */}
+            <div className="mt-16 flex items-center justify-center gap-8 border-t border-white/10 pt-8 w-full max-w-2xl mx-auto">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-white">500+</p>
+                <p className="text-sm text-blue-200/70 mt-1">Penulis Aktif</p>
+              </div>
+              <div className="w-px h-10 bg-white/10" />
+              <div className="text-center">
+                <p className="text-3xl font-bold text-white">10k+</p>
+                <p className="text-sm text-blue-200/70 mt-1">Buku Terbit</p>
+              </div>
+              <div className="w-px h-10 bg-white/10" />
+              <div className="text-center">
+                <p className="text-3xl font-bold text-white">4.9</p>
+                <p className="text-sm text-blue-200/70 mt-1">Rating Penulis</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </Container>
-
-      <div className="absolute bottom-0 left-0 w-full z-10">
+      
+      {/* Logos below hero, styled for dark background */}
+      <div className="w-full mt-24 opacity-60 hover:opacity-100 transition-opacity">
         <LogoMarqueeSection />
       </div>
     </Section>

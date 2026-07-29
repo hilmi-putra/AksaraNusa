@@ -73,7 +73,7 @@ export default function BlogIndexPage() {
           {/* Header Row: Title & Categories */}
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12 pb-6 border-b border-gray-200">
             <div className="flex items-center">
-               <h1 className="text-base md:text-lg font-bold text-white bg-[#DB8B00] px-6 py-2 rounded-full inline-block">
+               <h1 className="text-base md:text-lg font-bold text-white bg-gradient-primary px-6 py-2 rounded-full inline-block">
                  Blog
                </h1>
             </div>
@@ -114,7 +114,7 @@ export default function BlogIndexPage() {
                 <section className="mb-24">
                   <div className="flex justify-between items-end mb-8 border-b border-gray-200 pb-4">
                     <h2 className="text-3xl font-serif text-[#171512]">Latest articles</h2>
-                    <Link href="/blog/posts" className="text-sm font-semibold text-[#171512] hover:text-[#DB8B00] transition-colors flex items-center gap-2">
+                    <Link href="/blog/posts" className="text-sm font-semibold text-[#171512] hover:text-gradient-primary transition-colors flex items-center gap-2">
                       See all <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -140,7 +140,7 @@ export default function BlogIndexPage() {
                 <section className="mb-12">
                   <div className="flex justify-between items-end mb-8 border-b border-gray-200 pb-4">
                     <h2 className="text-3xl font-serif text-[#171512]">Popular articles</h2>
-                    <Link href="/blog/posts" className="text-sm font-semibold text-[#171512] hover:text-[#DB8B00] transition-colors flex items-center gap-2">
+                    <Link href="/blog/posts" className="text-sm font-semibold text-[#171512] hover:text-gradient-primary transition-colors flex items-center gap-2">
                       See all <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>

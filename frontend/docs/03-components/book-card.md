@@ -1,7 +1,7 @@
 # Component: BookCard
 
 ## 1. Objective
-Komponen `BookCard` adalah elemen atomik terpenting dalam UI Mega Bookstore. Digunakan secara luas untuk menampilkan entitas buku di berbagai halaman. Untuk menjaga reusability dan menghindari redundansi, `BookCard` harus mendukung berbagai *varian* tampilan.
+Komponen `BookCard` adalah elemen atomik terpenting dalam UI Aksara Nusa Bookstore. Digunakan secara luas untuk menampilkan entitas buku di berbagai halaman. Untuk menjaga reusability dan menghindari redundansi, `BookCard` harus mendukung berbagai *varian* tampilan.
 
 ## 2. Props Interface
 ```typescript

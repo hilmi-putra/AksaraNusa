@@ -10,7 +10,7 @@ Gabungan beberapa atoms menjadi satu unit fungsional kecil.
 ### `AdvantageCard`
 - Kombinasi `IconBadge` + judul + deskripsi singkat, background primary-brand, radius besar.
 - Props: `icon`, `title`, `description`.
-- Dipakai 4× di section "Kenapa Mega Press".
+- Dipakai 4× di section "Kenapa Aksara Nusa".
 
 ### `ProcessStepItem`
 - Kombinasi `NumberBadge` + judul step + deskripsi + (opsional) gambar kecil blob-shape.

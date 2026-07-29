@@ -3,7 +3,7 @@
 > Detail lengkap arsitektur sistem ada di dokumen utama *B2D Enterprise E-Commerce Architecture Blueprint v2.0*. Dokumen ini merangkum bagian yang relevan untuk kerja frontend sehari-hari.
 
 ## Stack (Final — Tidak Ada Alternatif)
-- **Next.js (App Router)** — seluruh halaman publik: Landing Page Mega Press, Blog, Katalog, Detail Produk, Search. Rendering SSR/SSG untuk SEO.
+- **Next.js (App Router)** — seluruh halaman publik: Landing Page Aksara Nusa, Blog, Katalog, Detail Produk, Search. Rendering SSR/SSG untuk SEO.
 - **Laravel Inertia.js + React** — Customer Dashboard & Admin Panel (repo backend, bukan bagian dari repo frontend ini).
 - **Laravel 12 REST API** — satu-satunya sumber data (single source of truth). Frontend tidak pernah bicara langsung ke database.
 
@@ -14,7 +14,7 @@ Client (Browser)
    ▼
 Next.js Frontend  ──REST API (JSON)──▶  Laravel 12 API  ──▶ Database / Storage
    │
-   └─ Landing Page Mega Press  ← fase saat ini (mock data, belum terhubung API)
+   └─ Landing Page Aksara Nusa  ← fase saat ini (mock data, belum terhubung API)
 ```
 
 Selama fase Landing Page, seluruh data (daftar keunggulan, katalog unggulan, testimoni) berasal dari **mock data lokal** di `lib/mock/`, bukan dari Laravel API. Kontrak data (shape/interface) tetap dirancang sesuai `types/` agar saat fase *API Integration* nanti, hanya perlu mengganti data source tanpa mengubah komponen.

@@ -1,7 +1,7 @@
 # Design System & UI/UX Guidelines
 
 ## 1. Filosofi Desain & Prinsip UI
-**Filosofi**: Mega Bookstore adalah ekstensi alami dari Mega Press. Pengalaman membeli buku harus terasa sama personalnya, profesionalnya, dan se-premium proses penerbitannya.
+**Filosofi**: Aksara Nusa Bookstore adalah ekstensi alami dari Aksara Nusa. Pengalaman membeli buku harus terasa sama personalnya, profesionalnya, dan se-premium proses penerbitannya.
 **Prinsip UI**:
 - **Clarity over Cleverness**: UI harus intuitif dan mudah dipahami, tidak membingungkan.
 - **Content-First**: Konten (buku) adalah raja. Elemen UI harus mendukung dan tidak mendistraksi dari visual buku.

@@ -45,7 +45,7 @@ export function LogoMarqueeSection() {
               <img 
                 src={logo} 
                 alt={`Partner Logo ${index + 1}`} 
-                className="h-10 md:h-12 w-auto object-contain brightness-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                className="h-10 md:h-12 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300"
               />
             </div>
           ))}

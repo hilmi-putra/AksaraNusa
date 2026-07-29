@@ -30,8 +30,8 @@ export function middleware(request: NextRequest) {
   requestHeaders.set('Content-Security-Policy', cspHeader);
 
   // Auth logic
-  const token = request.cookies.get('megapress_token')?.value;
-  const userCookie = request.cookies.get('megapress_user')?.value;
+  const token = request.cookies.get('aksaranusa_token')?.value;
+  const userCookie = request.cookies.get('aksaranusa_user')?.value;
   const path = request.nextUrl.pathname;
 
   const isProtectedRoute = path.startsWith('/dashboard') || path.startsWith('/admin');
@@ -53,8 +53,8 @@ export function middleware(request: NextRequest) {
       }
     } catch (e) {
       response = NextResponse.redirect(new URL('/login', request.url));
-      response.cookies.delete('megapress_token');
-      response.cookies.delete('megapress_user');
+      response.cookies.delete('aksaranusa_token');
+      response.cookies.delete('aksaranusa_user');
     }
   } else if (isAuthRoute && token) {
     let role = 'user';

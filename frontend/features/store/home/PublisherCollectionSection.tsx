@@ -24,10 +24,10 @@ export function PublisherCollectionSection() {
                   Koleksi Pilihan
                 </div>
                 <Typography  variant="h2" className="mb-4">
-                  Karya Fenomenal Mega Press
+                  Karya Fenomenal Aksara Nusa
                 </Typography>
                 <Typography variant="p" className="mb-8">
-                  Pilihan buku terbaik terbitan Mega Press yang telah menginspirasi ribuan pembaca. Wajib ada di rak buku Anda.
+                  Pilihan buku terbaik terbitan Aksara Nusa yang telah menginspirasi ribuan pembaca. Wajib ada di rak buku Anda.
                 </Typography>
                 <Link href="/bookstore/penerbit/mega-press">
                   <Button size="lg" className="rounded-full w-full sm:w-auto group">

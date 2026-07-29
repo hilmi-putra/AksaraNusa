@@ -73,7 +73,7 @@ function VerifyForm() {
     >
       <div className="text-center mb-8">
         <h1 className="text-3xl font-light tracking-wide text-gray-800">
-          VERIFY <span className="text-[#DB8B00]">EMAIL</span>
+          VERIFY <span className="text-gradient-primary">EMAIL</span>
         </h1>
         <p className="text-gray-500 text-sm mt-4">
           Masukkan 6 digit kode OTP yang telah dikirimkan ke <br />
@@ -104,7 +104,7 @@ function VerifyForm() {
             value={otp}
             onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
             placeholder="000000"
-            className="w-full sm:w-3/4 md:w-1/2 bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-300 text-3xl tracking-[0.3em] md:tracking-[0.5em] text-center"
+            className="w-full sm:w-3/4 md:w-1/2 bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-300 text-3xl tracking-[0.3em] md:tracking-[0.5em] text-center"
           />
         </div>
 
@@ -113,7 +113,7 @@ function VerifyForm() {
           <Button 
             type="submit" 
             disabled={loading || otp.length !== 6}
-            className="w-full h-12 rounded-none bg-[#DB8B00] hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors uppercase disabled:opacity-70"
+            className="w-full h-12 rounded-none bg-gradient-primary hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors uppercase disabled:opacity-70"
           >
             {loading ? "VERIFYING..." : "VERIFY ACCOUNT"}
           </Button>
@@ -124,7 +124,7 @@ function VerifyForm() {
               type="button"
               disabled={resending}
               onClick={handleResend}
-              className="text-[#DB8B00] hover:text-[#b06d00] font-semibold text-sm disabled:opacity-50"
+              className="text-gradient-primary hover:text-[#b06d00] font-semibold text-sm disabled:opacity-50"
             >
               {resending ? "MENGIRIM ULANG..." : "KIRIM ULANG OTP"}
             </button>

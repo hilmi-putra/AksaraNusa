@@ -29,7 +29,7 @@ export const blogMockData = {
     author: {
       name: "Budi Santoso",
       avatar: "https://i.pravatar.cc/150?u=budi",
-      role: "Head of Digital Marketing, Mega Press"
+      role: "Head of Digital Marketing, Aksara Nusa"
     },
     publishedAt: "February 24, 2026",
     readTime: "7 min read",

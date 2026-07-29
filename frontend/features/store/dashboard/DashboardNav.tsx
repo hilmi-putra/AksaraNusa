@@ -73,10 +73,10 @@ export function DashboardNav() {
                 <span className={cn(
                   "flex items-center gap-2 px-5 py-2.5 rounded-full transition-all font-bold text-xs tracking-wider uppercase",
                   isActive 
-                    ? "bg-[#DB8B00]/10 text-[#DB8B00]" 
+                    ? "bg-gradient-primary/10 text-gradient-primary" 
                     : "hover:bg-gray-50 text-gray-500 hover:text-[#171512]"
                 )}>
-                  <item.icon className={cn("w-4 h-4", isActive ? "text-[#DB8B00]" : "text-gray-400")} strokeWidth={isActive ? 2.5 : 2} />
+                  <item.icon className={cn("w-4 h-4", isActive ? "text-gradient-primary" : "text-gray-400")} strokeWidth={isActive ? 2.5 : 2} />
                   {item.title}
                 </span>
               </Link>

@@ -100,11 +100,11 @@ export function Wishlist() {
                   <div className="flex flex-col gap-4 flex-1 order-2 sm:order-1">
                     <div className="flex flex-col gap-1.5">
                       <Link href={`/bookstore/buku/${item.book.slug}`}>
-                        <h4 className="font-bold text-[#171512] text-xl hover:text-[#DB8B00] transition-colors leading-tight">
+                        <h4 className="font-bold text-[#171512] text-xl hover:text-gradient-primary transition-colors leading-tight">
                           {item.book.title}
                         </h4>
                       </Link>
-                      <p className="font-bold text-[#DB8B00] text-lg">{formatRupiah(item.book.price)}</p>
+                      <p className="font-bold text-gradient-primary text-lg">{formatRupiah(item.book.price)}</p>
                       <p className="text-sm text-gray-500">Penulis: <span className="font-medium text-[#171512]">{item.book.author?.name || 'Tidak diketahui'}</span></p>
                     </div>
                     
@@ -134,7 +134,7 @@ export function Wishlist() {
               </div>
               <Button 
                 onClick={handleAddAllToCart}
-                className="bg-[#171512] hover:bg-[#DB8B00] text-white rounded-none h-14 px-10 font-bold tracking-widest uppercase text-xs transition-colors mt-6 sm:mt-0"
+                className="bg-[#171512] hover:bg-gradient-primary text-white rounded-none h-14 px-10 font-bold tracking-widest uppercase text-xs transition-colors mt-6 sm:mt-0"
               >
                 Masukkan Semua Ke Keranjang
               </Button>
@@ -146,7 +146,7 @@ export function Wishlist() {
             <p className="text-gray-500 font-medium text-lg mb-2">Wishlist Anda kosong.</p>
             <p className="text-gray-400 text-sm mb-6 max-w-sm">Anda belum menyimpan buku apa pun. Ayo cari buku impian Anda sekarang!</p>
             <Link href="/bookstore">
-              <Button className="bg-[#DB8B00] hover:bg-[#b06f00] text-white rounded-full px-8 h-12 font-bold tracking-widest uppercase text-xs transition-colors">
+              <Button className="bg-gradient-primary hover:bg-[#b06f00] text-white rounded-full px-8 h-12 font-bold tracking-widest uppercase text-xs transition-colors">
                 Mulai Belanja
               </Button>
             </Link>

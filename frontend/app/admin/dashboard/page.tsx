@@ -153,7 +153,7 @@ export default function AdminDashboardPage() {
         { ref_id: 'REV-1235', status: 'Proses', entity: 'Buku Ajar B', date: new Date(Date.now() - 86400000).toISOString() },
     ] as any[];
     
-    const user = { name: 'Admin Megapress' };
+    const user = { name: 'Admin aksaranusa' };
 
     const topBrandsList = workOrdersPerBrand?.map((brand, index) => (
         <div key={index} className="flex items-center justify-between">
@@ -269,7 +269,7 @@ export default function AdminDashboardPage() {
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-2">
                     <div>
                         <h1 className="text-3xl font-bold text-gray-900 dark:text-zinc-100 font-sans transition-colors duration-300">Dashboard</h1>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 font-medium transition-colors duration-300">Megapress Admin Panel</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 font-medium transition-colors duration-300">aksaranusa Admin Panel</p>
                     </div>
                     
                     {/* Top Right Pill */}

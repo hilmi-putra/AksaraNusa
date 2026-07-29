@@ -19,11 +19,11 @@ export function StatsSection() {
       >
         <div 
           className="rounded-[32px] w-full py-16 md:py-24 px-8 md:px-16 flex flex-col items-center justify-center text-center shadow-2xl relative overflow-hidden"
-          style={{ backgroundColor: '#6E0000' }}
+          style={{ backgroundColor: '#EF7A08' }}
         >
           {/* Subtle background decoration */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#DB8B00]/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-primary/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
 
           {/* Label */}
           <div className="mb-6">
@@ -34,12 +34,12 @@ export function StatsSection() {
           
           {/* Headline */}
           <h2 className="font-serif text-[36px] md:text-[52px] lg:text-[64px] leading-[1.1] text-white max-w-[900px] mb-8">
-            Kekuatan Ekosistem <span className="italic" style={{ color: '#DB8B00' }}>Penerbitan Kami</span>
+            Kekuatan Ekosistem <span className="italic" style={{ color: '#004A8F' }}>Penerbitan Kami</span>
           </h2>
           
           {/* Subheadline */}
           <p className="text-[16px] md:text-[18px] text-white/80 max-w-[700px] mb-16 leading-relaxed">
-            Ribuan penulis dan kreator telah bergabung. Simak langsung bagaimana ekosistem Mega Press mentransformasi naskah mereka menjadi karya yang dirayakan oleh pembaca luas.
+            Ribuan penulis dan kreator telah bergabung. Simak langsung bagaimana ekosistem Aksara Nusa mentransformasi naskah mereka menjadi karya yang dirayakan oleh pembaca luas.
           </p>
 
           {/* Stats Row (like the G2/Gartner bar) */}
@@ -52,7 +52,7 @@ export function StatsSection() {
                 )}
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                    <Star className="text-[#DB8B00]" fill="#DB8B00" size={20} />
+                    <Star className="text-gradient-primary" fill="#004A8F" size={20} />
                   </div>
                   <div className="text-left">
                     <div className="text-[24px] md:text-[32px] font-serif text-white leading-none mb-1">

@@ -33,7 +33,7 @@ export function FeaturedBooksSection() {
       <Container>
 
         {/* Large Bordered Container (Using fieldset to cut the border on a patterned background) */}
-        <fieldset className="relative border border-[#6E0000]/20 rounded-[12px] px-6 pb-6 md:px-12 md:pb-12 lg:px-16 lg:pb-16 mt-24">
+        <fieldset className="relative border border-[#EF7A08]/20 rounded-[12px] px-6 pb-6 md:px-12 md:pb-12 lg:px-16 lg:pb-16 mt-24">
 
           {/* Header Intersecting the Border */}
           <legend className="ml-0 md:ml-8 px-4 md:px-8">
@@ -44,12 +44,12 @@ export function FeaturedBooksSection() {
               transition={{ duration: 0.6 }}
               className="flex flex-col items-start"
             >
-              <h2 className="text-[#6E0000] font-serif text-[48px] md:text-[68px] leading-[0.95] tracking-[-0.02em] mb-12">
+              <h2 className="text-gradient-secondary font-serif text-[48px] md:text-[68px] leading-[0.95] tracking-[-0.02em] mb-12">
                 Koleksi Terkini,<br />
                 Karya Terbaik,<br />
                 Baru Rilis
               </h2>
-              <button className="px-6 py-3 border border-[#6E0000]/30 rounded-md text-[#6E0000] font-bold text-[14px] hover:bg-[#6E0000]/5 transition-colors">
+              <button className="px-6 py-3 border border-[#EF7A08]/30 rounded-md text-gradient-secondary font-bold text-[14px] hover:bg-gradient-secondary/5 transition-colors">
                 Jelajahi Semua Koleksi
               </button>
             </motion.div>
@@ -60,17 +60,17 @@ export function FeaturedBooksSection() {
             {loading ? (
               Array.from({ length: 4 }).map((_, index) => (
                 <div key={index} className="flex flex-col">
-                  <div className="w-full h-[300px] md:h-[380px] flex items-center justify-center p-8 border border-[#6E0000]/15 rounded-2xl">
-                    <Skeleton className="w-[60%] h-[90%] rounded-md bg-[#6E0000]/10" />
+                  <div className="w-full h-[300px] md:h-[380px] flex items-center justify-center p-8 border border-[#EF7A08]/15 rounded-2xl">
+                    <Skeleton className="w-[60%] h-[90%] rounded-md bg-gradient-secondary/10" />
                   </div>
                   <div className="pt-6 flex flex-col flex-1">
                     <div>
-                      <Skeleton className="h-8 w-3/4 mb-2 bg-[#6E0000]/10" />
-                      <Skeleton className="h-4 w-1/2 bg-[#6E0000]/10" />
+                      <Skeleton className="h-8 w-3/4 mb-2 bg-gradient-secondary/10" />
+                      <Skeleton className="h-4 w-1/2 bg-gradient-secondary/10" />
                     </div>
                     <div className="mt-4 flex items-center justify-between">
-                      <Skeleton className="h-6 w-24 bg-[#6E0000]/10" />
-                      <Skeleton className="h-4 w-16 bg-[#6E0000]/10" />
+                      <Skeleton className="h-6 w-24 bg-gradient-secondary/10" />
+                      <Skeleton className="h-4 w-16 bg-gradient-secondary/10" />
                     </div>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ export function FeaturedBooksSection() {
                 >
                   <Link href={`/bookstore/buku/${book.slug || book.id}`} className="flex flex-col h-full cursor-pointer">
                     {/* Book Image Area (The Card) */}
-                    <div className="w-full h-[300px] md:h-[380px] flex items-center justify-center p-8 border border-[#6E0000]/15 rounded-2xl overflow-hidden transition-all duration-300 group-hover:-translate-y-1">
+                    <div className="w-full h-[300px] md:h-[380px] flex items-center justify-center p-8 border border-[#EF7A08]/15 rounded-2xl overflow-hidden transition-all duration-300 group-hover:-translate-y-1">
                       <img
                         src={book.coverUrl || "https://placehold.co/400x600/DAD6C9/171512?text=Cover"}
                         alt={book.title}
@@ -98,19 +98,19 @@ export function FeaturedBooksSection() {
                     {/* Book Info (Outside the card) */}
                     <div className="pt-6 flex flex-col flex-1">
                       <div>
-                        <h3 className="font-serif text-[22px] md:text-[24px] font-bold leading-tight mb-2 text-[#6E0000] group-hover:text-[#DB8B00] transition-colors">
+                        <h3 className="font-serif text-[22px] md:text-[24px] font-bold leading-tight mb-2 text-gradient-secondary group-hover:text-gradient-primary transition-colors">
                           {book.title}
                         </h3>
-                        <p className="text-[14px] text-[#6E0000]/70">
+                        <p className="text-[14px] text-[#EF7A08]/70">
                           {book.author}
                         </p>
                       </div>
 
                       <div className="mt-4 flex items-center justify-between">
-                        <span className="font-bold text-[18px] text-[#6E0000]">
+                        <span className="font-bold text-[18px] text-gradient-secondary">
                           Rp {book.price.toLocaleString("id-ID")}
                         </span>
-                        <div className="flex items-center text-[#DB8B00] text-[14px] font-bold group-hover:text-[#6E0000] transition-colors">
+                        <div className="flex items-center text-gradient-primary text-[14px] font-bold group-hover:text-gradient-secondary transition-colors">
                           Beli <ArrowRight className="w-4 h-4 ml-2" />
                         </div>
                       </div>
@@ -121,7 +121,7 @@ export function FeaturedBooksSection() {
             )}
             
             {!loading && featuredBooks.length === 0 && (
-              <div className="col-span-1 md:col-span-2 py-12 text-center text-[#6E0000]/60">
+              <div className="col-span-1 md:col-span-2 py-12 text-center text-[#EF7A08]/60">
                 Belum ada koleksi buku yang tersedia.
               </div>
             )}

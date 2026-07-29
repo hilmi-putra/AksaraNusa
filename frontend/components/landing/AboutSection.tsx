@@ -32,7 +32,7 @@ export function AboutSection() {
     <section id="about" className="py-24 px-6 bg-cream">
       <div className="container mx-auto flex flex-col items-center text-center max-w-4xl">
         <h2 className="text-body-lg font-medium text-ink leading-relaxed mb-10">
-          Halo! Kami Mega Press, dan kami <span className="inline-flex items-center gap-1 bg-surface-white px-3 py-1 rounded-full border border-border-subtle mx-1 align-middle text-base"><BookOpen className="w-4 h-4 text-primary-brand" /><span className="font-bold">penerbit</span></span>. Bersama kami, Anda mendapatkan kesempatan untuk mewujudkan naskah menjadi <span className="inline-flex items-center gap-1 bg-surface-white px-3 py-1 rounded-full border border-border-subtle mx-1 align-middle text-base"><PenTool className="w-4 h-4 text-primary-brand" /><span className="font-bold">karya berkualitas</span></span> dan menyebarkannya ke pembaca secara luas.
+          Halo! Kami Aksara Nusa, dan kami <span className="inline-flex items-center gap-1 bg-surface-white px-3 py-1 rounded-full border border-border-subtle mx-1 align-middle text-base"><BookOpen className="w-4 h-4 text-primary-brand" /><span className="font-bold">penerbit</span></span>. Bersama kami, Anda mendapatkan kesempatan untuk mewujudkan naskah menjadi <span className="inline-flex items-center gap-1 bg-surface-white px-3 py-1 rounded-full border border-border-subtle mx-1 align-middle text-base"><PenTool className="w-4 h-4 text-primary-brand" /><span className="font-bold">karya berkualitas</span></span> dan menyebarkannya ke pembaca secara luas.
         </h2>
         
         <button className="bg-ink text-surface-white px-6 py-2 rounded-full text-button hover:bg-ink/90 transition-colors">

@@ -24,9 +24,9 @@ export function CheckoutStepper({ currentStep }: CheckoutStepperProps) {
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${
                   isCompleted
-                    ? "bg-[#DB8B00] text-white"
+                    ? "bg-gradient-primary text-white"
                     : isActive
-                    ? "bg-[#DB8B00] text-white ring-4 ring-[#DB8B00]/20"
+                    ? "bg-gradient-primary text-white ring-4 ring-[#004A8F]/20"
                     : "bg-white border-2 border-gray-300 text-gray-400"
                 }`}
               >
@@ -44,7 +44,7 @@ export function CheckoutStepper({ currentStep }: CheckoutStepperProps) {
             {index < steps.length - 1 && (
               <div
                 className={`flex-1 h-[2px] mx-4 transition-colors duration-300 ${
-                  isCompleted ? "bg-[#DB8B00]" : "bg-gray-200"
+                  isCompleted ? "bg-gradient-primary" : "bg-gray-200"
                 }`}
               />
             )}

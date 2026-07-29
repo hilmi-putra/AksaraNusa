@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand & Info */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-4">Mega Press</h3>
+            <h3 className="text-xl font-bold mb-4">Aksara Nusa</h3>
             <p className="text-text-muted mb-6 max-w-sm">
               Satu Penerbit. Ribuan Cerita Penting. Kami berdedikasi untuk menerbitkan naskah berkualitas dari penulis berbakat ke seluruh penjuru negeri.
             </p>
@@ -54,7 +54,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-text-muted/20 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-text-muted text-sm">
-            &copy; {new Date().getFullYear()} Mega Press. All rights reserved.
+            &copy; {new Date().getFullYear()} Aksara Nusa. All rights reserved.
           </p>
           <div className="flex gap-4 text-sm text-text-muted">
             <Link href="#" className="hover:text-surface-white">Kebijakan Privasi</Link>

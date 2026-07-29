@@ -191,7 +191,7 @@ export default function AdminShippingPage() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
             <Input
               placeholder="Cari invoice atau nomor resi..."
-              className="pl-10 h-10 w-full text-sm bg-gray-50/50 border-gray-200 focus-visible:ring-[#DB8B00]"
+              className="pl-10 h-10 w-full text-sm bg-gray-50/50 border-gray-200 focus-visible:ring-[#004A8F]"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && fetchData()}
@@ -250,7 +250,7 @@ export default function AdminShippingPage() {
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle className="text-xl font-black uppercase tracking-tight text-[#171512] flex items-center gap-2">
-              <Package className="w-5 h-5 text-[#DB8B00]" />
+              <Package className="w-5 h-5 text-gradient-primary" />
               Input Resi Pengiriman
             </DialogTitle>
             <DialogDescription>

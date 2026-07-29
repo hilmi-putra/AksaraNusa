@@ -179,7 +179,7 @@ export function AddAddressModal({
         <div className="flex flex-col p-6 border-b border-gray-100 bg-gray-50/50">
           <div className="flex justify-between items-center mb-4">
             {onBack ? (
-              <button onClick={onBack} className="flex items-center text-sm font-bold text-[#DB8B00] hover:text-[#b06f00] uppercase tracking-wide">
+              <button onClick={onBack} className="flex items-center text-sm font-bold text-gradient-primary hover:text-[#b06f00] uppercase tracking-wide">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Addresses
               </button>
@@ -199,7 +199,7 @@ export function AddAddressModal({
             
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-[#171512] uppercase tracking-wider">Label <span className="text-red-500">*</span></label>
-              <select name="label" required value={formData.label || ""} onChange={handleChange} className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#DB8B00] bg-white">
+              <select name="label" required value={formData.label || ""} onChange={handleChange} className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#004A8F] bg-white">
                 <option value="" disabled>Select Address Type</option>
                 <option value="Home">Home</option>
                 <option value="Office">Office</option>
@@ -209,17 +209,17 @@ export function AddAddressModal({
 
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-[#171512] uppercase tracking-wider">Recipient Name <span className="text-red-500">*</span></label>
-              <input type="text" name="recipientName" required value={formData.recipientName} onChange={handleChange} placeholder="Full name of the recipient" className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#DB8B00]" />
+              <input type="text" name="recipientName" required value={formData.recipientName} onChange={handleChange} placeholder="Full name of the recipient" className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#004A8F]" />
             </div>
 
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-[#171512] uppercase tracking-wider">Phone Number <span className="text-red-500">*</span></label>
-              <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} placeholder="+62 812 3456 7890" className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#DB8B00]" />
+              <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} placeholder="+62 812 3456 7890" className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#004A8F]" />
             </div>
 
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-[#171512] uppercase tracking-wider">Full Address <span className="text-red-500">*</span></label>
-              <textarea name="fullAddress" required value={formData.fullAddress} onChange={handleChange} placeholder="Street address, building name, etc." rows={3} className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#DB8B00] resize-none" />
+              <textarea name="fullAddress" required value={formData.fullAddress} onChange={handleChange} placeholder="Street address, building name, etc." rows={3} className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#004A8F] resize-none" />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -300,11 +300,11 @@ export function AddAddressModal({
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-bold text-[#171512] uppercase tracking-wider">Postal Code <span className="text-red-500">*</span></label>
-                <input type="text" name="postalCode" required value={formData.postalCode} onChange={handleChange} placeholder="40123" className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#DB8B00]" />
+                <input type="text" name="postalCode" required value={formData.postalCode} onChange={handleChange} placeholder="40123" className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#004A8F]" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-bold text-[#171512] uppercase tracking-wider">Additional Notes</label>
-                <input type="text" name="notes" value={formData.notes} onChange={handleChange} placeholder="e.g. Near red gate" className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#DB8B00]" />
+                <input type="text" name="notes" value={formData.notes} onChange={handleChange} placeholder="e.g. Near red gate" className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:border-[#004A8F]" />
               </div>
             </div>
 

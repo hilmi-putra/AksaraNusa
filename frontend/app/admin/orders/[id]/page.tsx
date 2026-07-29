@@ -279,7 +279,7 @@ export default function AdminOrderDetailPage() {
                 </div>
                 <div className="flex justify-between w-full max-w-xs pt-2 mt-2 border-t border-gray-200">
                   <span className="font-bold text-[#171512] uppercase tracking-wider">Grand Total</span>
-                  <span className="font-black text-[#DB8B00] text-lg">{formatRupiah(order.grand_total)}</span>
+                  <span className="font-black text-gradient-primary text-lg">{formatRupiah(order.grand_total)}</span>
                 </div>
               </div>
             </div>
@@ -295,7 +295,7 @@ export default function AdminOrderDetailPage() {
                   <div className="relative pl-6 space-y-6 before:absolute before:inset-y-0 before:left-2 before:w-0.5 before:bg-gray-100">
                     {order.timeline.map((log: any, idx: number) => (
                       <div key={log.id} className="relative">
-                        <div className={`absolute -left-6 w-4 h-4 rounded-full border-4 border-white ${idx === order.timeline.length - 1 ? 'bg-[#DB8B00]' : 'bg-gray-300'}`} />
+                        <div className={`absolute -left-6 w-4 h-4 rounded-full border-4 border-white ${idx === order.timeline.length - 1 ? 'bg-gradient-primary' : 'bg-gray-300'}`} />
                         <div className="flex flex-col">
                           <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">
                             {format(new Date(log.created_at), "dd MMM yyyy HH:mm", { locale: id })}
@@ -327,7 +327,7 @@ export default function AdminOrderDetailPage() {
                 <span className="font-bold text-sm text-[#171512]">{order.user?.name}</span>
                 <span className="text-sm text-gray-600">{order.user?.email}</span>
                 <span className="text-sm text-gray-600">{order.user?.phone || 'Belum ada nomor HP'}</span>
-                <Link href={`/admin/customers/${order.user?.id}`} className="text-xs font-bold text-[#DB8B00] mt-3 hover:underline uppercase tracking-wider">
+                <Link href={`/admin/customers/${order.user?.id}`} className="text-xs font-bold text-gradient-primary mt-3 hover:underline uppercase tracking-wider">
                   Lihat Profil Pelanggan →
                 </Link>
               </div>

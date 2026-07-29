@@ -124,12 +124,12 @@ export function AdminSidebar({ open, setOpen }: { open: boolean, setOpen: (open:
                     <div className="size-10 bg-white rounded-xl flex items-center justify-center shadow-sm p-1.5 shrink-0">
                         <img 
                             src="https://ik.imagekit.io/yqhp1cmbp/logo_megapress.svg" 
-                            alt="Megapress Logo" 
+                            alt="aksaranusa Logo" 
                             className="size-full object-contain" 
                         />
                     </div>
                     <span className={`text-gray-900 dark:text-zinc-100 text-xl tracking-tight font-bold whitespace-nowrap overflow-hidden transition-all duration-300 ${!open && 'w-0 opacity-0'}`}>
-                        Megapress
+                        aksaranusa
                     </span>
                 </Link>
             </div>

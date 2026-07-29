@@ -85,19 +85,19 @@ export function SavedAddressesModal({
               <div 
                 key={addr.id}
                 onClick={() => onSelect(addr)}
-                className="bg-white border border-gray-200 rounded-xl p-5 cursor-pointer hover:border-[#DB8B00] hover:shadow-md transition-all group"
+                className="bg-white border border-gray-200 rounded-xl p-5 cursor-pointer hover:border-[#004A8F] hover:shadow-md transition-all group"
               >
                 <div className="flex justify-between items-center mb-3">
                   <div className="flex items-center gap-2">
                     <span className="font-bold text-sm text-[#171512] uppercase tracking-wide">{addr.label}</span>
                     {addr.isPrimary && (
-                      <span className="bg-[#DB8B00]/10 text-[#DB8B00] text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                      <span className="bg-gradient-primary/10 text-gradient-primary text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider">
                         Primary
                       </span>
                     )}
                   </div>
-                  <div className="w-4 h-4 rounded-full border border-gray-300 group-hover:border-[#DB8B00] flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-[#DB8B00] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="w-4 h-4 rounded-full border border-gray-300 group-hover:border-[#004A8F] flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-gradient-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
                 

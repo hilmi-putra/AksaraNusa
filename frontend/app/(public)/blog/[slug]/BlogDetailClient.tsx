@@ -118,7 +118,7 @@ export default function BlogDetailClient({ slug }: { slug: string }) {
 
       {/* Reading Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-[#DB8B00] origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-primary origin-left z-50"
         style={{ scaleX }}
       />
 
@@ -171,7 +171,7 @@ export default function BlogDetailClient({ slug }: { slug: string }) {
               </div>
               <div className="flex items-center gap-4 text-sm font-medium text-gray-500">
                 {post.category && (
-                  <span className="px-3 py-1 bg-[#DB8B00]/10 text-[#DB8B00] rounded-full text-xs uppercase tracking-wider">
+                  <span className="px-3 py-1 bg-gradient-primary/10 text-gradient-primary rounded-full text-xs uppercase tracking-wider">
                     {post.category.name}
                   </span>
                 )}
@@ -201,7 +201,7 @@ export default function BlogDetailClient({ slug }: { slug: string }) {
             {/* Left: Article Content */}
             <div className="lg:col-span-8">
               <article
-                className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-[#171512] prose-p:text-gray-700 prose-a:text-[#DB8B00] prose-blockquote:border-l-[#DB8B00] prose-blockquote:bg-[#DB8B00]/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:font-serif prose-blockquote:italic"
+                className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-[#171512] prose-p:text-gray-700 prose-a:text-gradient-primary prose-blockquote:border-l-[#004A8F] prose-blockquote:bg-gradient-primary/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:font-serif prose-blockquote:italic"
                 dangerouslySetInnerHTML={{ __html: post.content || `<p>${post.excerpt}</p>` }}
               />
 
@@ -233,21 +233,21 @@ export default function BlogDetailClient({ slug }: { slug: string }) {
               {/* Dynamic CTA Widget */}
               {post.cta ? (
                 <div className="bg-white rounded-3xl p-8 border border-[#EFEADD] shadow-sm mb-8 text-center relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#DB8B00]/5 rounded-bl-full -z-0"></div>
-                  <h3 className="font-serif text-2xl font-bold text-[#6E0000] mb-4 relative z-10">{post.cta.title}</h3>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-primary/5 rounded-bl-full -z-0"></div>
+                  <h3 className="font-serif text-2xl font-bold text-gradient-secondary mb-4 relative z-10">{post.cta.title}</h3>
                   {post.cta.description && (
                     <p className="text-sm text-gray-600 mb-6 relative z-10">{post.cta.description}</p>
                   )}
-                  <Link href={post.cta.button_link} className="inline-block w-full py-3 bg-[#DB8B00] hover:bg-[#c27a00] text-white font-bold rounded-full transition-colors relative z-10">
+                  <Link href={post.cta.button_link} className="inline-block w-full py-3 bg-gradient-primary hover:bg-[#c27a00] text-white font-bold rounded-full transition-colors relative z-10">
                     {post.cta.button_text}
                   </Link>
                 </div>
               ) : (
                 <div className="bg-white rounded-3xl p-8 border border-[#EFEADD] shadow-sm mb-8 text-center relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#DB8B00]/5 rounded-bl-full -z-0"></div>
-                  <h3 className="font-serif text-2xl font-bold text-[#6E0000] mb-4 relative z-10">Punya naskah yang siap diterbitkan?</h3>
-                  <p className="text-sm text-gray-600 mb-6 relative z-10">Wujudkan impian Anda menjadi penulis yang karyanya dibaca ribuan orang bersama Mega Press.</p>
-                  <Link href="/publishing" className="inline-block w-full py-3 bg-[#DB8B00] hover:bg-[#c27a00] text-white font-bold rounded-full transition-colors relative z-10">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-primary/5 rounded-bl-full -z-0"></div>
+                  <h3 className="font-serif text-2xl font-bold text-gradient-secondary mb-4 relative z-10">Punya naskah yang siap diterbitkan?</h3>
+                  <p className="text-sm text-gray-600 mb-6 relative z-10">Wujudkan impian Anda menjadi penulis yang karyanya dibaca ribuan orang bersama Aksara Nusa.</p>
+                  <Link href="/publishing" className="inline-block w-full py-3 bg-gradient-primary hover:bg-[#c27a00] text-white font-bold rounded-full transition-colors relative z-10">
                     Terbitkan Buku Anda
                   </Link>
                 </div>

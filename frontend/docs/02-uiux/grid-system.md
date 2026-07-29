@@ -20,7 +20,7 @@
 | Header | Flex 3 kolom (logo \| nav \| aksi) | Flex 2 kolom (logo \| hamburger) |
 | Hero | 2 kolom (headline 8/12, sub-copy+CTA 4/12) | Stack 1 kolom |
 | Galeri Hero | 3 kolom sejajar, blob overlap | Carousel horizontal / stack |
-| Kenapa Mega Press | 2 kolom (card besar 5/12, grid 2×2 7/12) | Stack: card besar, lalu grid 2×2 tetap 2 kolom |
+| Kenapa Aksara Nusa | 2 kolom (card besar 5/12, grid 2×2 7/12) | Stack: card besar, lalu grid 2×2 tetap 2 kolom |
 | Showcase Katalog | Bento grid 3 kolom (1 besar + 5 kecil) | Grid 2 kolom, urutan disederhanakan |
 | Proses Penerbitan | 2 kolom (list step 6/12, sub-copy 6/12) lalu step full width | Stack 1 kolom |
 

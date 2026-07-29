@@ -42,7 +42,7 @@ export default function ForgotPasswordPage() {
     >
       <div className="text-center mb-10">
         <h1 className="text-3xl font-light tracking-wide text-gray-800">
-          FORGOT <span className="text-[#DB8B00]">PASSWORD</span>
+          FORGOT <span className="text-gradient-primary">PASSWORD</span>
         </h1>
         <p className="text-sm text-gray-500 mt-3">
           Masukkan alamat email Anda untuk menerima kode verifikasi OTP.
@@ -69,7 +69,7 @@ export default function ForgotPasswordPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address"
-            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#DB8B00] transition-colors placeholder:text-gray-400 text-sm"
+            className="w-full bg-transparent border-0 border-b-2 border-gray-200 px-0 py-2 text-gray-800 focus:outline-none focus:ring-0 focus:border-[#004A8F] transition-colors placeholder:text-gray-400 text-sm"
           />
         </div>
 
@@ -77,7 +77,7 @@ export default function ForgotPasswordPage() {
           <Button 
             type="submit" 
             disabled={loading}
-            className="w-full h-12 rounded-none bg-[#DB8B00] hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors uppercase disabled:opacity-70"
+            className="w-full h-12 rounded-none bg-gradient-primary hover:bg-[#b06d00] text-white font-bold tracking-wider text-sm transition-colors uppercase disabled:opacity-70"
           >
             {loading ? "SENDING OTP..." : "SEND OTP"}
           </Button>
@@ -85,7 +85,7 @@ export default function ForgotPasswordPage() {
           <div className="text-center">
             <Link
               href="/login"
-              className="text-[#DB8B00] hover:text-[#b06d00] font-semibold text-sm transition-colors"
+              className="text-gradient-primary hover:text-[#b06d00] font-semibold text-sm transition-colors"
             >
               Back to Login
             </Link>

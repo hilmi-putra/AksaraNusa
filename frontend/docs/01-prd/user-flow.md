@@ -1,13 +1,13 @@
 # User Flow & Navigation
 
-Dokumen ini menjelaskan alur navigasi pengguna dan *journey* di dalam ekosistem Mega Press & Mega Bookstore.
+Dokumen ini menjelaskan alur navigasi pengguna dan *journey* di dalam ekosistem Aksara Nusa & Aksara Nusa Bookstore.
 
 ## 1. Global Flow Diagram
 Di bawah ini adalah diagram *happy path* dari Landing Page hingga pesanan berhasil:
 
 ```mermaid
 graph TD
-    A[Landing Page Mega Press] -->|Klik Navbar Bookstore| B(Mega Bookstore - Catalog)
+    A[Landing Page Aksara Nusa] -->|Klik Navbar Bookstore| B(Aksara Nusa Bookstore - Catalog)
     A -->|Klik Promo Buku| C(Product Detail Page - PDP)
     
     B -->|Filter/Search| B
@@ -32,8 +32,8 @@ graph TD
 
 ## 2. Rincian Alur
 ### a. Entry Point & Discovery
-- Pengguna mendarat di **Landing Page Mega Press**. Dari sini mereka dapat menjelajah layanan publikasi atau berpindah ke e-commerce melalui link di Header.
-- Di **Mega Bookstore**, pengguna disajikan Hero promo, lalu daftar kategori dan rekomendasi. Mereka dapat menggunakan *Search Bar* global untuk mencari buku spesifik.
+- Pengguna mendarat di **Landing Page Aksara Nusa**. Dari sini mereka dapat menjelajah layanan publikasi atau berpindah ke e-commerce melalui link di Header.
+- Di **Aksara Nusa Bookstore**, pengguna disajikan Hero promo, lalu daftar kategori dan rekomendasi. Mereka dapat menggunakan *Search Bar* global untuk mencari buku spesifik.
 
 ### b. Engagement & Cart
 - Pada **Product Detail Page (PDP)**, pengguna melihat spesifikasi buku, harga, dan CTA (Call to Action).

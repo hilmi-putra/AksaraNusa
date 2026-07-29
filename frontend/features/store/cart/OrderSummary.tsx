@@ -37,7 +37,7 @@ export function OrderSummary() {
 
       <Link href="/checkout" className="block w-full">
         {/* ORANGE button as requested by user */}
-        <button className="w-full bg-[#DB8B00] hover:bg-[#b06f00] text-white h-14 text-xs font-bold tracking-widest uppercase rounded-none transition-colors mb-6">
+        <button className="w-full bg-gradient-primary hover:bg-[#b06f00] text-white h-14 text-xs font-bold tracking-widest uppercase rounded-none transition-colors mb-6">
           Proceed to Checkout
         </button>
       </Link>

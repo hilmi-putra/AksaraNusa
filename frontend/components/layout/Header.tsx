@@ -11,7 +11,7 @@ export function Header() {
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold text-ink">
-          Mega Press
+          Aksara Nusa
         </Link>
 
         {/* Navigation */}
@@ -53,7 +53,7 @@ export function Header() {
           >
             <ShoppingCart className="w-5 h-5" />
             {itemCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-[#6E0000] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-cream">
+              <span className="absolute -top-1 -right-1 bg-gradient-secondary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-cream">
                 {itemCount}
               </span>
             )}

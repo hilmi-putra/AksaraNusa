@@ -48,7 +48,7 @@ export function OrderHistory() {
             <p className="text-gray-500 font-medium text-lg mb-2">Belum ada pesanan.</p>
             <p className="text-gray-400 text-sm mb-6 max-w-sm">Anda belum melakukan pesanan apa pun. Ayo jelajahi koleksi buku kami!</p>
             <Link href="/bookstore">
-              <Button className="bg-[#DB8B00] hover:bg-[#b06f00] text-white rounded-full px-8 h-12 font-bold tracking-widest uppercase text-xs transition-colors">
+              <Button className="bg-gradient-primary hover:bg-[#b06f00] text-white rounded-full px-8 h-12 font-bold tracking-widest uppercase text-xs transition-colors">
                 Mulai Belanja
               </Button>
             </Link>
@@ -85,7 +85,7 @@ export function OrderHistory() {
                   <div className="flex flex-col items-end">
                     <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">Invoice # {order.invoice_number}</span>
                     <Link href={`/dashboard/orders/${order.id}`}>
-                      <span className="font-bold text-[#DB8B00] hover:underline text-xs cursor-pointer">Lihat Detail</span>
+                      <span className="font-bold text-gradient-primary hover:underline text-xs cursor-pointer">Lihat Detail</span>
                     </Link>
                   </div>
                 </div>
@@ -110,13 +110,13 @@ export function OrderHistory() {
                             ${order.status === 'Completed' ? 'bg-green-100 text-green-700' 
                             : order.status === 'Pending' ? 'bg-yellow-100 text-yellow-700'
                             : order.status === 'Cancelled' ? 'bg-red-100 text-red-700'
-                            : 'bg-[#DB8B00]/10 text-[#DB8B00]'}`}>
+                            : 'bg-gradient-primary/10 text-gradient-primary'}`}>
                             {order.status}
                           </span>
                         </div>
                         <div className="text-sm text-gray-500 flex flex-col gap-1.5 mt-1">
                           <p>Penulis: <span className="font-medium text-[#171512]">{item.book?.author?.name || 'Tidak diketahui'}</span></p>
-                          <p>Harga: <span className="font-medium text-[#DB8B00]">{formatRupiah(item.price)}</span></p>
+                          <p>Harga: <span className="font-medium text-gradient-primary">{formatRupiah(item.price)}</span></p>
                         </div>
                       </div>
                       
@@ -130,7 +130,7 @@ export function OrderHistory() {
                         <div className="flex flex-col gap-2 shrink-0">
                           {order.status === 'Pending' ? (
                             <Link href={`/dashboard/orders/${order.id}`}>
-                              <Button className="bg-[#DB8B00] hover:bg-[#b06f00] text-white rounded-none h-10 px-6 font-bold tracking-widest uppercase text-[10px] transition-colors w-full">
+                              <Button className="bg-gradient-primary hover:bg-[#b06f00] text-white rounded-none h-10 px-6 font-bold tracking-widest uppercase text-[10px] transition-colors w-full">
                                 Bayar
                               </Button>
                             </Link>
