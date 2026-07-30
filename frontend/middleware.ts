@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
   // but strictly use nonce for scripts.
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: http: ${isDev ? "'unsafe-eval'" : ""};
+    script-src 'self' 'nonce-${nonce}' https: http: ${isDev ? "'unsafe-eval'" : ""};
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     img-src 'self' blob: data: https://placehold.co https://ik.imagekit.io https://megapress.co.id https://*.googleusercontent.com;
     font-src 'self' https://fonts.gstatic.com;
