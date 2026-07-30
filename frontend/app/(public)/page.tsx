@@ -16,13 +16,14 @@ export const metadata = {
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col relative bg-cream min-h-screen">
+    <div className="flex flex-col relative bg-cream min-h-screen overflow-x-hidden">
       {/* Global Soft Grid Background */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.03] z-0"
+        className="absolute inset-0 pointer-events-none opacity-100 z-0"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 32 Q40 40 48 40 Q40 40 40 48 Q40 40 32 40 Q40 40 40 32 Z' fill='%23004A8F' fill-opacity='0.03'/%3E%3Cpath d='M15 11 Q15 15 19 15 Q15 15 15 19 Q15 15 11 15 Q15 15 15 11 Z' fill='%23EF7A08' fill-opacity='0.02'/%3E%3C/svg%3E")`,
           backgroundRepeat: 'repeat',
+          backgroundAttachment: 'fixed'
         }}
       />
       

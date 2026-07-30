@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Container } from "@/components/atoms/Container";
 import { Section } from "@/components/atoms/Section";
-import { ArrowRight } from "lucide-react";
+import { Typography } from "@/components/atoms/Typography";
+import { ArrowRight, BookOpen } from "lucide-react";
 import { getPublicBooks, Book, mapApiBookToFrontendBook } from "@/lib/api/books";
 import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -28,107 +29,119 @@ export function FeaturedBooksSection() {
     };
     fetchBooks();
   }, []);
+
   return (
-    <Section className="py-24 md:py-32 relative overflow-hidden bg-transparent">
-      <Container>
-
-        {/* Large Bordered Container (Using fieldset to cut the border on a patterned background) */}
-        <fieldset className="relative border border-[#EF7A08]/20 rounded-[12px] px-6 pb-6 md:px-12 md:pb-12 lg:px-16 lg:pb-16 mt-24">
-
-          {/* Header Intersecting the Border */}
-          <legend className="ml-0 md:ml-8 px-4 md:px-8">
+    <Section className="py-24 md:py-32 relative overflow-visible bg-transparent scroll-mt-24">
+      <Container className="max-w-[1200px]">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+          
+          {/* LEFT: Sticky Header Column */}
+          <div className="w-full lg:w-1/3 lg:sticky lg:top-32">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="flex flex-col items-start"
             >
-              <h2 className="text-gradient-secondary font-serif text-[48px] md:text-[68px] leading-[0.95] tracking-[-0.02em] mb-12">
-                Koleksi Terkini,<br />
-                Karya Terbaik,<br />
-                Baru Rilis
-              </h2>
-              <button className="px-6 py-3 border border-[#EF7A08]/30 rounded-md text-gradient-secondary font-bold text-[14px] hover:bg-gradient-secondary/5 transition-colors">
-                Jelajahi Semua Koleksi
-              </button>
-            </motion.div>
-          </legend>
-
-          {/* Grid of 4 Book Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-6">
-            {loading ? (
-              Array.from({ length: 4 }).map((_, index) => (
-                <div key={index} className="flex flex-col">
-                  <div className="w-full h-[300px] md:h-[380px] flex items-center justify-center p-8 border border-[#EF7A08]/15 rounded-2xl">
-                    <Skeleton className="w-[60%] h-[90%] rounded-md bg-gradient-secondary/10" />
-                  </div>
-                  <div className="pt-6 flex flex-col flex-1">
-                    <div>
-                      <Skeleton className="h-8 w-3/4 mb-2 bg-gradient-secondary/10" />
-                      <Skeleton className="h-4 w-1/2 bg-gradient-secondary/10" />
-                    </div>
-                    <div className="mt-4 flex items-center justify-between">
-                      <Skeleton className="h-6 w-24 bg-gradient-secondary/10" />
-                      <Skeleton className="h-4 w-16 bg-gradient-secondary/10" />
-                    </div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              featuredBooks.map((book, index) => (
-                <motion.div
-                  key={book.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  className="group relative flex flex-col"
-                >
-                  <Link href={`/bookstore/buku/${book.slug || book.id}`} className="flex flex-col h-full cursor-pointer">
-                    {/* Book Image Area (The Card) */}
-                    <div className="w-full h-[300px] md:h-[380px] flex items-center justify-center p-8 border border-[#EF7A08]/15 rounded-2xl overflow-hidden transition-all duration-300 group-hover:-translate-y-1">
-                      <img
-                        src={book.cover_image || "https://placehold.co/400x600/DAD6C9/171512?text=Cover"}
-                        alt={book.title}
-                        className="h-full w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)] group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-
-                    {/* Book Info (Outside the card) */}
-                    <div className="pt-6 flex flex-col flex-1">
-                      <div>
-                        <h3 className="font-serif text-[22px] md:text-[24px] font-bold leading-tight mb-2 text-gradient-secondary group-hover:text-gradient-primary transition-colors">
-                          {book.title}
-                        </h3>
-                        <p className="text-[14px] text-[#EF7A08]/70">
-                          {book.author?.name || 'Penulis'}
-                        </p>
-                      </div>
-
-                      <div className="mt-4 flex items-center justify-between">
-                        <span className="font-bold text-[18px] text-gradient-secondary">
-                          Rp {book.price.toLocaleString("id-ID")}
-                        </span>
-                        <div className="flex items-center text-gradient-primary text-[14px] font-bold group-hover:text-gradient-secondary transition-colors">
-                          Beli <ArrowRight className="w-4 h-4 ml-2" />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))
-            )}
-            
-            {!loading && featuredBooks.length === 0 && (
-              <div className="col-span-1 md:col-span-2 py-12 text-center text-[#EF7A08]/60">
-                Belum ada koleksi buku yang tersedia.
+              <div className="inline-flex items-center gap-2 mb-6">
+                <div className="w-8 h-[2px] bg-[#EF7A08]" />
+                <span className="text-[#EF7A08] font-bold tracking-[0.2em] text-[10px] uppercase">Koleksi Eksklusif</span>
               </div>
-            )}
+              
+              <Typography variant="h2" className="text-[#002D5A] font-serif text-5xl md:text-6xl leading-[1.05] tracking-tight mb-6">
+                Karya <em className="italic font-light text-[#EF7A08]">Terbaik,</em> <br />
+                Baru Rilis.
+              </Typography>
+              
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-light mb-10 max-w-sm">
+                Temukan kurasi mahakarya terbaru dari para penulis berbakat Aksara Nusa. Setiap naskah telah melalui proses penyuntingan ketat dan desain sampul kelas dunia.
+              </p>
+
+              <Link 
+                href="/bookstore" 
+                className="group inline-flex items-center gap-3 bg-[#004A8F] text-white px-8 py-4 rounded-full font-medium text-[14px] shadow-[0_10px_30px_rgba(0,74,143,0.2)] hover:bg-[#002D5A] hover:shadow-[0_15px_40px_rgba(0,45,90,0.3)] transition-all duration-300 hover:-translate-y-1"
+              >
+                <BookOpen className="w-4 h-4" />
+                Jelajahi Semua Koleksi
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </div>
 
-        </fieldset>
+          {/* RIGHT: High-End Book Grid */}
+          <div className="w-full lg:w-2/3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-20">
+              
+              {loading ? (
+                Array.from({ length: 4 }).map((_, index) => (
+                  <div key={index} className="flex flex-col items-center">
+                    <Skeleton className="w-[220px] h-[330px] rounded-r-md bg-slate-200/50 mb-8" />
+                    <Skeleton className="h-6 w-3/4 mb-3 bg-slate-200/50" />
+                    <Skeleton className="h-4 w-1/2 mb-4 bg-slate-200/50" />
+                    <Skeleton className="h-5 w-24 bg-slate-200/50" />
+                  </div>
+                ))
+              ) : (
+                featuredBooks.map((book, index) => (
+                  <motion.div
+                    key={book.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+                    className={`flex flex-col group ${index % 2 !== 0 ? 'sm:mt-16' : ''}`} // Staggered masonry effect on desktop
+                  >
+                    <Link href={`/bookstore/buku/${book.slug || book.id}`} className="flex flex-col items-center cursor-pointer">
+                      
+                      {/* Physical Book Cover (No borders, just shadow) */}
+                      <div className="relative w-full max-w-[240px] aspect-[2/3] mb-8 transition-all duration-500 group-hover:-translate-y-3 group-hover:scale-[1.03]">
+                        {/* Ambient glow */}
+                        <div className="absolute inset-0 bg-[#004A8F]/10 blur-[30px] rounded-full scale-90 group-hover:bg-[#EF7A08]/20 transition-colors duration-500" />
+                        
+                        <img
+                          src={book.cover_image || "https://placehold.co/400x600/F8FAFC/002D5A?text=Karya+Terbaik"}
+                          alt={book.title}
+                          className="relative w-full h-full object-cover rounded-r-md shadow-[10px_15px_35px_rgba(0,45,90,0.15)] group-hover:shadow-[15px_25px_45px_rgba(0,45,90,0.25)] border-l-[4px] border-white/60 transition-shadow duration-500"
+                        />
+                        
+                        {/* 3D Spine effect overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/[0.08] via-transparent to-transparent rounded-r-md pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent rounded-r-md pointer-events-none" />
+                      </div>
 
+                      {/* Clean Typography Info */}
+                      <div className="text-center w-full px-2">
+                        <h3 className="font-serif text-[22px] font-bold text-[#002D5A] leading-[1.2] mb-2 group-hover:text-[#EF7A08] transition-colors duration-300 line-clamp-2">
+                          {book.title}
+                        </h3>
+                        
+                        <p className="text-slate-400 text-[11px] font-bold tracking-[0.15em] uppercase mb-4">
+                          {book.author?.name || 'Penulis Aksara Nusa'}
+                        </p>
+                        
+                        <div className="flex items-center justify-center gap-2">
+                          <span className="font-bold text-[18px] text-[#004A8F]">
+                            Rp {book.price.toLocaleString("id-ID")}
+                          </span>
+                        </div>
+                      </div>
+                      
+                    </Link>
+                  </motion.div>
+                ))
+              )}
+              
+              {!loading && featuredBooks.length === 0 && (
+                <div className="col-span-1 sm:col-span-2 py-24 text-center text-slate-400">
+                  Belum ada koleksi buku yang tersedia.
+                </div>
+              )}
+              
+            </div>
+          </div>
+
+        </div>
       </Container>
     </Section>
   );

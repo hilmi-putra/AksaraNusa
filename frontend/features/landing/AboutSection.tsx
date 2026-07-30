@@ -1,245 +1,134 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Section } from "@/components/atoms/Section";
-import { 
-  ArrowRight, BookOpen, Book, BookMarked, Layers, PenTool, CheckCircle, 
-  LayoutTemplate, Star, MessageSquare, FileText, Send, MoreHorizontal, FileSpreadsheet, Bot, Wand2, Mail
-} from "lucide-react";
+import { Typography } from "@/components/atoms/Typography";
+import { Send, PenTool, LayoutTemplate, Store, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/atoms/Container";
+
+const workflowSteps = [
+  {
+    icon: <Send size={20} className="text-white" />,
+    title: "Pengiriman Naskah",
+    description: "Kirimkan draf atau naskah lengkap Anda. Tim ahli kami akan melakukan seleksi awal dan kurasi untuk menilai potensi serta kesesuaian cerita Anda dengan visi Aksara Nusa.",
+    color: "from-[#004A8F] to-[#0074B7]"
+  },
+  {
+    icon: <PenTool size={20} className="text-white" />,
+    title: "Kurasi & Editorial",
+    description: "Naskah Anda akan melewati proses penyuntingan profesional secara intensif. Kami memastikan setiap kata, paragraf, dan dialog memiliki kekuatan emosional untuk menginspirasi pembaca.",
+    color: "from-[#EF7A08] to-[#F9A03F]"
+  },
+  {
+    icon: <LayoutTemplate size={20} className="text-white" />,
+    title: "Pracetak & Desain",
+    description: "Dari tata letak halaman yang nyaman dibaca hingga desain sampul premium yang memikat mata di rak buku. Buku Anda akan dirancang layaknya mahakarya kelas dunia.",
+    color: "from-[#002D5A] to-[#004A8F]"
+  },
+  {
+    icon: <Store size={20} className="text-white" />,
+    title: "Rilis di Bookstore",
+    description: "Momen yang ditunggu! Buku Anda dicetak dengan kualitas terbaik dan didistribusikan secara eksklusif ke Aksara Nusa Bookstore serta puluhan jaringan mitra di seluruh Indonesia.",
+    color: "from-[#EF7A08] to-[#C27A00]"
+  }
+];
 
 export function AboutSection() {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <Section className="py-20 md:py-24 overflow-hidden bg-transparent">
-      <div className="w-full max-w-[1280px] mx-auto px-6 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <Section className="py-16 md:py-20 bg-transparent relative overflow-visible">
+      {/* Premium Background Elements */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#004A8F]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#EF7A08]/10 rounded-full blur-[100px] pointer-events-none translate-y-1/4 -translate-x-1/4" />
+      
+      <Container className="relative z-10 max-w-[1100px]">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           
-          {/* LEFT COLUMN: Text, Graphic, Text, Button */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left relative z-20"
-          >
-            {/* Top Text Block */}
-            <div className="mb-12 flex flex-col items-center lg:items-start">
-              <div className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-[#657555] mb-2 opacity-90">
-                Kabar Dari Penerbit
-              </div>
-              <h2 className="font-serif text-[32px] md:text-[40px] leading-[1.1] mb-3 text-gray-900">
-                Alur Kerja Penulis
-              </h2>
-              <a href="#" className="inline-flex items-center text-[13px] md:text-[15px] font-bold text-gradient-primary hover:text-[#C27A00] transition-colors group">
-                Pelajari lebih lanjut 
-                <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-
-            {/* Middle Graphic (Circular Books Illustration) */}
-            <div className="relative w-[280px] h-[280px] md:w-[300px] md:h-[300px] mb-12 flex items-center justify-center">
-              {/* Central badge Image */}
-              <img 
-                src="https://ik.imagekit.io/yqhp1cmbp/megapress/book.svg" 
-                alt="Book Graphic" 
-                className="absolute z-30 w-[260px] h-[260px] md:w-[280px] md:h-[280px] object-contain drop-shadow-[0_10px_30px_rgba(219,139,0,0.3)]" 
-              />
-            </div>
-
-            {/* Bottom Text Block */}
-            <div className="flex flex-col items-center lg:items-start">
-              <p className="text-[15px] md:text-[17px] leading-[1.6] text-gray-600 mb-6 max-w-[340px]">
-                Yayasan untuk penerbitan modern, mengubah naskah mentah menjadi peluncuran yang sukses.
-              </p>
-              <button className="flex items-center justify-center gap-2 border border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-2.5 rounded-xl font-bold transition-all text-[14px]">
-                Tingkatkan Penerbitan Anda
-              </button>
-            </div>
-          </motion.div>
-
-
-          {/* RIGHT COLUMN: The Storyboard/Workbench UI */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-8 relative w-full h-[550px] md:h-[600px] flex items-center justify-center"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            
-            {/* Wrapper to align all boards relative to the center */}
-            <div className="relative w-full max-w-[480px] md:max-w-[540px] h-[560px] flex items-center justify-center scale-95 md:scale-100 transform origin-right">
-
-              {/* BACK CARD (Left): Naskah Metrics */}
-              <motion.div 
-                animate={{ x: isHovered ? -15 : 0, y: isHovered ? -10 : 0 }}
-                transition={{ duration: 0.4 }}
-                className="absolute top-8 -left-[5%] md:-left-[20%] lg:-left-[160px] w-[260px] lg:w-[300px] bg-[#FAF8F5] rounded-2xl shadow-lg border border-gray-200 overflow-hidden z-0 hidden md:block"
-              >
-                <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-white">
-                  <div className="flex items-center gap-2">
-                    <FileText size={16} className="text-[#8C4332]" />
-                    <span className="font-bold text-gray-800 text-[13px]">Naskah</span>
-                  </div>
-                </div>
-                <div className="p-5 bg-white m-2 rounded-xl shadow-sm border border-gray-100">
-                  <div className="flex gap-1 mb-4">
-                    <div className="bg-[#F6EBE9] text-[#8C4332] text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#8C4332]"></span> Nigh
-                    </div>
-                  </div>
-                  <h5 className="font-bold text-gray-900 text-[18px] mb-2 leading-tight">Tinjauan sedang berlangsung</h5>
-                  <div className="flex items-center gap-2 text-[11px] text-gray-500 mb-6">
-                    <span className="w-2 h-2 rounded-full bg-[#657555]"></span> Tinjauan sedang berlangsung
-                  </div>
-                  
-                  <div className="text-[11px] font-bold text-gray-500 mb-2">Case metrics</div>
-                  <div className="w-full text-left text-[12px]">
-                    <div className="flex justify-between border-b border-gray-100 pb-2 mb-2 font-bold text-gray-600">
-                      <span>Halaman</span>
-                      <span>Kata</span>
-                      <span>Bab</span>
-                    </div>
-                    <div className="flex justify-between text-gray-800">
-                      <span>320</span>
-                      <span>85,000</span>
-                      <span>22</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="px-5 pb-5 text-[11px] text-gray-500 leading-relaxed">
-                  Lihat detail di bawah untuk analisis editorial lebih lanjut, termasuk garis besar bab, pemeriksaan karakter, dan rekomendasi gaya.
-                </div>
-              </motion.div>
-
-              {/* MAIN BOARD (Center): Pipa Editorial Workflow */}
-              <div className="relative w-full h-full bg-white rounded-2xl border border-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col z-10">
-                
-                {/* Header */}
-                <div className="w-full h-12 border-b border-gray-100 flex items-center justify-between px-4 bg-white z-10">
-                  <div className="flex items-center gap-2">
-                    <LayoutTemplate size={16} className="text-gray-500" />
-                    <span className="font-bold text-gray-700 text-[14px]">Pipa Editorial</span>
-                  </div>
-                  <div className="flex gap-2 text-gray-400">
-                    <MoreHorizontal size={16} />
-                  </div>
-                </div>
-
-                {/* Dotted Grid Body */}
-                <div className="relative flex-1 bg-[#FAFAFA] overflow-hidden p-6 flex justify-center" style={{ backgroundImage: 'radial-gradient(circle, #E5E5E5 1.5px, transparent 1.5px)', backgroundSize: '16px 16px' }}>
-                  
-                  {/* Workflow Nodes */}
-                  <div className="relative w-full max-w-[240px] flex flex-col items-center mt-2 -translate-x-6 lg:-translate-x-12">
-                    
-                    {/* Node 1 */}
-                    <div className="bg-[#F6EBE9] px-4 py-2 rounded-lg border border-[#8C4332]/20 flex items-center gap-2 w-[160px] shadow-sm z-10">
-                      <Mail size={14} className="text-[#8C4332]" />
-                      <div className="text-[11px] font-bold text-[#8C4332]">Naskah Diterima</div>
-                    </div>
-                    
-                    <div className="w-px h-6 bg-gray-300"></div>
-
-                    {/* Node 2 */}
-                    <div className="bg-[#FDF0D5] px-4 py-2 rounded-lg border border-[#004A8F]/20 flex items-center gap-2 w-[160px] shadow-sm z-10">
-                      <Bot size={14} className="text-gradient-primary" />
-                      <div className="text-[11px] font-bold text-gradient-primary">Analisis Teks AI</div>
-                    </div>
-
-                    <div className="w-px h-6 bg-gray-300"></div>
-
-                    {/* Node 3 */}
-                    <div className="bg-emerald-50 px-4 py-2 rounded-lg border border-emerald-200 flex items-center gap-2 w-[160px] shadow-sm z-10">
-                      <CheckCircle size={14} className="text-emerald-600" />
-                      <div className="text-[11px] font-bold text-emerald-700">Tinjauan Selesai</div>
-                    </div>
-
-                    <div className="w-px h-6 bg-gray-300"></div>
-
-                    {/* Branching */}
-                    <div className="w-[180px] border-t border-gray-300 relative h-6">
-                      <div className="absolute top-0 left-0 w-px h-6 bg-gray-300"></div>
-                      <div className="absolute top-0 right-0 w-px h-6 bg-gray-300"></div>
-                    </div>
-
-                    <div className="flex gap-4 w-[200px] justify-between">
-                      {/* Branch Left */}
-                      <div className="bg-red-50 px-3 py-2 rounded-lg border border-red-200 flex items-center gap-1.5 w-[90px] shadow-sm z-10 justify-center text-center">
-                        <div className="text-[10px] font-bold text-red-600">Revisi Mayor</div>
-                      </div>
-                      {/* Branch Right */}
-                      <div className="bg-green-50 px-3 py-2 rounded-lg border border-green-200 flex items-center gap-1.5 w-[90px] shadow-sm z-10 justify-center text-center">
-                        <div className="text-[10px] font-bold text-green-700">Revisi Minor</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Sidebar Tools Icons (Left edge of board) */}
-                  <div className="absolute left-3 top-6 flex flex-col gap-4 text-gray-400">
-                    <PenTool size={18} />
-                    <LayoutTemplate size={18} />
-                    <Book size={18} />
-                    <FileText size={18} />
-                  </div>
-                </div>
+          {/* LEFT COLUMN: Context */}
+          <div className="lg:w-5/12 pt-4">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="w-8 h-[2px] bg-[#EF7A08]" />
+                <span className="text-[#EF7A08] font-bold tracking-[0.2em] text-[10px] uppercase">Alur Kerja Penulis</span>
               </div>
 
-              {/* FRONT CARD (Right): Obrolan Penulis Chat */}
-              <motion.div 
-                animate={{ x: isHovered ? 10 : 0, y: isHovered ? 5 : 0 }}
-                transition={{ duration: 0.3 }}
-                className="absolute top-1/4 -right-[2%] md:-right-[10%] lg:-right-[140px] w-[280px] md:w-[340px] bg-white rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.15)] border border-gray-200 overflow-hidden z-20"
-              >
-                <div className="p-4 border-b border-gray-100 flex items-center justify-between bg-white">
-                  <div className="flex items-center gap-2">
-                    <MessageSquare size={16} className="text-[#657555]" />
-                    <span className="font-bold text-gray-800 text-[14px]">Obrolan Penulis</span>
-                  </div>
-                  <div className="flex gap-1">
-                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                  </div>
-                </div>
-                <div className="p-4 bg-[#FAFAFA] flex flex-col gap-3 h-[240px] overflow-y-auto">
-                  {/* Chat Bubble Right */}
-                  <div className="self-end bg-[#657555] text-white p-3 rounded-2xl rounded-tr-sm text-[12px] max-w-[85%] shadow-sm">
-                    Halo, bisa Anda tinjau bab ketiga Jennifer Browne?
-                  </div>
-                  
-                  {/* Chat Bubble Left */}
-                  <div className="self-start bg-white border border-gray-100 text-gray-700 p-3 rounded-2xl rounded-tl-sm text-[12px] max-w-[90%] shadow-sm flex flex-col gap-2">
-                    <span>Tentu! Langkah pertama adalah mengambil file naskah terbaru dan profil penulis.</span>
-                    
-                    {/* Action Item inside Chat */}
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-2 flex justify-between items-center mt-1">
-                      <div className="flex items-center gap-2">
-                        <FileSpreadsheet size={14} className="text-gradient-primary" />
-                        <span className="font-bold text-[11px] text-gray-700">Ambil File Naskah (Mss 12)</span>
+              <Typography variant="h2" className="text-[#002D5A] mb-5 leading-[1.1] font-serif text-3xl md:text-4xl tracking-tight">
+                Perjalanan Naskah Menjadi <span className="block mt-1 italic font-light text-[#EF7A08]">Mahakarya</span>
+              </Typography>
+              
+              <div className="w-12 h-[2px] bg-gradient-to-r from-[#004A8F] to-transparent mb-6 opacity-30" />
+
+              <Typography variant="description" className="text-slate-600 mb-8 text-sm md:text-base leading-relaxed font-light">
+                Kami percaya setiap cerita pantas untuk didengar. Di Aksara Nusa Mediatama, kami mendampingi penulis melalui proses penerbitan eksklusif yang terstruktur, transparan, dan berstandar internasional.
+              </Typography>
+              
+              <Button size="default" className="group rounded-full px-6 h-11 bg-white text-[#004A8F] hover:bg-[#004A8F] hover:text-white font-bold text-sm transition-all duration-300 shadow-md shadow-slate-200 hover:shadow-[#004A8F]/20 border border-slate-100">
+                Mulai Terbitkan Buku
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+          </div>
+
+          {/* RIGHT COLUMN: Vertical Timeline */}
+          <div className="lg:w-7/12 relative w-full pt-4 lg:pt-0">
+            {/* The vertical connecting line */}
+            <div className="absolute left-[27px] md:left-[27px] top-4 bottom-10 w-[2px] bg-gradient-to-b from-[#004A8F]/20 via-[#EF7A08]/20 to-transparent hidden sm:block" />
+
+            <div className="flex flex-col gap-8 md:gap-10 relative">
+              {workflowSteps.map((step, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                  className="relative flex flex-col sm:flex-row gap-5 md:gap-6 group"
+                >
+                  {/* Step Icon / Number Indicator */}
+                  <div className="relative z-10 flex shrink-0">
+                    <div className="w-14 h-14 rounded-xl bg-white shadow-lg shadow-slate-200/50 flex items-center justify-center border border-slate-50 relative overflow-hidden group-hover:-translate-y-1 transition-transform duration-300 ease-out">
+                      {/* Gradient background that reveals on hover */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                      
+                      {/* Icon normal state */}
+                      <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
+                        {React.cloneElement(step.icon as React.ReactElement, { className: "text-[#004A8F]" })}
                       </div>
-                      <ArrowRight size={12} className="text-gray-400" />
+                      
+                      {/* Icon hover state */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {step.icon}
+                      </div>
+                    </div>
+
+                    {/* Step Number Badge */}
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#EF7A08] text-white flex items-center justify-center font-bold text-[10px] shadow-sm border-[1.5px] border-white">
+                      {index + 1}
                     </div>
                   </div>
-                </div>
-                
-                {/* Chat Input */}
-                <div className="p-3 border-t border-gray-100 bg-white flex items-center gap-2">
-                  <div className="flex-1 bg-gray-100 rounded-full px-4 py-2 text-[12px] text-gray-500">
-                    Tulis pesan Anda
-                  </div>
-                  <div className="w-8 h-8 bg-[#657555] rounded-full flex items-center justify-center text-white shrink-0 shadow-sm">
-                    <Send size={14} />
-                  </div>
-                </div>
-              </motion.div>
 
+                  {/* Step Content */}
+                  <div className="flex-1 pt-0 sm:pt-1">
+                    <Typography variant="h3" className="text-[#002D5A] mb-2 font-serif text-xl md:text-2xl group-hover:text-[#EF7A08] transition-colors duration-300">
+                      {step.title}
+                    </Typography>
+                    <Typography variant="p" className="text-slate-500 text-sm leading-relaxed font-light">
+                      {step.description}
+                    </Typography>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
+          </div>
 
         </div>
-      </div>
+      </Container>
     </Section>
   );
 }

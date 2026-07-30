@@ -3,6 +3,26 @@ import { headers } from "next/headers";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
+import { Manrope, Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Aksara Nusa | Satu Penerbit. Ribuan Cerita Penting.",
   description: "Aksara Nusa - Penerbit buku ajar, buku referensi, novel, dan jurnal.",
@@ -28,7 +48,12 @@ export default async function RootLayout({
     <html
       lang="id"
       suppressHydrationWarning
-      className={cn("h-full", "antialiased", "font-plus-jakarta-sans", "font-manrope", "font-playfair-display")}
+      className={cn(
+        "h-full antialiased",
+        manrope.variable,
+        plusJakartaSans.variable,
+        playfairDisplay.variable
+      )}
     >
       <head>
         <meta property="csp-nonce" content={nonce ?? ""} />

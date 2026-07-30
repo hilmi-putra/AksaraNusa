@@ -4,104 +4,91 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Container } from "@/components/atoms/Container";
 import { Section } from "@/components/atoms/Section";
-import { landingData } from "@/lib/mock/landing.mock";
-import { ArrowRight } from "lucide-react";
+import { Typography } from "@/components/atoms/Typography";
 
-// Using the provided assets
-const serviceImages = [
-  "https://ik.imagekit.io/yqhp1cmbp/megapress/penyuntingan.svg",
-  "https://ik.imagekit.io/yqhp1cmbp/megapress/design.svg",
-  "https://ik.imagekit.io/yqhp1cmbp/megapress/distribusi.svg",
-  "https://ik.imagekit.io/yqhp1cmbp/megapress/royalti.svg",
+const services = [
+  {
+    id: "01",
+    title: "Penyuntingan Profesional",
+    desc: "Naskah dikurasi secara presisi oleh editor ahli. Kami memastikan tata bahasa dan alur cerita yang sempurna tanpa menghilangkan nyawa tulisan Anda.",
+  },
+  {
+    id: "02",
+    title: "Desain Sampul Premium",
+    desc: "Tim desainer in-house merancang sampul kelas dunia dengan nilai estetika dan daya tarik komersial tinggi untuk memikat mata pembaca di toko buku.",
+  },
+  {
+    id: "03",
+    title: "Distribusi Nasional",
+    desc: "Melalui jaringan distribusi masif, karya Anda didistribusikan secara fisik dan digital agar mudah ditemukan oleh pembaca dari Sabang hingga Merauke.",
+  },
+  {
+    id: "04",
+    title: "Royalti Transparan",
+    desc: "Akses sistem pelaporan royalti secara waktu nyata. Kami menjamin hak finansial setiap penulis dengan pembagian profit yang jujur dan tepat waktu.",
+  }
 ];
 
 export function ServicesSection() {
   return (
-    <Section id="layanan" className="py-24 md:py-32 relative overflow-hidden bg-transparent scroll-mt-24">
-      
-      <Container>
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20 relative z-10">
+    <Section id="layanan" className="py-24 md:py-32 relative bg-transparent overflow-visible scroll-mt-24">
+      {/* Background Orbs */}
+      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-[#004A8F]/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#EF7A08]/5 rounded-full blur-[120px] pointer-events-none translate-y-1/4 translate-x-1/4" />
+
+      <Container className="relative z-10 max-w-[1000px]">
+        
+        {/* Header */}
+        <div className="text-center flex flex-col items-center mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col items-center"
           >
-            <h2 className="text-[12px] md:text-[13px] font-bold tracking-[0.2em] uppercase mb-4 text-gradient-primary">
-              Layanan Kami
-            </h2>
-            <h3 className="mb-6 font-serif text-[36px] md:text-[48px] text-gradient-secondary leading-tight">
-              Solusi Lengkap untuk <em className="italic font-light text-gradient-primary">Penulis</em>
-            </h3>
-            <p className="text-[#EF7A08]/70 text-[16px] md:text-[18px]">
-              Mulai dari penyuntingan hingga royalti, kami memfasilitasi setiap aspek.
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="w-12 h-[1px] bg-[#EF7A08]" />
+              <span className="text-[#EF7A08] font-bold tracking-[0.25em] text-[11px] uppercase">Layanan Aksara Nusa</span>
+              <div className="w-12 h-[1px] bg-[#EF7A08]" />
+            </div>
+            
+            <Typography variant="h2" className="text-[#002D5A] font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-8 max-w-2xl">
+              Solusi Penerbitan <em className="italic font-light text-[#EF7A08]">Total.</em>
+            </Typography>
+            
+            <p className="text-slate-500 text-sm md:text-base leading-relaxed font-light max-w-xl">
+              Mulai dari draf kasar hingga terbit dan mejeng di rak toko buku nasional, kami memfasilitasi setiap detail perjalanan naskah Anda.
             </p>
           </motion.div>
         </div>
 
-        {/* Cards Grid (2x2 layout for landscape rectangles) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-          {landingData.services.map((service, index) => {
-            const imageSrc = serviceImages[index] || serviceImages[3];
-            
-            return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                whileHover={{ y: -5, backgroundColor: "rgba(110, 0, 0, 0.02)" }}
-                className="group relative p-8 md:p-10 rounded-3xl transition-all duration-300 flex flex-col justify-center"
-                style={{ 
-                  background: 'transparent',
-                  border: '1px solid rgba(110, 0, 0, 0.15)'
-                }}
-              >
-                {/* Card Content (Horizontal Layout) */}
-                <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 h-full">
-                  
-                  {/* Left: Text & Action */}
-                  <div className="flex flex-col justify-center w-full sm:w-1/2 text-center sm:text-left">
-                    <h4 className="text-[22px] md:text-[26px] font-serif font-bold mb-6 leading-[1.2] text-gradient-secondary">
-                      {service.title}
-                    </h4>
-                    
-                    {/* Action Link */}
-                    <div className="flex items-center justify-center sm:justify-start text-gradient-primary font-bold text-[14px] group-hover:text-gradient-secondary transition-colors cursor-pointer w-full sm:w-fit">
-                      Pelajari lebih lanjut <ArrowRight className="ml-2 w-4 h-4" />
-                    </div>
-                  </div>
-
-                  {/* Right: SVG Illustration */}
-                  <div className="w-full sm:w-1/2 flex justify-center sm:justify-end items-center h-[140px] md:h-[180px]">
-                    <motion.img 
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      src={imageSrc} 
-                      alt={service.title} 
-                      className="max-h-full max-w-full object-contain drop-shadow-lg"
-                      onError={(e) => {
-                        if (index === 0) e.currentTarget.src = serviceImages[3];
-                      }}
-                    />
-                  </div>
-
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Bottom Filter/Nav */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-[#EF7A08]/70 text-[14px]">
-          <span>Jelajahi Ekosistem Aksara Nusa untuk</span>
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-2 font-medium hover:text-gradient-secondary cursor-pointer transition-colors"><span className="w-2 h-2 rounded-full bg-gradient-primary"></span> Fiksi</span>
-            <span className="flex items-center gap-2 font-medium hover:text-gradient-secondary cursor-pointer transition-colors"><span className="w-2 h-2 rounded-full bg-[#FAEDEE] border border-[#EF7A08]/20"></span> Non-Fiksi</span>
-            <span className="flex items-center gap-2 font-medium hover:text-gradient-secondary cursor-pointer transition-colors"><span className="w-2 h-2 rounded-full bg-gradient-primary"></span> Akademik</span>
-          </div>
+        {/* Pure Typographic Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16 lg:gap-y-24">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative group"
+            >
+              {/* Massive Watermark Number */}
+              <div className="absolute -top-10 -left-6 font-serif text-[120px] leading-none font-bold text-slate-100/50 pointer-events-none select-none z-0 transition-colors duration-500 group-hover:text-[#EF7A08]/10">
+                {service.id}
+              </div>
+              
+              <div className="relative z-10 pl-4 md:pl-6 border-l border-slate-200 group-hover:border-[#EF7A08] transition-colors duration-500">
+                <h4 className="text-2xl md:text-3xl font-serif font-bold text-[#002D5A] leading-tight mb-4 tracking-tight group-hover:text-[#EF7A08] transition-colors duration-500">
+                  {service.title}
+                </h4>
+                <p className="text-slate-500 text-[14px] md:text-[15px] leading-relaxed font-light">
+                  {service.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
       </Container>

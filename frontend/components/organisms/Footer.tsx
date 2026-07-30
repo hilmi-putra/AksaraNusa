@@ -1,74 +1,79 @@
 import React from "react";
 import Link from "next/link";
 import { Container } from "@/components/atoms/Container";
+import { ArrowRight, BookOpen } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#F8FAFC] text-[#0F172A] py-16 md:py-20">
-      <Container>
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8">
+    <footer className="bg-transparent border-t border-slate-200/60 text-[#002D5A] pt-20 pb-10 md:pt-28 md:pb-12 relative overflow-hidden">
+      <Container className="relative z-10 max-w-[1200px]">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-12">
           
           {/* Left Column */}
-          <div className="md:w-1/2 flex flex-col justify-between h-full min-h-[250px]">
+          <div className="w-full lg:w-5/12 flex flex-col justify-between h-full min-h-[250px]">
             <div>
-              {/* Floating Pill Rectangles (Zapier-style) */}
-              <div className="relative h-40 w-full max-w-[340px] mb-6 select-none">
+              {/* Premium Floating Badges (Editorial Style) */}
+              <div className="relative h-36 w-full max-w-[340px] mb-10 select-none">
                 {/* Pill 1 */}
-                <div className="absolute top-4 left-4 border-2 border-[#0F172A] text-[#0F172A] rounded-full px-4 py-1.5 text-lg font-bold -rotate-12 hover:rotate-0 transition-transform bg-transparent">
+                <div className="absolute top-2 left-0 border border-[#004A8F]/20 text-[#004A8F] rounded-full px-5 py-2 text-sm font-semibold tracking-wide uppercase bg-white shadow-sm -rotate-3 hover:rotate-0 transition-transform duration-500">
                   Penerbit
                 </div>
                 {/* Pill 2 */}
-                <div className="absolute top-14 left-20 border-2 border-[#0F172A] text-[#0F172A] rounded-full px-6 py-2 text-2xl font-serif font-bold rotate-6 hover:rotate-0 transition-transform bg-transparent">
+                <div className="absolute top-12 left-16 bg-[#004A8F]/5 border border-[#004A8F]/10 text-[#002D5A] rounded-full px-6 py-2.5 text-xl font-serif font-bold rotate-2 hover:rotate-0 transition-transform duration-500 backdrop-blur-sm">
                   Nusantara
                 </div>
-                {/* Pill 3 (Filled dark) */}
-                <div className="absolute top-28 left-8 bg-gradient-secondary text-white rounded-full px-6 py-2 text-2xl font-bold -rotate-3 hover:rotate-0 transition-transform shadow-[-4px_4px_0px_rgba(239,122,8,1)] border-2 border-[#0F172A]">
+                {/* Pill 3 (Accent) */}
+                <div className="absolute top-24 left-6 bg-[#EF7A08] text-white rounded-full px-7 py-2.5 text-lg font-bold -rotate-2 hover:rotate-0 transition-transform duration-500 shadow-[0_10px_20px_rgba(239,122,8,0.25)] border border-[#EF7A08]/50">
                   Terpercaya
                 </div>
-                {/* Small circle with star */}
-                <div className="absolute top-24 left-60 border-2 border-[#0F172A] rounded-full w-10 h-10 flex items-center justify-center rotate-12 bg-gradient-primary">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                {/* Small star accent */}
+                <div className="absolute top-16 left-[280px] w-8 h-8 flex items-center justify-center rotate-12 text-[#EF7A08] opacity-60">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6h8l-6.4 4.7 2.4 7.6-6.4-4.7-6.4 4.7 2.4-7.6-6.4-4.7h8z"/></svg>
                 </div>
               </div>
 
-              <p className="text-[14px] md:text-[15px] leading-relaxed font-medium max-w-[85%] mb-10 opacity-90">
-                Penerbit anggota IKAPI yang dipercaya ribuan penulis di seluruh nusantara. Menerbitkan berbagai genre mulai dari Fiksi, Novel, hingga Buku Ajar dan Jurnal Ilmiah. 
+              <p className="text-[14px] md:text-[15px] leading-relaxed font-light text-slate-500 max-w-[90%] mb-10">
+                Penerbit anggota IKAPI yang dipercaya ribuan penulis di seluruh nusantara. Menerbitkan berbagai genre mulai dari Fiksi, Novel, hingga Buku Ajar dan Jurnal Ilmiah dengan standar kualitas editorial terbaik.
                 <br /><br />
-                <strong>Kritik & Saran:</strong> 0857-2469-3474
+                <strong className="text-[#002D5A] font-medium">Layanan Pelanggan:</strong> <br/>
+                <span className="text-[#EF7A08] font-bold text-lg">0857-2469-3474</span>
               </p>
             </div>
             
             <div className="mt-auto pt-6">
-              <div className="flex items-center">
-                <img src="https://ik.imagekit.io/yqhp1cmbp/Teks%20paragraf%20Anda%201.png" alt="Aksara Nusa Logo" className="w-[140px] md:w-[180px] h-auto object-contain" />
-              </div>
+              <img src="https://ik.imagekit.io/yqhp1cmbp/Teks%20paragraf%20Anda%201.png" alt="Aksara Nusa Logo" className="w-[160px] md:w-[180px] h-auto object-contain" />
             </div>
           </div>
           
           {/* Right Column */}
-          <div className="md:w-1/2 flex flex-col justify-between h-full min-h-[250px] md:items-end text-left md:text-right">
+          <div className="w-full lg:w-7/12 flex flex-col justify-between h-full min-h-[250px] lg:items-end text-left lg:text-right">
             
-            <div className="flex flex-col md:items-end w-full">
-              <h2 className="font-serif text-[36px] md:text-[44px] leading-[1.05] tracking-tight mb-6 max-w-[550px]">
-                Feeling inspired to up your publishing game?
+            <div className="flex flex-col lg:items-end w-full">
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-[54px] leading-[1.05] tracking-tight mb-8 max-w-[600px] text-[#002D5A]">
+                Siap Menerbitkan <em className="italic font-light text-[#EF7A08]">Karya Terbaik</em> Anda?
               </h2>
               
-              <Link href="/layanan" className="inline-block bg-gradient-primary text-[#F8FAFC] border-2 border-[#0F172A] text-sm font-bold px-6 py-3 rounded-full hover:brightness-110 transition-colors mb-12 self-start md:self-end shadow-[-4px_4px_0px_rgba(15,23,42,1)]">
-                Get started
+              <Link 
+                href="/layanan" 
+                className="group inline-flex items-center gap-3 bg-[#004A8F] text-white px-8 py-4 rounded-full font-medium text-[15px] shadow-[0_10px_30px_rgba(0,74,143,0.2)] hover:bg-[#002D5A] hover:shadow-[0_15px_40px_rgba(0,45,90,0.3)] transition-all duration-300 hover:-translate-y-1 mb-16 self-start lg:self-end"
+              >
+                <BookOpen className="w-4 h-4" />
+                Mulai Konsultasi Naskah
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               
               {/* Links */}
-              <div className="flex flex-wrap gap-x-6 gap-y-3 text-[13px] font-bold opacity-90 justify-start md:justify-end mb-12 w-full">
-                <Link href="/" className="hover:text-gradient-primary transition-colors">Home</Link>
-                <Link href="/bookstore" className="hover:text-gradient-primary transition-colors">Aksara Nusa Bookstore</Link>
-                <Link href="/kontak" className="hover:text-gradient-primary transition-colors">Kontak</Link>
-                <Link href="/layanan" className="hover:text-gradient-primary transition-colors">Layanan Penerbitan Buku</Link>
+              <div className="flex flex-wrap gap-x-8 gap-y-4 text-[13px] font-bold uppercase tracking-wider text-[#002D5A]/70 justify-start lg:justify-end w-full mb-12">
+                <Link href="/" className="hover:text-[#EF7A08] transition-colors">Beranda</Link>
+                <Link href="/bookstore" className="hover:text-[#EF7A08] transition-colors">Toko Buku</Link>
+                <Link href="/layanan" className="hover:text-[#EF7A08] transition-colors">Layanan Penerbitan</Link>
+                <Link href="/kontak" className="hover:text-[#EF7A08] transition-colors">Hubungi Kami</Link>
               </div>
             </div>
 
-            <div className="text-xs font-medium opacity-70 md:text-right flex flex-col items-start md:items-end w-full mt-auto">
-              <p className="mb-1">© 2026 AKSARA NUSA , All rights reserved.</p>
-              <p>Dibuat dan diterbitkan oleh Aksara Nusa Nusantara</p>
+            <div className="border-t border-slate-100 w-full pt-6 text-[12px] font-light text-slate-400 flex flex-col lg:flex-row items-start lg:items-center justify-between mt-auto gap-4">
+              <p>Dibuat dan dikelola dengan penuh dedikasi oleh <strong className="font-medium text-[#002D5A]">Aksara Nusa Nusantara</strong>.</p>
+              <p>© {new Date().getFullYear()} Aksara Nusa. Seluruh hak cipta dilindungi.</p>
             </div>
           </div>
           
