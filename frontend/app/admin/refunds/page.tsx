@@ -314,7 +314,7 @@ export default function AdminRefundsPage() {
             {selectedRequest?.proof_image && (
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-gray-500">Bukti Foto</label>
-                <img src={`http://localhost:8000/storage/${selectedRequest.proof_image}`} alt="Proof" className="w-full max-h-48 object-contain rounded-lg border border-gray-200" />
+                <img src={`${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'https://api.aksaranusamediatama.com'}/storage/${selectedRequest.proof_image}`} alt="Proof" className="w-full max-h-48 object-contain rounded-lg border border-gray-200" />
               </div>
             )}
 
