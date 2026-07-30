@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
   const nonce = crypto.randomUUID();
 
   const isDev = process.env.NODE_ENV !== 'production';
-  
+
   // CSP Header without 'unsafe-inline' for scripts
   // We allow 'unsafe-inline' for styles because many UI libraries (like Tailwind via style tags in dev) need it,
   // but strictly use nonce for scripts.
@@ -62,7 +62,7 @@ export function middleware(request: NextRequest) {
       try {
         const user = JSON.parse(userCookie);
         role = user.role;
-      } catch(e) {}
+      } catch (e) { }
     }
     const redirectPath = role === 'admin' ? '/admin/dashboard' : '/dashboard';
     response = NextResponse.redirect(new URL(redirectPath, request.url));
