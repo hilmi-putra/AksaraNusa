@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     img-src 'self' blob: data: https://placehold.co https://ik.imagekit.io https://megapress.co.id https://*.googleusercontent.com;
     font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self' http://localhost:* ws://localhost:* https://megapress.co.id https://app.sandbox.midtrans.com https://api.sandbox.midtrans.com https://app.midtrans.com https://api.midtrans.com;
+    connect-src 'self' http://localhost:* ws://localhost:* https://megapress.co.id https://api.aksaranusamediatama.com https://app.sandbox.midtrans.com https://api.sandbox.midtrans.com https://app.midtrans.com https://api.midtrans.com;
     frame-src 'self' https://app.sandbox.midtrans.com https://app.midtrans.com;
     object-src 'none';
     base-uri 'self';
