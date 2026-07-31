@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-transparent border-t border-slate-200/60 text-[#002D5A] pt-20 pb-10 md:pt-28 md:pb-12 relative overflow-hidden">
+    <footer className="bg-cream border-t border-slate-200/60 text-[#002D5A] pt-20 pb-10 md:pt-28 md:pb-12 relative overflow-hidden">
       <Container className="relative z-10 max-w-[1200px]">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-12">
           

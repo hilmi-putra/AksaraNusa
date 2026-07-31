@@ -98,7 +98,7 @@ export function AboutSection() {
                       
                       {/* Icon normal state */}
                       <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
-                        {React.cloneElement(step.icon as React.ReactElement, { className: "text-[#004A8F]" })}
+                        {React.cloneElement(step.icon as React.ReactElement<{ className?: string }>, { className: "text-[#004A8F]" })}
                       </div>
                       
                       {/* Icon hover state */}
