@@ -72,14 +72,21 @@ export function AdminNavbar({ sidebarOpen, setSidebarOpen }: { sidebarOpen: bool
 
     useEffect(() => {
         setMounted(true);
-        const userCookie = Cookies.get(USER_COOKIE);
-        if (userCookie) {
-            try {
-                setUser(JSON.parse(userCookie));
-            } catch (e) {
-                console.error("Failed to parse user cookie", e);
+        const loadUserFromCookie = () => {
+            const userCookie = Cookies.get(USER_COOKIE);
+            if (userCookie) {
+                try {
+                    setUser(JSON.parse(userCookie));
+                } catch (e) {
+                    console.error("Failed to parse user cookie", e);
+                }
             }
-        }
+        };
+
+        loadUserFromCookie();
+
+        window.addEventListener("userUpdated", loadUserFromCookie);
+        return () => window.removeEventListener("userUpdated", loadUserFromCookie);
     }, []);
 
     useEffect(() => {
@@ -163,7 +170,7 @@ export function AdminNavbar({ sidebarOpen, setSidebarOpen }: { sidebarOpen: bool
                                 className="inline-flex shrink-0 items-center gap-x-3 rounded-full hover:ring-4 hover:ring-gray-100 transition-all focus:outline-none"
                             >
                                 {user?.avatar ? (
-                                    <img className="shrink-0 size-9 rounded-full object-cover" src={user.avatar} alt="Profile" />
+                                    <img className="shrink-0 size-9 rounded-full object-cover" src={user.avatar.startsWith('http') ? user.avatar : `${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '')}${user.avatar}`} alt="Profile" />
                                 ) : (
                                     <div className="shrink-0 size-9 rounded-full bg-[#004A8F] text-white flex items-center justify-center font-bold text-sm">
                                         {user?.name ? user.name.split(' ').map((n: string) => n[0]).join('').toUpperCase().substring(0, 2) : 'A'}

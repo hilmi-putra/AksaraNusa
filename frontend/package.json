@@ -13,6 +13,7 @@
     "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^5.4.0",
     "@iconify/react": "^6.0.2",
+    "@tailwindcss/typography": "^0.5.20",
     "@tanstack/react-table": "^8.21.3",
     "@tiptap/extension-heading": "^3.29.1",
     "@tiptap/extension-highlight": "^3.29.1",

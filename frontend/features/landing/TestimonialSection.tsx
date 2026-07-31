@@ -11,8 +11,8 @@ import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 const stats = [
   { value: "200+", label: "Ulasan Penerbitan" },
   { value: "4.9", label: "Rating Kepuasan", icon: true },
-  { value: "500+", label: "Penulis Aktif" },
-  { value: "1M+", label: "Eksemplar Terjual" }
+  { value: "5", label: "Penulis Aktif" },
+  { value: "0", label: "Eksemplar Terjual" }
 ];
 
 const testimonials = [
@@ -49,23 +49,12 @@ const bookReviews = [
   { bookTitle: "Sang Pemimpin", review: "Penjualan cetakan kedua berhasil dicapai hanya dalam waktu 1 bulan rilis.", coverUrl: "https://megapress.co.id/wp-content/uploads/2024/04/cover-4.png" }
 ];
 
-const BookReviewCard = ({ bookTitle, review, coverUrl }: any) => (
-  <div className="h-[180px] w-[400px] shrink-0 bg-white rounded-2xl p-5 flex items-center gap-6 border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-lg transition-shadow">
-    <div className="w-[100px] h-[140px] rounded shrink-0 shadow-md overflow-hidden bg-slate-100 relative">
-      {coverUrl ? (
-        <img src={coverUrl} alt={bookTitle} className="w-full h-full object-cover" />
-      ) : (
-        <div className="w-full h-full bg-[#004A8F] flex items-center justify-center p-2 text-center">
-          <span className="text-white text-xs font-serif leading-tight">{bookTitle}</span>
-        </div>
-      )}
+const BookReviewCard = ({ review }: any) => (
+  <div className="h-[160px] w-[350px] shrink-0 bg-white rounded-2xl p-6 flex flex-col justify-center gap-4 border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all hover:border-[#004A8F]/10">
+    <div className="flex gap-1">
+      {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-[#EF7A08] text-[#EF7A08]" />)}
     </div>
-    <div className="flex-1 flex flex-col justify-center">
-      <div className="flex gap-1 mb-3">
-        {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-[#EF7A08] text-[#EF7A08]" />)}
-      </div>
-      <p className="font-medium text-[13px] leading-relaxed text-slate-700">"{review}"</p>
-    </div>
+    <p className="font-medium text-[14px] leading-relaxed text-slate-700">"{review}"</p>
   </div>
 );
 

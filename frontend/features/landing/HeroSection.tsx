@@ -64,12 +64,12 @@ export function HeroSection() {
             {/* Quick stats / Trust indicators */}
             <div className="mt-16 flex items-center justify-center gap-8 border-t border-white/10 pt-8 w-full max-w-2xl mx-auto">
               <div className="text-center">
-                <p className="text-3xl font-bold text-white">500+</p>
+                <p className="text-3xl font-bold text-white">5</p>
                 <p className="text-sm text-blue-200/70 mt-1">Penulis Aktif</p>
               </div>
               <div className="w-px h-10 bg-white/10" />
               <div className="text-center">
-                <p className="text-3xl font-bold text-white">10k+</p>
+                <p className="text-3xl font-bold text-white">5</p>
                 <p className="text-sm text-blue-200/70 mt-1">Buku Terbit</p>
               </div>
               <div className="w-px h-10 bg-white/10" />

@@ -6,30 +6,50 @@ import { Container } from "@/components/atoms/Container";
 import { Section } from "@/components/atoms/Section";
 import { Typography } from "@/components/atoms/Typography";
 import { Search, Book, PenTool, FileText, ArrowRight, Clock, Flame } from "lucide-react";
-import { mockSearchResults, recentSearches, popularSearches, SearchResult } from "@/lib/mock/search.mock";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { getGlobalSearch, SearchResultItem } from "@/lib/api/search";
+import Image from "next/image";
+import { recentSearches, popularSearches } from "@/lib/mock/search.mock";
 
 function SearchContent() {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q") || "";
   
   const [query, setQuery] = useState(initialQuery);
-  const [results, setResults] = useState<SearchResult[]>([]);
+  const [debouncedQuery, setDebouncedQuery] = useState(initialQuery);
+  const [results, setResults] = useState<SearchResultItem[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (query.trim().length > 1) {
-      const filtered = mockSearchResults.filter(
-        (item) =>
-          item.title.toLowerCase().includes(query.toLowerCase()) ||
-          item.description.toLowerCase().includes(query.toLowerCase())
-      );
-      setResults(filtered);
-    } else {
-      setResults([]);
-    }
+    const timer = setTimeout(() => setDebouncedQuery(query), 400);
+    return () => clearTimeout(timer);
   }, [query]);
+
+  useEffect(() => {
+    const fetchResults = async () => {
+      if (debouncedQuery.trim().length > 1) {
+        setIsLoading(true);
+        try {
+          const res = await getGlobalSearch(debouncedQuery);
+          if (res.success && res.data) {
+            setResults([...res.data.books, ...res.data.articles]);
+          } else {
+            setResults([]);
+          }
+        } catch (error) {
+          console.error("Failed to fetch search results:", error);
+          setResults([]);
+        } finally {
+          setIsLoading(false);
+        }
+      } else {
+        setResults([]);
+      }
+    };
+    fetchResults();
+  }, [debouncedQuery]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,7 +83,7 @@ function SearchContent() {
     }
     acc[result.type].push(result);
     return acc;
-  }, {} as Record<string, SearchResult[]>);
+  }, {} as Record<string, SearchResultItem[]>);
 
   return (
     <div className="bg-white rounded-[2rem] shadow-sm border border-border/50 overflow-hidden flex flex-col">
@@ -84,7 +104,6 @@ function SearchContent() {
       {/* Search Body */}
       <div className="flex-1 p-6 md:p-10 min-h-[500px]">
         {!query.trim() ? (
-          // Initial State: Recent & Popular
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -128,14 +147,17 @@ function SearchContent() {
               </div>
             </div>
           </motion.div>
+        ) : isLoading ? (
+          <div className="flex flex-col items-center justify-center py-20 text-center">
+            <div className="w-12 h-12 border-4 border-primary-brand/20 border-t-primary-brand rounded-full animate-spin mb-4" />
+            <Typography variant="p" className="text-muted-foreground mt-2 animate-pulse">Mencari...</Typography>
+          </div>
         ) : results.length > 0 ? (
-          // Results State
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex flex-col md:flex-row gap-10"
+            className="flex flex-col md:flex-row gap-8 lg:gap-12"
           >
-            {/* Left sidebar navigation for result types */}
             <div className="w-full md:w-64 shrink-0">
               <Typography variant="caption" className="text-muted-foreground font-semibold uppercase tracking-wider mb-6 block">Kategori</Typography>
               <ul className="space-y-2">
@@ -163,7 +185,6 @@ function SearchContent() {
               </ul>
             </div>
 
-            {/* Main results list */}
             <div className="flex-1 space-y-10">
               {Object.entries(groupedResults).map(([type, items]) => (
                 <div key={type} className="space-y-6">
@@ -174,28 +195,31 @@ function SearchContent() {
                   <div className="grid grid-cols-1 gap-4">
                     {items.map((item) => (
                       <Link 
-                        key={item.id} 
-                        href={item.url}
-                        className="group bg-white border border-border/50 rounded-2xl p-5 flex gap-5 hover:border-primary-brand/30 hover:shadow-md transition-all items-start"
+                        key={`${item.type}-${item.id}`} 
+                        href={item.type === 'book' ? `/bookstore/buku/${item.slug}` : `/blog/${item.slug}`}
+                        className="group bg-white border border-border/50 rounded-2xl p-4 flex gap-4 hover:border-primary-brand/30 hover:shadow-md transition-all items-start"
                       >
                         <div className={cn(
-                          "w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-sm",
-                          type === "book" ? "bg-amber-100 text-amber-700" :
-                          type === "author" ? "bg-blue-100 text-blue-700" :
-                          type === "article" ? "bg-emerald-100 text-emerald-700" :
-                          "bg-primary-brand/10 text-primary-brand"
+                          "w-16 h-20 rounded-lg overflow-hidden shrink-0 shadow-sm relative",
+                          type === "book" ? "bg-amber-100/50" : "bg-emerald-100/50"
                         )}>
-                          {getIconForType(item.type)}
+                          {item.thumbnail ? (
+                            <Image src={item.thumbnail} alt={item.title} fill className="object-cover" />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                              {getIconForType(item.type)}
+                            </div>
+                          )}
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between gap-4">
-                            <h4 className="font-semibold text-xl text-ink group-hover:text-primary-brand transition-colors truncate">
+                            <h4 className="font-semibold text-ink group-hover:text-primary-brand transition-colors truncate">
                               {item.title}
                             </h4>
-                            <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary-brand opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0 shrink-0 mt-1" />
+                            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary-brand opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0 shrink-0 mt-1" />
                           </div>
-                          <p className="text-base text-ink/70 line-clamp-1 mt-2">
-                            {item.description}
+                          <p className="text-sm text-ink/60 line-clamp-1 mt-1">
+                            {item.author}
                           </p>
                           {item.category && (
                             <div className="mt-4 flex items-center gap-2">

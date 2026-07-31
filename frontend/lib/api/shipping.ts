@@ -30,6 +30,6 @@ export const getShippingCost = async (destinationInfo: any, weight: number, cour
 };
 
 export const getPaymentConfig = async () => {
-    const response = await api.get('/store/payment/config');
+    const response = await api.get('/public/payment/config');
     return response;
 };

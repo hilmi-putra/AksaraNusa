@@ -43,6 +43,13 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
+    // Profile Routes
+    Route::prefix('profile')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Api\ProfileController::class, 'show']);
+        Route::put('/', [\App\Http\Controllers\Api\ProfileController::class, 'update']);
+        Route::put('/password', [\App\Http\Controllers\Api\ProfileController::class, 'updatePassword']);
+    });
+
     // Admin only routes
     Route::middleware('role:admin')->prefix('admin')->group(function () {
         // Uploads
@@ -125,7 +132,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('shipping/cost', [\App\Http\Controllers\Api\Store\ShippingController::class, 'cost']);
 
         // Payment
-        Route::get('payment/config', [\App\Http\Controllers\Api\Store\PaymentController::class, 'config']);
         Route::post('payment/sync/{orderId}', [\App\Http\Controllers\Api\Store\PaymentController::class, 'sync']);
 
         // Orders
@@ -150,6 +156,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
 // Public Routes (No authentication required)
 Route::prefix('public')->group(function () {
+    Route::get('search', [\App\Http\Controllers\Api\Public\SearchController::class, 'index']);
     Route::get('books', [PublicBookController::class, 'index']);
     Route::get('books/{slug}', [PublicBookController::class, 'show']);
 
@@ -162,6 +169,9 @@ Route::prefix('public')->group(function () {
 
     // Reviews
     Route::get('books/{bookId}/reviews', [\App\Http\Controllers\Api\Store\ReviewController::class, 'getProductReviews']);
+
+    // Payment Config
+    Route::get('payment/config', [\App\Http\Controllers\Api\Store\PaymentController::class, 'config']);
 
 });
 

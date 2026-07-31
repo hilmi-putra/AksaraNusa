@@ -39,61 +39,44 @@ export function ProductMetadata({ book }: ProductMetadataProps) {
         
         <TabsContent value="description" className="mt-0 outline-none">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm text-gray-600">
-            {/* Column 1 */}
-            <div className="flex flex-col gap-4">
-              <h4 className="font-bold tracking-widest uppercase text-xs text-[#171512] mb-2">PENGANTAR REDAKSI</h4>
-              <div className="leading-relaxed">
-                {book.editor_note ? (
-                  <p>{book.editor_note}</p>
-                ) : (
-                  <p className="text-gray-400 italic">Tidak ada pengantar redaksi.</p>
-                )}
-              </div>
+            {/* Column 1: Main Description */}
+            <div className="flex flex-col gap-4 md:col-span-2">
+              <h4 className="font-bold tracking-widest uppercase text-xs text-[#171512] mb-2">DESKRIPSI BUKU</h4>
+              <div 
+                className="leading-relaxed prose prose-sm max-w-none text-gray-600 prose-p:mb-4 prose-a:text-primary"
+                dangerouslySetInnerHTML={{ __html: book.long_description || '<p class="text-gray-400 italic">Tidak ada deskripsi tersedia.</p>' }}
+              />
             </div>
 
-            {/* Column 2 */}
+            {/* Column 2: Metadata */}
             <div className="flex flex-col gap-4">
-              <h4 className="font-bold tracking-widest uppercase text-xs text-[#171512] mb-2">DETAIL SPESIFIKASI</h4>
-              <div className="leading-relaxed">
-                {book.short_description ? (
-                  <p>{book.short_description}</p>
-                ) : (
-                  <p className="text-gray-400 italic">Tidak ada deskripsi singkat.</p>
-                )}
-              </div>
-              <ul className="flex flex-col gap-2 mt-2">
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-gray-400"></span> 
-                  <strong>Format:</strong> <span className="capitalize">{book.cover_type || '-'}</span>
+              <h4 className="font-bold tracking-widest uppercase text-xs text-[#171512] mb-2">DETAIL BUKU</h4>
+              <ul className="flex flex-col gap-3">
+                <li className="grid grid-cols-2 gap-2">
+                  <strong className="font-medium text-gray-900">Format</strong> 
+                  <span className="capitalize">{book.cover_type || '-'}</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-gray-400"></span> 
-                  <strong>Jumlah Halaman:</strong> {book.page_count ? `${book.page_count} Halaman` : '-'}
+                <li className="grid grid-cols-2 gap-2">
+                  <strong className="font-medium text-gray-900">Jumlah Halaman</strong> 
+                  <span>{book.page_count ? `${book.page_count} Halaman` : '-'}</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-gray-400"></span> 
-                  <strong>Tanggal Terbit:</strong> {book.published_at ? new Date(book.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : '-'}
+                <li className="grid grid-cols-2 gap-2">
+                  <strong className="font-medium text-gray-900">Tanggal Terbit</strong> 
+                  <span>{book.published_at ? new Date(book.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : '-'}</span>
+                </li>
+                <li className="grid grid-cols-2 gap-2">
+                  <strong className="font-medium text-gray-900">Penerbit</strong> 
+                  <span>{book.publisher?.name || '-'}</span>
+                </li>
+                <li className="grid grid-cols-2 gap-2">
+                  <strong className="font-medium text-gray-900">ISBN</strong> 
+                  <span>{book.isbn || '-'}</span>
+                </li>
+                <li className="grid grid-cols-2 gap-2">
+                  <strong className="font-medium text-gray-900">Berat</strong> 
+                  <span>{book.weight ? `${book.weight} gr` : '-'}</span>
                 </li>
               </ul>
-            </div>
-
-            {/* Column 3 */}
-            <div className="flex flex-col gap-4">
-              <h4 className="font-bold tracking-widest uppercase text-xs text-[#171512] mb-2">INFORMASI LAINNYA</h4>
-              <p className="leading-relaxed">
-                <strong>Penerbit:</strong> {book.publisher?.name || '-'}<br/>
-                <strong>ISBN:</strong> {book.isbn || '-'}<br/>
-                <strong>Berat:</strong> {book.weight ? `${book.weight} gr` : '-'}
-              </p>
-              
-              <h4 className="font-bold tracking-widest uppercase text-xs text-[#171512] mt-4 mb-2">CATATAN</h4>
-              <div className="leading-relaxed">
-                {book.additional_info ? (
-                  <p>{book.additional_info}</p>
-                ) : (
-                  <p className="text-gray-400 italic">Tidak ada catatan tambahan.</p>
-                )}
-              </div>
             </div>
           </div>
         </TabsContent>

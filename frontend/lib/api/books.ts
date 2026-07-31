@@ -4,8 +4,8 @@ import { ApiBook } from "@/types/book";
 // Re-export ApiBook as Book for backward compatibility
 export type { ApiBook as Book } from "@/types/book";
 
-// Mapper to adapt API book structure to Frontend UI Book type (for cards/listings)
 export const mapApiBookToFrontendBook = (apiBook: ApiBook): any => ({
+  ...apiBook,
   id: apiBook.id.toString(),
   title: apiBook.title,
   subtitle: apiBook.subtitle,
@@ -65,11 +65,7 @@ export const updateAdminBookPricing = async (id: number, data: any) => {
 export const uploadFile = async (file: File) => {
   const formData = new FormData();
   formData.append("file", file);
-  return await api.post('/admin/upload', formData, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
-  });
+  return await api.post('/admin/upload', formData);
 };
 
 // --------------- Public Book APIs ---------------

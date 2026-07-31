@@ -8,6 +8,8 @@ import { mockSearchResults, recentSearches, popularSearches, SearchResult } from
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { getGlobalSearch, SearchResultItem } from "@/lib/api/search";
+import Image from "next/image";
 
 interface SearchOverlayProps {
   isOpen: boolean;
@@ -16,7 +18,9 @@ interface SearchOverlayProps {
 
 export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchResult[]>([]);
+  const [debouncedQuery, setDebouncedQuery] = useState("");
+  const [results, setResults] = useState<SearchResultItem[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
@@ -34,19 +38,36 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
     };
   }, [isOpen]);
 
+  // Debounce logic
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedQuery(query), 400);
+    return () => clearTimeout(timer);
+  }, [query]);
+
   // Handle search logic
   useEffect(() => {
-    if (query.trim().length > 1) {
-      const filtered = mockSearchResults.filter(
-        (item) =>
-          item.title.toLowerCase().includes(query.toLowerCase()) ||
-          item.description.toLowerCase().includes(query.toLowerCase())
-      );
-      setResults(filtered);
-    } else {
-      setResults([]);
-    }
-  }, [query]);
+    const fetchResults = async () => {
+      if (debouncedQuery.trim().length > 1) {
+        setIsLoading(true);
+        try {
+          const res = await getGlobalSearch(debouncedQuery);
+          if (res.success && res.data) {
+            setResults([...res.data.books, ...res.data.articles]);
+          } else {
+            setResults([]);
+          }
+        } catch (error) {
+          console.error("Failed to fetch search results:", error);
+          setResults([]);
+        } finally {
+          setIsLoading(false);
+        }
+      } else {
+        setResults([]);
+      }
+    };
+    fetchResults();
+  }, [debouncedQuery]);
 
   // Handle keyboard shortcuts (Escape to close)
   useEffect(() => {
@@ -88,12 +109,12 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
     }
     acc[result.type].push(result);
     return acc;
-  }, {} as Record<string, SearchResult[]>);
+  }, {} as Record<string, SearchResultItem[]>);
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-40 flex justify-center items-start pt-24 md:pt-28 px-4 sm:px-6">
+        <div className="fixed inset-0 z-40 flex justify-center items-start pt-32 md:pt-40 px-4 sm:px-6">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -190,6 +211,12 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                     </div>
                   </div>
                 </div>
+              ) : isLoading ? (
+                // Loading State
+                <div className="flex flex-col items-center justify-center py-20 text-center">
+                  <div className="w-12 h-12 border-4 border-primary-brand/20 border-t-primary-brand rounded-full animate-spin mb-4" />
+                  <Typography variant="p" className="text-muted-foreground mt-2 animate-pulse">Mencari...</Typography>
+                </div>
               ) : results.length > 0 ? (
                 // Results State
                 <div className="flex flex-col md:flex-row gap-8">
@@ -224,30 +251,33 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                         <div className="grid grid-cols-1 gap-3">
                           {items.map((item) => (
                             <Link 
-                              key={item.id} 
-                              href={item.url}
+                              key={`${item.type}-${item.id}`} 
+                              href={item.type === 'book' ? `/bookstore/buku/${item.slug}` : `/blog/${item.slug}`}
                               onClick={onClose}
                               className="group bg-white border border-border/50 rounded-2xl p-4 flex gap-4 hover:border-primary-brand/30 hover:shadow-md transition-all items-start"
                             >
-                              <div className={cn(
-                                "w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-sm",
-                                type === "book" ? "bg-amber-100 text-amber-700" :
-                                type === "author" ? "bg-blue-100 text-blue-700" :
-                                type === "article" ? "bg-emerald-100 text-emerald-700" :
-                                "bg-primary-brand/10 text-primary-brand"
-                              )}>
-                                {getIconForType(item.type)}
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-start justify-between gap-4">
-                                  <h4 className="font-semibold text-ink group-hover:text-primary-brand transition-colors truncate">
-                                    {item.title}
-                                  </h4>
-                                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary-brand opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0 shrink-0 mt-1" />
+                                <div className={cn(
+                                  "w-16 h-20 rounded-lg overflow-hidden shrink-0 shadow-sm relative",
+                                  type === "book" ? "bg-amber-100/50" : "bg-emerald-100/50"
+                                )}>
+                                  {item.thumbnail ? (
+                                    <Image src={item.thumbnail} alt={item.title} fill className="object-cover" />
+                                  ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                                      {getIconForType(item.type)}
+                                    </div>
+                                  )}
                                 </div>
-                                <p className="text-sm text-ink/60 line-clamp-1 mt-1">
-                                  {item.description}
-                                </p>
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-start justify-between gap-4">
+                                    <h4 className="font-semibold text-ink group-hover:text-primary-brand transition-colors truncate">
+                                      {item.title}
+                                    </h4>
+                                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary-brand opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0 shrink-0 mt-1" />
+                                  </div>
+                                  <p className="text-sm text-ink/60 line-clamp-1 mt-1">
+                                    {item.author}
+                                  </p>
                                 {item.category && (
                                   <div className="mt-3 flex items-center gap-2">
                                     <span className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground">
