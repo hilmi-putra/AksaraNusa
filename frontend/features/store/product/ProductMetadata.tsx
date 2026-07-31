@@ -40,10 +40,10 @@ export function ProductMetadata({ book }: ProductMetadataProps) {
         <TabsContent value="description" className="mt-0 outline-none">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm text-gray-600">
             {/* Column 1: Main Description */}
-            <div className="flex flex-col gap-4 md:col-span-2">
+            <div className="flex flex-col gap-4 md:col-span-2 min-w-0 overflow-hidden">
               <h4 className="font-bold tracking-widest uppercase text-xs text-[#171512] mb-2">DESKRIPSI BUKU</h4>
               <div 
-                className="leading-relaxed prose prose-sm max-w-none text-gray-600 prose-p:mb-4 prose-a:text-primary"
+                className="leading-relaxed prose prose-sm max-w-none text-gray-600 break-words whitespace-pre-wrap [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-[#171512] [&_h2]:mt-6 [&_h2]:mb-3 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4"
                 dangerouslySetInnerHTML={{ __html: book.long_description || '<p class="text-gray-400 italic">Tidak ada deskripsi tersedia.</p>' }}
               />
             </div>
