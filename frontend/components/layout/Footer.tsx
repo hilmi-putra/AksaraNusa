@@ -43,7 +43,7 @@ export function Footer() {
                 Email: hello@megapress.com
               </li>
               <li className="text-text-muted">
-                WhatsApp: +62 812-3456-7890
+                WhatsApp: +62 852-8703-0246
               </li>
               <li className="text-text-muted mt-4">
                 Jl. Penerbitan No. 1, Jakarta, Indonesia

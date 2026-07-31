@@ -40,7 +40,7 @@ export function Header() {
             <Mail className="w-5 h-5" />
           </a>
           <a
-            href="https://wa.me/123456789"
+            href="https://wa.me/6285287030246"
             className="w-10 h-10 rounded-full bg-surface-muted flex items-center justify-center text-ink hover:bg-primary-brand hover:text-surface-white transition-colors"
             aria-label="WhatsApp"
           >

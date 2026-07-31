@@ -11,7 +11,7 @@ export function FloatingWhatsAppCTA() {
 
   return (
     <a
-      href="https://wa.me/6281212088836"
+      href="https://wa.me/6285287030246"
       target="_blank"
       rel="noopener noreferrer"
       className={`fixed right-6 ${isDashboard ? "bottom-28" : "bottom-6"} md:bottom-10 md:right-10 z-[50] flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-primary text-white shadow-[0_8px_20px_rgba(219,139,0,0.3)] border border-white/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(219,139,0,0.5)] group`}
